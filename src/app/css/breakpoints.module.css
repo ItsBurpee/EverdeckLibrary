@@ -1,0 +1,3 @@
+@value tablet: min-width: 600px; 
+@value laptop: min-width: 992px; 
+@value desktop: min-width: 1200px; 
