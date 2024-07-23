@@ -5,10 +5,10 @@
 */
 .slider {
   position: relative;
-  width: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 200px;
+}
+
+.slider * {
 }
 
 .sliderTrack,
@@ -16,6 +16,7 @@
   border-radius: 3px;
   height: 5px;
   position: absolute;
+  left: 1%;
 }
 
 .sliderTrack {
@@ -39,7 +40,8 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 10rem;
+  width: 200px;
+  /* width: 100%; */
 }
 
 .thumbZInd3 {
@@ -60,8 +62,8 @@
   border-radius: 50%;
   box-shadow: 0 0 1px 1px #ced4da;
   cursor: pointer;
-  height: 18px;
-  width: 18px;
+  height: 1.2rem;
+  width: 1.2rem;
   pointer-events: all;
   position: relative;
 }
@@ -72,8 +74,8 @@
   border-radius: 50%;
   box-shadow: 0 0 1px 1px #ced4da;
   cursor: pointer;
-  height: 18px;
-  width: 18px;
+  height: 1.2rem;
+  width: 1.2rem;
   pointer-events: all;
   position: relative;
 }
@@ -94,18 +96,18 @@
 
 .sliderLeftVal,
 .sliderRightVal {
-  color: #dee2e6;
+  color: black;
   font-size: 12px;
   margin-top: 20px;
   position: absolute;
 }
 
 .sliderLeftVal {
-  left: 0.3rem;
-  top: -0.5rem;
+  left: 0rem;
+  top: 0rem;
 }
 
 .sliderRightVal {
-  right: 0.3rem;
-  top: -0.5rem;
+  right: 0rem;
+  top: 0rem;
 }

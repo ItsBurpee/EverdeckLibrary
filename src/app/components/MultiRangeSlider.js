@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "@/app/ui/css/multiRangeSlider.module.css";
+import styles from "../css/multiRangeSlider.module.css";
 import PropTypes from "prop-types";
 import { useState, useEffect, useCallback, useRef } from "react";
 
@@ -36,7 +36,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
             const maxPercent = getPercent(+maxValRef.current.value);
 
             if (range.current) {
-                range.current.style.left = `${minPercent}%`;
+                range.current.style.left = `${minPercent + 1}%`;
                 range.current.style.width = `${maxPercent - minPercent}%`;
             }
         }
