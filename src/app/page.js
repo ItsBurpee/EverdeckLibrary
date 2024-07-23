@@ -1,9 +1,10 @@
 import { Stack } from "react-bootstrap";
 import SearchBar from "./components/SearchBar";
+import styles from "./css/mainPage.module.css";
 
 export default function MainPage() {
     return (
-        <div id="main">
+        <div id="main" className={styles.mainPage}>
             <Stack gap={3}>
                 <SearchBar />
                 {/*Placeholder h1 element*/}

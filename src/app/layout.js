@@ -1,4 +1,5 @@
-import AppNavbar from "./components/AppNavbar"
+import AppNavbar from "./components/AppNavbar";
+import styles from "./css/mainPage.module.css";
 
 export const metadata = {
   title: 'Everdeck Library',
@@ -7,11 +8,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"> 
-      <body>
+    <html lang="en">
+      <body className={styles.mainLayout}>
         <AppNavbar />
         {children}
       </body>
     </html>
-  )
+  );
 }
