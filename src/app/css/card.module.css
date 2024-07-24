@@ -107,10 +107,9 @@
   z-index: 2;
 }
 
-/* uncomment to center ! in alert circle if you import bootstrap.min.css */
-/* .alertCircle > p {
+.alertCircle > p {
   margin-top: 0.7rem;
-} */
+}
 
 @media (laptop) {
   .card {

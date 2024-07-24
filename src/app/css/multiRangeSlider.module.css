@@ -6,6 +6,8 @@
 .slider {
   position: relative;
   width: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .slider * {
@@ -16,7 +18,6 @@
   border-radius: 3px;
   height: 5px;
   position: absolute;
-  left: 1%;
 }
 
 .sliderTrack {
