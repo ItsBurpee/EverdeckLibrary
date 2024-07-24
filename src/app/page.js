@@ -15,7 +15,14 @@ export default function MainPage() {
                 <SearchFilters />
                 {/*Placeholder h1 element*/}
                 <h1>Welcome</h1>
-                <Card title="Game Title" plyCount={[1,8]} time={[30,45]} complexity={[2.4]} />
+                <Card
+                    title="Game Title"
+                    cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                    plyCount={[1, 8]}
+                    time={[30, 45]}
+                    complexity={[2.4]}
+                    shDescription="A short description of the game"
+                />
             </Stack>
             <GameAlertModal />
             <FilterMenu />

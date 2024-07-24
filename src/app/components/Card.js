@@ -13,6 +13,7 @@ import GameAlertModal from "./GameAlertModal";
  * @param {array} props.plyCount - range of number of players that can play the game 
  * @param {array} props.time - range of average time to complete the game 
  * @param {float} props.complexity - range of complexity of game 
+ * @param {string} props.shDescription - short description of game
  * @returns {React.ReactElement} - card element
  */
 
