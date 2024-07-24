@@ -12,26 +12,32 @@ export default function FilterMenu() {
   
     return (
         
-        <div className="filter-menu">
+        <div className="filter-menu d-flex flex-column gap-3">
             <h1>Filters</h1>
-            <p> Player Count </p>
-            <MultiRangeSlider
-                min={1}
-                max={8}
-                onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-             />
-            <p> Average Playtime </p>
-            <MultiRangeSlider
-                min={15}
-                max={120}
-                onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-             />
-            <p> Complexity </p>
-            <MultiRangeSlider
-                min={1}
-                max={5}
-                onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-             />
+            <div className="mb-5">
+                <p> Player Count </p>
+                <MultiRangeSlider
+                    min={1}
+                    max={8}
+                    onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+                />
+            </div>
+            <div className="mb-5">
+                <p> Average Playtime </p>
+                <MultiRangeSlider
+                    min={15}
+                    max={120}
+                    onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+                />
+            </div>
+            <div className="mb-5">
+                <p> Complexity </p>
+                <MultiRangeSlider
+                    min={1}
+                    max={5}
+                    onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+                />
+            </div>
 
             <div className="mapping-section">
                 <DropdownButton title="Mapping Strength" id="mapping-dropdown">
