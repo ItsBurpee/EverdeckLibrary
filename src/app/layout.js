@@ -1,6 +1,6 @@
 import AppNavbar from "./components/AppNavbar";
 import styles from "./css/mainPage.module.css";
-
+import "bootstrap/dist/css/bootstrap.min.css"
 export const metadata = {
   title: 'Everdeck Library',
   description: 'A library of games playable by the Everdeck',
