@@ -2,6 +2,7 @@
 
 import { Container, Button, DropdownButton, Dropdown, Form } from "react-bootstrap";
 import MultiRangeSlider from "./MultiRangeSlider";
+import Image from "next/image";
 
 export default function FilterMenu() {
     /*TO-DO: 
@@ -15,7 +16,7 @@ export default function FilterMenu() {
         <div className="filter-menu d-flex flex-column gap-3">
             <h1>Filters</h1>
             <div className="mb-5">
-                <p> Player Count </p>
+                <p><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={20} height={20} /> Player Count </p>
                 <MultiRangeSlider
                     min={1}
                     max={8}
@@ -23,7 +24,7 @@ export default function FilterMenu() {
                 />
             </div>
             <div className="mb-5">
-                <p> Average Playtime </p>
+                <p><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={20} height={20} /> Average Playtime </p>
                 <MultiRangeSlider
                     min={15}
                     max={120}
@@ -31,7 +32,7 @@ export default function FilterMenu() {
                 />
             </div>
             <div className="mb-5">
-                <p> Complexity </p>
+                <p><Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} width={20} height={20} /> Complexity </p>
                 <MultiRangeSlider
                     min={1}
                     max={5}

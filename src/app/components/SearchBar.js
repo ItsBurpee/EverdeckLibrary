@@ -1,8 +1,11 @@
+"use client"
+
 import { Button, Form, InputGroup } from "react-bootstrap"
+import Image from "next/image"
 
 export default function SearchBar() {
     /*TO-DO: 
-        - Icon for search-button
+        - ???
     */
 
     return (
@@ -13,8 +16,8 @@ export default function SearchBar() {
                     aria-label="Game Library Search Field"
                     aria-describedby="button-search"
                 />
-                <Button>
-                    Go
+                <Button id="button-search">
+                    <Image src={"/search-svgrepo-com.svg"} width={20} height={20} alt="Search button"/> 
                 </Button>
             </InputGroup>
         </div>

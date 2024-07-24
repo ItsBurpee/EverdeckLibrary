@@ -1,5 +1,9 @@
+"use client"
+
 import styles from "../css/card.module.css";
 import Image from "next/image";
+import { Button } from "react-bootstrap";
+import GameAlertModal from "./GameAlertModal";
 
 /**
  * Card component for use in the main gamelist page
@@ -8,9 +12,14 @@ import Image from "next/image";
  * @param {string} props.cardImg - image for the card 
  * @param {array} props.plyCount - range of number of players that can play the game 
  * @param {array} props.time - range of average time to complete the game 
- * @param {int} props.complexity - range of complexity of game 
+ * @param {float} props.complexity - range of complexity of game 
  * @returns {React.ReactElement} - card element
  */
+
+function GameAlert() {
+    return <GameAlertModal />
+}
+
 export default function Card(props) {
     return (
         
@@ -49,8 +58,8 @@ export default function Card(props) {
                 </div>
                 <p>{props.shDescription}</p>
             </div>
-            <div className={styles.alertCircle}>
-                <p>!</p>
+            <div>
+                <Button className={styles.alertCircle} onClick={GameAlert}>!</Button>
             </div>
         </div>
         
