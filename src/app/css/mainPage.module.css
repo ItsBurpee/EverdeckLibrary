@@ -8,4 +8,18 @@
 }
 
 .mainPage {
+  outline: 2px solid blue;
+}
+
+.filterButton {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 1rem;
+  left: 2rem;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: 0 3px 10px black;
 }

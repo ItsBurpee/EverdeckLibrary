@@ -3,6 +3,10 @@
 * from Sandra Lewis's tutorial with some changes to acccessibility and layout
 * https://dev.to/sandra_lewis/building-a-multi-range-slider-in-react-from-scratch-4dl1
 */
+.sliderContainer {
+  position: relative;
+}
+
 .slider {
   position: relative;
   width: 200px;

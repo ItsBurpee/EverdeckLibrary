@@ -60,7 +60,7 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
     }, [minVal, maxVal, onChange]);
 
     return (
-        <div>
+        <div className={styles.sliderContainer}>
             {/* left thumb */}
             <input
                 type="range"

@@ -1,13 +1,21 @@
-import { Stack } from "react-bootstrap";
+"use client"
+
+import { useState } from "react";
+import { Stack, Button, Image } from "react-bootstrap";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import styles from "./css/mainPage.module.css";
 import SearchBar from "./components/SearchBar";
 import SearchFilters from "./components/SearchFilters";
 import FilterMenu from "./components/FilterMenu";
-import styles from "./css/mainPage.module.css";
 import Card from "./components/Card";
 import GameAlertModal from "./components/GameAlertModal";
 
 
 export default function MainPage() {
+    const [showFilters, setShowFilters] = useState(false);
+    const handleClose = () => setShowFilters(false);
+    const handleShow = () => setShowFilters(true);
+
     return (
         <div id="main" className={styles.mainPage}>
             <Stack gap={3}>
@@ -25,7 +33,17 @@ export default function MainPage() {
                 />
             </Stack>
             <GameAlertModal />
-            <FilterMenu />
+            <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
+                <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
+            </Button>
+            <Offcanvas show={showFilters} onHide={handleClose} placement="end">
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Filter Menu</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    <FilterMenu />
+                </Offcanvas.Body>
+            </Offcanvas>
         </div>
     );
 }
