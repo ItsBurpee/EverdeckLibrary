@@ -9,7 +9,7 @@
 
 .slider {
   position: relative;
-  width: 200px;
+  width: 85%;
   display: flex;
   align-items: center;
 }
@@ -45,8 +45,7 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 200px;
-  /* width: 100%; */
+  width: 85%;
 }
 
 .thumbZInd3 {
