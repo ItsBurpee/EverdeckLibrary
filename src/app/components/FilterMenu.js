@@ -1,36 +1,39 @@
 "use client"
 import { useState, useEffect } from "react";
-import { Container, Button, DropdownButton, Dropdown, Form } from "react-bootstrap";
+import { Container, Button, DropdownButton, Dropdown, Form, Col, Row } from "react-bootstrap";
 import MultiRangeSlider from "./MultiRangeSlider";
 import Image from "next/image";
+const firstOpen = true;
 
 export default function FilterMenu() {
+    
     /*TO-DO: 
         - Currently has placeholder min/max values for sliders. Needs to have them set to correct values
         - Ask what we agreed upon for the game type section
-        - Make sure syntex for the checkbox forms are correct
     */
     // states for the component checkboxes
     const [toggleComponents, setToggleComponents] = useState(false);
-    const [checkedComponents, setCheckedComponents] = useState({
-        "Dice": false,
-        "Chips": false,
-        "Card Guide": false,
-        "Other": false
+
+
+    const  [checkedComponents, setCheckedComponents] = useState({
+        "Dice": true,
+        "Chips": true,
+        "Card Guide": true,
+        "Other": true
     });
 
     // states for the game type checkboxes
     const [toggleTypes, setToggleTypes] = useState(false);
     const [checkedTypes, setCheckedTypes] = useState({
-        "Abstract Strategy": false,
-        "Customizable": false,
-        "Family": false,
-        "Thematic": false,
-        "Children": false,
-        "Party": false,
-        "Strategy": false,
-        "Wargames": false
-    });
+        "Abstract Strategy": true,
+        "Customizable": true,
+        "Family": true,
+        "Thematic": true,
+        "Children": true,
+        "Party": true,
+        "Strategy": true,
+        "Wargames": true
+    }); 
 
     //effect to check if all boxes are checked when a box is checked
     useEffect(() => {
@@ -128,104 +131,119 @@ export default function FilterMenu() {
             </div>
             
             <div className="components-section">
+                
                 <div className="components-title">
-                    <p>External Components</p>
-                    <Button id="components-toggle" onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
+                    <Row>
+                        <Col>
+                            <p>External Components</p>
+                        </Col>
+                        <Col>
+                            <Button id="components-toggle" onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
+                        </Col>
+                    </Row>
                 </div>
-            
-            
+
                 <Form>
-                    {['checkbox'].map((type) => (
-                        <div key={`components-${type}`}  className="components-checkboxes">
-                        <Form.Check
-                            label="Dice"
-                            type={type}
-                            onChange={() => checkComp("Dice")}
-                            checked={checkedComponents["Dice"]}
-                        />
-                        <Form.Check
-                            label="Chips"
-                            type={type}
-                            onChange={() => checkComp("Chips")}
-                            checked={checkedComponents["Chips"]}    
-                        />
-                        <Form.Check
-                            label="Card Guide"
-                            type={type}
-                            onChange={() => checkComp("Card Guide")}
-                            checked={checkedComponents["Card Guide"]} 
-                        />
-                        <Form.Check
-                            label="Other"
-                            type={type}
-                            onChange={() => checkComp("Other")}
-                            checked={checkedComponents["Other"]}    
-                        />
-                        </div>
-                    ))}
+                    <Row>
+                        <Col>
+                            <Form.Check
+                                label="Dice"
+                                type="checkbox"
+                                onChange={() => checkComp("Dice")}
+                                checked={checkedComponents["Dice"]}
+                            />  
+                            <Form.Check
+                                label="Card Guide"
+                                type="checkbox"
+                                onChange={() => checkComp("Card Guide")}
+                                checked={checkedComponents["Card Guide"]} 
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Check
+                                label="Chips"
+                                type="checkbox"
+                                onChange={() => checkComp("Chips")}
+                                checked={checkedComponents["Chips"]}    
+                            />
+                            <Form.Check
+                                label="Other" 
+                                type="checkbox"
+                                onChange={() => checkComp("Other")}
+                                checked={checkedComponents["Other"]}    
+                            />
+                        </Col>
+                    </Row>
                 </Form>
             </div>    
 
             <div className="game-type-section">
                 <div className="game-type-title">
-                    <p>Game Type</p>
-                    <Button id="game-type-toggle" onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>
+                    <Row>
+                        <Col>
+                            <p>Game Type</p>
+                        </Col>
+                        <Col>
+                             <Button id="game-type-toggle" onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>
+                        </Col>
+                    </Row>
+                    
                 </div>
-            
-            
                 <Form>
-                    {['checkbox'].map((type) => (
-                        <div key={`game-type-${type}`}  className="game-type-checkboxes">
-                        <Form.Check
-                            label="Abstract Strategy"
-                            type={type}
-                            onChange={() => checkType("Abstract Strategy")}
-                            checked={checkedTypes["Abstract Strategy"]}    
-                        />
-                        <Form.Check
-                            label="Customizable"
-                            type={type}
-                            onChange={() => checkType("Customizable")}
-                            checked={checkedTypes["Customizable"]}
-                        />
-                        <Form.Check
-                            label="Family"
-                            type={type}
-                            onChange={() => checkType("Family")}
-                            checked={checkedTypes["Family"]}
-                        />
-                        <Form.Check
-                            label="Thematic"
-                            type={type}
-                            onChange={() => checkType("Thematic")}
-                            checked={checkedTypes["Thematic"]}
-                        />
-                        <Form.Check
-                            label="Children"
-                            type={type}
-                            onChange={() => checkType("Children")}
-                            checked={checkedTypes["Children"]}
-                        />
-                        <Form.Check
-                            label="Party"
-                            type={type}
-                            onChange={() => checkType("Party")}
-                            checked={checkedTypes["Party"]}
-                        />
-                        <Form.Check
-                            label="Strategy"
-                            type={type}
-                            onChange={() => checkType("Strategy")}
-                            checked={checkedTypes["Strategy"]}
-                        />
-                        <Form.Check
-                            label="Wargames"
-                            type={type}
-                            onChange={() => checkType("Wargames")}
-                            checked={checkedTypes["Wargames"]}
-                        />
-                        </div>
-                    ))}
+                    <Row>
+                        <Col>
+                            <Form.Check
+                                label="Abstract Strategy"
+                                type="checkbox"
+                                onChange={() => checkType("Abstract Strategy")}
+                                checked={checkedTypes["Abstract Strategy"]}    
+                            />
+                            <Form.Check
+                                label="Customizable"
+                                type="checkbox"
+                                onChange={() => checkType("Customizable")}
+                                checked={checkedTypes["Customizable"]}
+                            />
+                            <Form.Check
+                                label="Family"
+                                type="checkbox"
+                                onChange={() => checkType("Family")}
+                                checked={checkedTypes["Family"]}
+                            />
+                            <Form.Check
+                                label="Thematic"
+                                type="checkbox"
+                                onChange={() => checkType("Thematic")}
+                                checked={checkedTypes["Thematic"]}
+                            />
+                        </Col>
+                        <Col>
+                            <Form.Check
+                                label="Children"
+                                type="checkbox"
+                                onChange={() => checkType("Children")}
+                                checked={checkedTypes["Children"]}
+                            />
+                            <Form.Check
+                                label="Party"
+                                type="checkbox"
+                                onChange={() => checkType("Party")}
+                                checked={checkedTypes["Party"]}
+                            />
+                            <Form.Check
+                                label="Strategy"
+                                type="checkbox"
+                                onChange={() => checkType("Strategy")}
+                                checked={checkedTypes["Strategy"]}
+                            />
+                            <Form.Check
+                                label="Wargames"
+                                type="checkbox"
+                                onChange={() => checkType("Wargames")}
+                                checked={checkedTypes["Wargames"]}
+                            />
+                        </Col>
+                    </Row>
                 </Form>
             </div>    
 
