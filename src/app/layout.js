@@ -6,6 +6,9 @@ import ImportBsJS from "./components/importBsJs";
 export const metadata = {
   title: 'Everdeck Library',
   description: 'A library of games playable by the Everdeck',
+  icons: {
+    icon: '/everdeck-clam.svg'
+  }
 }
 
 export default function RootLayout({ children }) {

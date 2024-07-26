@@ -1,9 +1,14 @@
 import { Container, Navbar } from "react-bootstrap";
+import Image from "next/image";
+import { Alegreya_SC } from "next/font/google";
+
+const alegreya_sc = Alegreya_SC({
+    weight: '400', 
+    subsets: ['latin']
+})
 
 export default function AppNavbar() {
     /*TO-DO: 
-        - Icon to the left of h1/Navbar.Brand
-            ! Navbar.Brand doesn't seem to work?
         - Middle Game Name while on a rules page
     */
 
@@ -11,7 +16,7 @@ export default function AppNavbar() {
         <header>
             <Navbar className="bg-body-primary">
                 <Container>
-                    <h1>Everdeck Library</h1>
+                    <h1 className={alegreya_sc.className}><Image src={"/everdeck-clam.svg"} width={50} height={50} alt="Website Icon"/> Everdeck Library</h1>
                 </Container>
             </Navbar>
         </header>
