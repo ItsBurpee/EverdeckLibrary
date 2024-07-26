@@ -1,8 +1,9 @@
 "use client"
 
+import { useState } from "react";
 import styles from "../css/card.module.css";
 import Image from "next/image";
-import { Button } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import GameAlertModal from "./GameAlertModal";
 
 /**
@@ -14,20 +15,21 @@ import GameAlertModal from "./GameAlertModal";
  * @param {array} props.time - range of average time to complete the game 
  * @param {float} props.complexity - range of complexity of game 
  * @param {string} props.shDescription - short description of game
+ * @param {string} props.gameWarning - warnings for the game
  * @returns {React.ReactElement} - card element
  */
 
-function GameAlert() {
-    return <GameAlertModal />
-}
-
 export default function Card(props) {
+    const [showGameWarning, setShowGameWarning] = useState(false);
+    const handleGameWarningClose = () => setShowGameWarning(false);
+    const handleGameWarningOpen = () => setShowGameWarning(true);
+
     return (
         
         <div className={styles.card}>
             <div className={styles.cardImgContainer}>
                 <div className={styles.cardImg}>
-                    <Image src={props.cardImg} fill/>
+                    <Image src={props.cardImg} fill alt="Game Image" />
                 </div>
             </div>
             <div className={styles.cardInfo}>
@@ -37,21 +39,21 @@ export default function Card(props) {
                         {/* player count icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
-                                <Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} fill />
+                                <Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} fill alt="Player Count Icon" />
                             </div>
-                            <h4>{`${props.plyCount[0]}-${props.plyCount[1]}`}</h4>
+                            <h4>{props.plyCount.length == 1 ? `${props.plyCount[0]}` : `${props.plyCount[0]}-${props.plyCount[1]}`}</h4>
                         </div>
                         {/* time icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
-                                <Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} fill />
-                            </div>
-                            <h4>{`${props.time[0]}-${props.time[1]}`}</h4>
+                                <Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} fill alt="Play Time Icon" />
+                            </div> 
+                            <h4>{props.time.length == 1 ? `${props.time[0]}` : `${props.time[0]}-${props.time[1]}`}</h4>
                         </div>
                         {/* complexity icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
-                                <Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} fill />
+                                <Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} fill alt="Complexity Icon" />
                             </div>
                             <h4>{`${props.complexity}/5`}</h4>
                         </div>
@@ -59,9 +61,20 @@ export default function Card(props) {
                 </div>
                 <p>{props.shDescription}</p>
             </div>
-            <div>
-                <Button className={styles.alertCircle} onClick={GameAlert}>!</Button>
-            </div>
+            {
+                props.gameWarning &&
+                <div id="game-warning-button">
+                    <Button className={styles.alertCircle} onClick={handleGameWarningOpen}>!</Button>
+                    
+                    <Modal show={showGameWarning} onHide={handleGameWarningClose}>
+                        <GameAlertModal />
+                        <Modal.Footer>
+                            <Button onClick={handleGameWarningClose}>Ok</Button>
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+            }
+
         </div>
         
     );
