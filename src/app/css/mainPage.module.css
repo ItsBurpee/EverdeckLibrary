@@ -1,3 +1,5 @@
+@value tablet, laptop, desktop from "./breakpoints.module.css";
+
 .mainLayout {
   width: 100dvw;
   max-width: 100%;
@@ -40,9 +42,18 @@
   align-items: center;
   justify-content: center;
   bottom: 1rem;
-  left: 2rem;
+  left: 5%;
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
   box-shadow: 0 3px 10px black;
+  z-index: 100;
+}
+
+@media (laptop) {
+  /* fixed position right attribute not working for some reason */
+  .filterButton {
+    top: 1rem;
+    left: 95%;
+  }
 }
