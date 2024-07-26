@@ -39,21 +39,21 @@ export default function Card(props) {
                         {/* player count icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
-                                <Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} fill alt="Player Count Icon" />
+                                <Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} height={25} width={25} alt="Player Count Icon" />
                             </div>
                             <h4>{props.plyCount.length == 1 ? `${props.plyCount[0]}` : `${props.plyCount[0]}-${props.plyCount[1]}`}</h4>
                         </div>
                         {/* time icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
-                                <Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} fill alt="Play Time Icon" />
+                                <Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} height={25} width={25} alt="Play Time Icon" />
                             </div> 
                             <h4>{props.time.length == 1 ? `${props.time[0]}` : `${props.time[0]}-${props.time[1]}`}</h4>
                         </div>
                         {/* complexity icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
-                                <Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} fill alt="Complexity Icon" />
+                                <Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} height={25} width={25} alt="Complexity Icon" />
                             </div>
                             <h4>{`${props.complexity}/5`}</h4>
                         </div>
