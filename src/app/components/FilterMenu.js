@@ -80,7 +80,7 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
     return (
         <div className="filter-menu d-flex flex-column gap-3">
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={20} height={20} /> Player Count </p>
+                <p><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={20} height={20} alt="Player Count Icon"/> Player Count </p>
                 <MultiRangeSlider
                     min={1}
                     max={8}
@@ -88,7 +88,7 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                 />
             </div>
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={20} height={20} /> Average Playtime </p>
+                <p><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={20} height={20} alt="Play Time Icon"/> Average Playtime </p>
                 <MultiRangeSlider
                     min={15}
                     max={120}
@@ -96,7 +96,7 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                 />
             </div>
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} width={20} height={20} /> Complexity </p>
+                <p><Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} width={20} height={20} alt="Complexity Icon"/> Complexity </p>
                 <MultiRangeSlider
                     min={1}
                     max={5}

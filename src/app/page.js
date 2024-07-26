@@ -1,15 +1,12 @@
 "use client"
 
 import { useState } from "react";
-import { Stack, Button, Image } from "react-bootstrap";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import { Stack, Button, Image, Offcanvas } from "react-bootstrap";
 import styles from "./css/mainPage.module.css";
 import SearchBar from "./components/SearchBar";
 import SearchFilters from "./components/SearchFilters";
 import FilterMenu from "./components/FilterMenu";
 import Card from "./components/Card";
-import GameAlertModal from "./components/GameAlertModal";
-
 
 export default function MainPage() {
     const [showFilters, setShowFilters] = useState(false);
@@ -46,8 +43,18 @@ export default function MainPage() {
                     cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
                     plyCount={[1, 8]}
                     time={[30, 45]}
-                    complexity={[2.4]}
-                    shDescription="A short description of the game"
+                    complexity={[2.44]}
+                    // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
+                    gameWarning="yes"
+                    shDescription="A loaded example of a game"
+                />
+                <Card
+                    title="Game Title"
+                    cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                    plyCount={[2]}
+                    time={[20]}
+                    complexity={[2]}
+                    shDescription="A minimal example of a game"
                 />
             </Stack>
             <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
