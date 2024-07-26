@@ -1,4 +1,4 @@
-@value tablet, laptop, desktop from "./breakpoints.module.css";
+@value tablet, laptop, desktop, desktop-l from "./breakpoints.module.css";
 
 .card {
   position: relative;
@@ -45,7 +45,7 @@
 }
 
 .cardTitle h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -67,7 +67,6 @@
   justify-content: flex-end;
   align-items: center;
   height: 100%;
-  width: 50%;
   gap: 1rem;
 }
 
@@ -117,7 +116,7 @@
   }
 }
 
-@media (desktop) {
+@media (desktop-l) {
   .cardInfo {
     grid-column: 2 / 5;
   }
@@ -131,9 +130,5 @@
     width: 40%;
     background-color: #d9d9d9;
     border-radius: 12px;
-  }
-  .card {
-    width: 35rem;
-    height: 12rem;
   }
 }

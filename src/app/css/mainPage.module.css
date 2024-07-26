@@ -51,9 +51,22 @@
 }
 
 @media (laptop) {
+  .cards > * {
+    flex-basis: 49%;
+    flex-shrink: 0;
+  }
   /* fixed position right attribute not working for some reason */
   .filterButton {
     top: 5.5rem;
     left: 90%;
+  }
+  .cards {
+    padding-inline: 4%;
+  }
+}
+
+@media (desktop) {
+  .cards {
+    padding-inline: 12%;
   }
 }
