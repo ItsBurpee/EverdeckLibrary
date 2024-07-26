@@ -53,7 +53,7 @@
 @media (laptop) {
   /* fixed position right attribute not working for some reason */
   .filterButton {
-    top: 1rem;
-    left: 95%;
+    top: 5.5rem;
+    left: 90%;
   }
 }
