@@ -35,29 +35,52 @@ export default function MainPage() {
 
     return (
         <div id="main" className={styles.mainPage}>
-            <Stack gap={3}>
-                <SearchBar />
-                <SearchFilters />
-                <Card
-                    title="Game Title"
-                    cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                    plyCount={[1, 8]}
-                    time={[30, 45]}
-                    complexity={[2.44]}
-                    // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
-                    gameWarning="yes"
-                    shDescription="A loaded example of a game"
-                />
-                <Card
-                    title="Game Title"
-                    cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                    plyCount={[2]}
-                    time={[20]}
-                    complexity={[2]}
-                    shDescription="A minimal example of a game"
-                />
-            </Stack>
-            <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
+            <div className={styles.stackContainer}>
+                <Stack gap={3} className={styles.mainStack}>
+                    <div className={styles.searchArea}>
+                        <SearchBar />
+                        <SearchFilters />
+                    </div>
+                    <div className={styles.cards}>
+                        <Card
+                            title="Game Title"
+                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                            plyCount={[1, 8]}
+                            time={[30, 45]}
+                            complexity={[2.44]}
+                            // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
+                            gameWarning="yes"
+                            shDescription="A loaded example of a game"
+                        />
+                        <Card
+                            title="Game Title"
+                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                            plyCount={[2]}
+                            time={[20]}
+                            complexity={[2]}
+                            shDescription="A minimal example of a game"
+                        />
+                        <Card
+                            title="Game Title"
+                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                            plyCount={[2]}
+                            time={[20]}
+                            complexity={[2]}
+                            shDescription="A minimal example of a game"
+                        />
+                        <Card
+                            title="Game Title"
+                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                            plyCount={[1, 8]}
+                            time={[30, 45]}
+                            complexity={[2.44]}
+                            // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
+                            gameWarning="yes"
+                            shDescription="A loaded example of a game"
+                        />
+                    </div>
+                </Stack>
+            </div>            <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
                 <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
             </Button>
             <Offcanvas show={showFilters} onHide={handleClose} placement="end">

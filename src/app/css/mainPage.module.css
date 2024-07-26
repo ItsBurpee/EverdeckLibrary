@@ -10,6 +10,30 @@
 .mainPage {
 }
 
+.stackContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.mainStack {
+  max-width: 90%;
+}
+
+.searchArea {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-width: 65%;
+  align-self: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .filterButton {
   position: fixed;
   display: flex;
