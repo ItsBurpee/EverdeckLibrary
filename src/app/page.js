@@ -16,13 +16,31 @@ export default function MainPage() {
     const handleClose = () => setShowFilters(false);
     const handleShow = () => setShowFilters(true);
 
+    // state for the checked components in filter menu
+    const  [checkedComponents, setCheckedComponents] = useState({
+        "Dice": true,
+        "Chips": true,
+        "Card Guide": true,
+        "Other": true
+    });
+
+    // state for checked game types in filter menu
+    const [checkedTypes, setCheckedTypes] = useState({
+        "Abstract Strategy": true,
+        "Customizable": true,
+        "Family": true,
+        "Thematic": true,
+        "Children": true,
+        "Party": true,
+        "Strategy": true,
+        "Wargames": true
+    });
+
     return (
         <div id="main" className={styles.mainPage}>
             <Stack gap={3}>
                 <SearchBar />
                 <SearchFilters />
-                {/*Placeholder h1 element*/}
-                <h1>Welcome</h1>
                 <Card
                     title="Game Title"
                     cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
@@ -32,7 +50,6 @@ export default function MainPage() {
                     shDescription="A short description of the game"
                 />
             </Stack>
-            <GameAlertModal />
             <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
                 <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
             </Button>
@@ -41,7 +58,12 @@ export default function MainPage() {
                     <Offcanvas.Title>Filter Menu</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <FilterMenu />
+                    <FilterMenu
+                        checkedComponents={checkedComponents}
+                        setCheckedComponents={setCheckedComponents}
+                        checkedTypes={checkedTypes}
+                        setCheckedTypes={setCheckedTypes}
+                    />
                 </Offcanvas.Body>
             </Offcanvas>
         </div>

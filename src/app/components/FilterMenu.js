@@ -5,35 +5,17 @@ import MultiRangeSlider from "./MultiRangeSlider";
 import Image from "next/image";
 const firstOpen = true;
 
-export default function FilterMenu() {
+export default function FilterMenu({ checkedComponents, setCheckedComponents, checkedTypes, setCheckedTypes }) {
     
     /*TO-DO: 
         - Currently has placeholder min/max values for sliders. Needs to have them set to correct values
         - Ask what we agreed upon for the game type section
     */
-    // states for the component checkboxes
+    // state to track if all components are checked
     const [toggleComponents, setToggleComponents] = useState(false);
 
-
-    const  [checkedComponents, setCheckedComponents] = useState({
-        "Dice": true,
-        "Chips": true,
-        "Card Guide": true,
-        "Other": true
-    });
-
-    // states for the game type checkboxes
+    // state to track if all types are checked
     const [toggleTypes, setToggleTypes] = useState(false);
-    const [checkedTypes, setCheckedTypes] = useState({
-        "Abstract Strategy": true,
-        "Customizable": true,
-        "Family": true,
-        "Thematic": true,
-        "Children": true,
-        "Party": true,
-        "Strategy": true,
-        "Wargames": true
-    }); 
 
     //effect to check if all boxes are checked when a box is checked
     useEffect(() => {
