@@ -12,10 +12,11 @@ import { useState, useEffect, useCallback, useRef } from "react";
  * @param {Object} props - props for the component 
  * @param {int} props.min - min value for the slider 
  * @param {int} props.max - max value for the slider 
+ * @param {int} props.step - step/increment value for the slider 
  * @param {function} props.onChange - function to retrieve min and max when their state changes 
  * @returns {React.ReactElement} - card element
  */
-const MultiRangeSlider = ({ min, max, onChange }) => {
+const MultiRangeSlider = ({ min, max, step, onChange }) => {
     const [minVal, setMinVal] = useState(min);
     const [maxVal, setMaxVal] = useState(max);
 
@@ -70,8 +71,8 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
                 ref={minValRef}
                 // onChange function sets min value to prevent right bound from passing left bound
                 onChange={(event) => {
-                    const value = Math.min(+event.target.value, maxVal - 1);
-                    setMinVal(value);
+                    const value = Math.min(+event.target.value, maxVal - step);
+                    setMinVal(Math.floor(value / step) * step);
                     event.target.value = value.toString();
                 }}
                 className={`${styles.thumb} ` +
@@ -86,8 +87,8 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
                 ref={maxValRef}
                 // onChange value sets max value to prevent left bound from passing right bound
                 onChange={(event) => {
-                    const value = Math.max(+event.target.value, minVal + 1);
-                    setMaxVal(value);
+                    const value = Math.max(+event.target.value, minVal + step);
+                    setMaxVal(Math.floor(value / step) * step);
                     event.target.value = value.toString();
                 }}
                 className={`${styles.thumb} ${styles.thumbZInd4}`}

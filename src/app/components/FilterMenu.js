@@ -84,14 +84,16 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                 <MultiRangeSlider
                     min={1}
                     max={8}
+                    step={1}
                     onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
                 />
             </div>
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={20} height={20} alt="Play Time Icon"/> Average Playtime </p>
+                <p><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={20} height={20} alt="Play Time Icon"/> Play Time </p>
                 <MultiRangeSlider
                     min={15}
                     max={120}
+                    step={5}
                     onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
                 />
             </div>
@@ -100,6 +102,7 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                 <MultiRangeSlider
                     min={1}
                     max={5}
+                    step={1}
                     onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
                 />
             </div>
