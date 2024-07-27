@@ -67,13 +67,13 @@ const MultiRangeSlider = ({ min, max, step, onChange }) => {
                 type="range"
                 min={min}
                 max={max}
+                step={step}
                 value={minVal}
                 ref={minValRef}
                 // onChange function sets min value to prevent right bound from passing left bound
                 onChange={(event) => {
-                    const value = Math.min(+event.target.value, maxVal - step);
-                    setMinVal(Math.floor(value / step) * step);
-                    event.target.value = value.toString();
+                    const value = Math.min(+event.target.value, maxVal);
+                    setMinVal(value);
                 }}
                 className={`${styles.thumb} ` +
                     (minVal > max - 100 ? `${styles.thumbZInd5}` : `${styles.thumbZInd3}`)}
@@ -83,13 +83,13 @@ const MultiRangeSlider = ({ min, max, step, onChange }) => {
                 type="range"
                 min={min}
                 max={max}
+                step={step}
                 value={maxVal}
                 ref={maxValRef}
                 // onChange value sets max value to prevent left bound from passing right bound
                 onChange={(event) => {
-                    const value = Math.max(+event.target.value, minVal + step);
-                    setMaxVal(Math.floor(value / step) * step);
-                    event.target.value = value.toString();
+                    const value = Math.max(+event.target.value, minVal);
+                    setMaxVal(value);
                 }}
                 className={`${styles.thumb} ${styles.thumbZInd4}`}
             />
