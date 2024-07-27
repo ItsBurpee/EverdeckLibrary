@@ -47,7 +47,7 @@ export default function MainPage() {
                             cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
                             plyCount={[1, 8]}
                             time={[30, 45]}
-                            complexity={[2.44]}
+                            complexity={2.44}
                             // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
                             gameWarning="yes"
                             shDescription="A loaded example of a game"
@@ -57,7 +57,7 @@ export default function MainPage() {
                             cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
                             plyCount={[2]}
                             time={[20]}
-                            complexity={[2]}
+                            complexity={2}
                             shDescription="A minimal example of a game"
                         />
                         <Card
@@ -65,7 +65,7 @@ export default function MainPage() {
                             cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
                             plyCount={[2]}
                             time={[20]}
-                            complexity={[2]}
+                            complexity={2}
                             shDescription="A minimal example of a game"
                         />
                         <Card
@@ -73,7 +73,7 @@ export default function MainPage() {
                             cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
                             plyCount={[1, 8]}
                             time={[30, 45]}
-                            complexity={[2.44]}
+                            complexity={2.44}
                             // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
                             gameWarning="yes"
                             shDescription="A loaded example of a game"
