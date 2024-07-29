@@ -49,7 +49,7 @@ export default function MainPage() {
                             time={[30, 45]}
                             complexity={2.44}
                             // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
-                            gameWarning="yes"
+                            gameWarning="both"
                             shDescription="A loaded example of a game"
                         />
                         <Card
@@ -74,8 +74,16 @@ export default function MainPage() {
                             plyCount={[1, 8]}
                             time={[30, 45]}
                             complexity={2.44}
-                            // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
-                            gameWarning="yes"
+                            gameWarning="mapping"
+                            shDescription="A loaded example of a game"
+                        />
+                        <Card
+                            title="Game Title"
+                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
+                            plyCount={[1, 8]}
+                            time={[30, 45]}
+                            complexity={2.44}
+                            gameWarning="component"
                             shDescription="A loaded example of a game"
                         />
                     </div>

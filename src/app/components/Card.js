@@ -4,7 +4,8 @@ import { useState } from "react";
 import styles from "../css/card.module.css";
 import Image from "next/image";
 import { Button, Modal } from "react-bootstrap";
-import GameAlertModal from "./GameAlertModal";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 /**
  * Card component for use in the main gamelist page
@@ -15,15 +16,28 @@ import GameAlertModal from "./GameAlertModal";
  * @param {array} props.time - range of average time to complete the game 
  * @param {float} props.complexity - range of complexity of game 
  * @param {string} props.shDescription - short description of game
- * @param {string} props.gameWarning - warnings for the game
+ * @param {string} props.gameWarning - warnings for the game "both" "component" or "mapping"
  * @returns {React.ReactElement} - card element
  */
 
 export default function Card(props) {
-    const [showGameWarning, setShowGameWarning] = useState(false);
-    const handleGameWarningClose = () => setShowGameWarning(false);
-    const handleGameWarningOpen = () => setShowGameWarning(true);
-
+ 
+    const componentWarning = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          This game has extra components
+        </Tooltip>
+    )
+    ;
+    const mappingWarning = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          This game does not map perfectly to the everdeck
+        </Tooltip>
+    );
+    const bothWarning = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          This game has extra components; and does not map perfectly to the everdeck
+        </Tooltip>
+    );
     return (
         
         <div className={styles.card}>
@@ -61,17 +75,33 @@ export default function Card(props) {
                 </div>
                 <p>{props.shDescription}</p>
             </div>
-            {
-                props.gameWarning &&
+            {   //create different overlays if warning is component || mapping || both 
+                props.gameWarning == "component" &&
                 <div id="game-warning-button">
-                    <Button className={styles.alertCircle} onClick={handleGameWarningOpen}>!</Button>
+                    <OverlayTrigger placement="left" overlay={componentWarning} >
+                        <Button className={styles.alertCircleComponent} >!</Button>
+                    </OverlayTrigger>
                     
-                    <Modal show={showGameWarning} onHide={handleGameWarningClose}>
-                        <GameAlertModal />
-                        <Modal.Footer>
-                            <Button onClick={handleGameWarningClose}>Ok</Button>
-                        </Modal.Footer>
-                    </Modal>
+                </div>
+                
+                || 
+
+                props.gameWarning == "mapping" &&
+                <div id="game-warning-button">
+                    <OverlayTrigger placement="left" overlay={mappingWarning} >
+                        <Button className={styles.alertCircleMapping} >!</Button>
+                    </OverlayTrigger>
+                    
+                </div>
+
+                ||
+
+                props.gameWarning == "both" &&
+                <div id="game-warning-button">
+                    <OverlayTrigger placement="left" overlay={bothWarning} >
+                        <Button className={styles.alertCircleBoth}>!</Button>
+                    </OverlayTrigger>
+                    
                 </div>
             }
 

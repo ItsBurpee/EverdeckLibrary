@@ -104,10 +104,60 @@
   font-size: 2rem;
   z-index: 2;
 }
+.alertCircleBoth {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 3rem;
+  width: 3rem;
+  bottom: 1rem;
+  right: 1rem;
+  background-color:#d22027;
+  border-color: #d22027;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 2;
+}
 
+.alertCircleComponent {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 3rem;
+  width: 3rem;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #346ebf;
+  border-color: #346ebf;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+.alertCircleMapping {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 3rem;
+  width: 3rem;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #e1ad12;
+  border-color: #e1ad12;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 2;
+}
 .alertCircle > p {
   margin-top: 0.7rem;
 }
+
 
 @media (laptop) {
   .card {
