@@ -13,17 +13,7 @@ export default function MainPage() {
     const handleClose = () => setShowFilters(false);
     const handleShow = () => setShowFilters(true);
 
-    // state for the range sliders
-    // sliderRanges[0] = [current min, current max] of player count 
-    // sliderRanges[1] = [current min, current max] of play time 
-    // sliderRanges[2] = [current min, current max] of complexity 
-    // const [sliderRanges, setSliderRanges] = useState(
-    //     [
-    //         [1, 8],
-    //         [15, 120],
-    //         [1, 5]
-    //     ]
-    // );
+    // state for slider ranges
     const [sliderRanges, setSliderRanges] = useState({
         "plCountMin": 1,
         "plCountMax": 8,
