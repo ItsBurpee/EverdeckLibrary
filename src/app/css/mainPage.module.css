@@ -1,4 +1,5 @@
 @value tablet, laptop, desktop from "./breakpoints.module.css";
+@value EDBlue from "./colors.module.css";
 
 .mainLayout {
   width: 100dvw;
@@ -47,6 +48,8 @@
   height: 3rem;
   width: 3rem;
   box-shadow: 0 3px 10px black;
+  background-color: EDBlue;
+  border-color: EDBlue;
   z-index: 100;
 }
 

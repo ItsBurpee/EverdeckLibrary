@@ -1,7 +1,9 @@
+@value EDBlue from "./colors.module.css";
+
 .navbar {
     width: 100dvw;
     max-width: 100%;
-    background-color: #3A9DFA;
+    background-color: EDBlue;
 }
 
 .container {

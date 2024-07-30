@@ -1,3 +1,5 @@
+@value EDBlue from "./colors.module.css";
+
 .searchField {
     border-radius: 12px;
     box-shadow: 0 5px 10px;
@@ -7,4 +9,6 @@
   .searchButton {
     display: flex;
     align-items: center;
+    background-color: EDBlue;
+    border-color: EDBlue;
   }

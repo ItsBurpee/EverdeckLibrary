@@ -1,4 +1,6 @@
 @value tablet, laptop, desktop, desktop-l from "./breakpoints.module.css";
+@value EDBlue, EDRed, EDDarkYellow from "./colors.module.css";
+
 
 .card {
   position: relative;
@@ -104,43 +106,31 @@
   z-index: 2;
 }
 
-.alertCircleBoth {
-  background-color: #d22027;
-  border-color: #d22027;
-}
-
-.alertCircleComponent {
-  background-color: #346ebf;
-  border-color: #346ebf;
-}
-
-.alertCircleMapping {
-  background-color: #e1ad12;
-  border-color: #e1ad12;
-}
-
 /* overwrite react-bootstrap button hover and focus effects for the warning */
 .alertCircle:hover,
 .alertCircle:focus {
   opacity: 90%;
 }
 
+.alertCircleBoth,
 .alertCircleBoth:hover,
 .alertCircleBoth:focus {
-  background-color: #d22027;
-  border-color: #d22027;
+  background-color: EDRed;
+  border-color: EDRed;
 }
 
+.alertCircleComponent,
 .alertCircleComponent:hover,
 .alertCircleComponent:focus {
-  background-color: #346ebf;
-  border-color: #346ebf;
+  background-color: EDBlue;
+  border-color: EDBlue;
 }
 
+.alertCircleMapping,
 .alertCircleMapping:hover,
 .alertCircleMapping:focus {
-  background-color: #e1ad12;
-  border-color: #e1ad12;
+  background-color: EDDarkYellow;
+  border-color: EDDarkYellow;
 }
 
 .alertCircle > p {
