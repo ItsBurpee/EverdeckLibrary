@@ -119,6 +119,30 @@
   border-color: #e1ad12;
 }
 
+/* overwrite react-bootstrap button hover and focus effects for the warning */
+.alertCircle:hover,
+.alertCircle:focus {
+  opacity: 90%;
+}
+
+.alertCircleBoth:hover,
+.alertCircleBoth:focus {
+  background-color: #d22027;
+  border-color: #d22027;
+}
+
+.alertCircleComponent:hover,
+.alertCircleComponent:focus {
+  background-color: #346ebf;
+  border-color: #346ebf;
+}
+
+.alertCircleMapping:hover,
+.alertCircleMapping:focus {
+  background-color: #e1ad12;
+  border-color: #e1ad12;
+}
+
 .alertCircle > p {
   margin-top: 0.7rem;
 }
