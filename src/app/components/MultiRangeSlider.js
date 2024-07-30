@@ -16,9 +16,9 @@ import { useState, useEffect, useCallback, useRef } from "react";
  * @param {function} props.onChange - function to retrieve min and max when their state changes 
  * @returns {React.ReactElement} - card element
  */
-const MultiRangeSlider = ({ min, max, step, onChange }) => {
-    const [minVal, setMinVal] = useState(min);
-    const [maxVal, setMaxVal] = useState(max);
+const MultiRangeSlider = ({ min, max, currMin, currMax, setMinMax, step, onChange }) => {
+    const [minVal, setMinVal] = useState(currMin);
+    const [maxVal, setMaxVal] = useState(currMax);
 
     const minValRef = useRef(null);
     const maxValRef = useRef(null);
@@ -29,7 +29,7 @@ const MultiRangeSlider = ({ min, max, step, onChange }) => {
         (value) => Math.round(((value - min) / (max - min)) * 100),
         [min, max]
     );
-
+    
     // effect to decrease width of range from left side
     useEffect(() => {
         if (maxValRef.current) {
@@ -55,10 +55,9 @@ const MultiRangeSlider = ({ min, max, step, onChange }) => {
         }
     }, [maxVal, getPercent]);
 
-    // effect to get min and max when state changes
     useEffect(() => {
-        onChange({ min: minVal, max: maxVal });
-    }, [minVal, maxVal, onChange]);
+        setMinMax([minVal, maxVal]);
+    }, [minVal, maxVal]);
 
     return (
         <div className={styles.sliderContainer}>
@@ -104,11 +103,5 @@ const MultiRangeSlider = ({ min, max, step, onChange }) => {
         </div>
     );
 }
-
-MultiRangeSlider.PropTypes = {
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
-};
 
 export default MultiRangeSlider;

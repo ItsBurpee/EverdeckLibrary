@@ -14,7 +14,16 @@ import Image from "next/image";
 import styles from "../css/filterMenu.module.css"
 const firstOpen = true;
 
-export default function FilterMenu({ mappingStrength, setMappingStrength, checkedComponents, setCheckedComponents, checkedTypes, setCheckedTypes }) {
+export default function FilterMenu({
+    sliderRanges,
+    setSliderRanges,
+    mappingStrength,
+    setMappingStrength,
+    checkedComponents,
+    setCheckedComponents,
+    checkedTypes,
+    setCheckedTypes
+}) {
     
     /*TO-DO: 
         - Currently has placeholder min/max values for sliders. Needs to have them set to correct values
@@ -26,6 +35,38 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
 
     // state to track if all types are checked
     const [toggleTypes, setToggleTypes] = useState(false);
+
+    // states for the sliders current min and max values
+    const [plCountRange, setPlCountRange] = useState([sliderRanges["complexityMin"], sliderRanges["complexityMax"]])
+    const [plTimeRange, setPlTimeRange] = useState([sliderRanges["complexityMin"], sliderRanges["complexityMax"]])
+    const [complexityRange, setComplexityRange] = useState([sliderRanges["complexityMin"], sliderRanges["complexityMax"]])
+
+    // effect to update parent state if player count slider is modified
+    useEffect(() => {
+        setSliderRanges({
+            ...sliderRanges,
+            "plCountMin": plCountRange[0],
+            "plCountMax": plCountRange[1]
+        });
+    }, [plCountRange]);
+
+    // effect to update parent state if player time slider is modified
+    useEffect(() => {
+        setSliderRanges({
+            ...sliderRanges,
+            "plTimeMin": plTimeRange[0],
+            "plTimeMax": plTimeRange[1]
+        });
+    }, [plTimeRange]);
+
+    // effect to update parent state if complexity slider is modified
+    useEffect(() => {
+        setSliderRanges({
+            ...sliderRanges,
+            "complexityMin": complexityRange[0],
+            "complexityMax": complexityRange[1]
+        });
+    }, [complexityRange]);
 
     //effect to check if all boxes are checked when a box is checked
     useEffect(() => {
@@ -94,8 +135,11 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                 <MultiRangeSlider
                     min={1}
                     max={8}
+                    currMin={sliderRanges["plCountMin"]}
+                    currMax={sliderRanges["plCountMax"]}
+                    setMinMax={setPlCountRange}
                     step={1}
-                    onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+                    onChange={({ currMin, currMax }) => console.log(`min = ${currMin}, max = ${currMax}`)}
                 />
             </div>
             <div className="mb-5">
@@ -103,8 +147,11 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                 <MultiRangeSlider
                     min={15}
                     max={120}
+                    currMin={sliderRanges["plTimeMin"]}
+                    currMax={sliderRanges["plTimeMax"]}
+                    setMinMax={setPlTimeRange}
                     step={5}
-                    onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+                    onChange={({ currMin, currMax }) => console.log(`min = ${currMin}, max = ${currMax}`)}
                 />
             </div>
             <div className="mb-5">
@@ -112,8 +159,11 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                 <MultiRangeSlider
                     min={1}
                     max={5}
+                    currMin={sliderRanges["complexityMin"]}
+                    currMax={sliderRanges["complexityMax"]}
+                    setMinMax={setComplexityRange}
                     step={1}
-                    onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+                    onChange={({ currMin, currMax }) => console.log(`min = ${currMin}, max = ${currMax}`)}
                 />
             </div>
 
@@ -154,8 +204,7 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                 <Form style={{fontSize:18.9}} className={styles.checkboxes}>
                     <Row>
                         <Col>
-                            <Form.Check 
-                                custom
+                            <Form.Check
                                 label="Dice"
                                 type="checkbox"
                                 onChange={() => checkComp("Dice")}
