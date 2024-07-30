@@ -1,16 +1,25 @@
 "use client"
 import { useState, useEffect } from "react";
-import { Container, Button, DropdownButton, Dropdown, Form, Col, Row } from "react-bootstrap";
+import {
+    Container,
+    Button,
+    DropdownButton,
+    Dropdown,
+    Form,
+    Col,
+    Row,
+} from "react-bootstrap";
 import MultiRangeSlider from "./MultiRangeSlider";
 import Image from "next/image";
 const firstOpen = true;
 
-export default function FilterMenu({ checkedComponents, setCheckedComponents, checkedTypes, setCheckedTypes }) {
+export default function FilterMenu({ mappingStrength, setMappingStrength, checkedComponents, setCheckedComponents, checkedTypes, setCheckedTypes }) {
     
     /*TO-DO: 
         - Currently has placeholder min/max values for sliders. Needs to have them set to correct values
         - Ask what we agreed upon for the game type section
     */
+    
     // state to track if all components are checked
     const [toggleComponents, setToggleComponents] = useState(false);
 
@@ -107,12 +116,19 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                 />
             </div>
 
-            <div className="mapping-section">
-                <DropdownButton title="Mapping Strength" id="mapping-dropdown">
-                    <Dropdown.Item eventKey="1">Perfect</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">High</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">Low</Dropdown.Item>
-                </DropdownButton>
+            <div className="w-75">
+                <Form.Select
+                    value={mappingStrength}
+                    onChange={e => {
+                        setMappingStrength(e.currentTarget.value);
+                    }}
+                >
+                    <option>Mapping Strength</option>
+                    <option value="Perfect">Perfect</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                </Form.Select>
+
             </div>
             
             <div className="components-section">

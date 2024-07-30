@@ -13,6 +13,9 @@ export default function MainPage() {
     const handleClose = () => setShowFilters(false);
     const handleShow = () => setShowFilters(true);
 
+    // state for the mapping strength dropdown
+    const [mappingStrength, setMappingStrength] = useState("")
+
     // state for the checked components in filter menu
     const  [checkedComponents, setCheckedComponents] = useState({
         "Dice": true,
@@ -98,6 +101,8 @@ export default function MainPage() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <FilterMenu
+                        mappingStrength={mappingStrength}
+                        setMappingStrength={setMappingStrength}
                         checkedComponents={checkedComponents}
                         setCheckedComponents={setCheckedComponents}
                         checkedTypes={checkedTypes}
