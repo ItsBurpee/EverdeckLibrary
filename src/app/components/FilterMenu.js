@@ -116,27 +116,32 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                 />
             </div>
 
-            <div className="w-75">
-                <Form.Select
-                    value={mappingStrength}
-                    onChange={e => {
-                        setMappingStrength(e.currentTarget.value);
-                    }}
-                >
-                    <option>Mapping Strength</option>
-                    <option value="Perfect">Perfect</option>
-                    <option value="High">High</option>
-                    <option value="Low">Low</option>
-                </Form.Select>
+            <Row className="w-100 mb-4 align-items-center">
+                <Col>
+                    <p className="mb-0 pb-0">Mapping Strength</p>
+                </Col>
+                <Col>
+                    <Form.Select
+                        value={mappingStrength}
+                        onChange={e => {
+                            setMappingStrength(e.currentTarget.value);
+                        }}
+                        >
+                        <option value="Any">Any</option>
+                        <option value="Perfect">Perfect</option>
+                        <option value="High">High</option>
+                        <option value="Low">Low</option>
+                    </Form.Select>
+                </Col>
 
-            </div>
+            </Row>
             
-            <div className="components-section">
+            <div className="components-section mb-3">
                 
-                <div className="components-title">
-                    <Row>
+                <div className="components-title mb-3">
+                    <Row className="align-items-center">
                         <Col>
-                            <p>External Components</p>
+                            <p className="mb-0 pb-0">External Components</p>
                         </Col>
                         <Col>
                             <Button id="components-toggle" onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
@@ -180,10 +185,10 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
             </div>    
 
             <div className="game-type-section">
-                <div className="game-type-title">
-                    <Row>
+                <div className="game-type-title mb-3">
+                    <Row className="align-items-center">
                         <Col>
-                            <p>Game Type</p>
+                            <p className="mb-0 pb-0">Game Type</p>
                         </Col>
                         <Col>
                              <Button id="game-type-toggle" onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>

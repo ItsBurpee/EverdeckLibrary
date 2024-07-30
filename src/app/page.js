@@ -14,7 +14,7 @@ export default function MainPage() {
     const handleShow = () => setShowFilters(true);
 
     // state for the mapping strength dropdown
-    const [mappingStrength, setMappingStrength] = useState("")
+    const [mappingStrength, setMappingStrength] = useState("Any")
 
     // state for the checked components in filter menu
     const  [checkedComponents, setCheckedComponents] = useState({
