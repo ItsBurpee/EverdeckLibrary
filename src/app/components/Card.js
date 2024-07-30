@@ -80,21 +80,21 @@ export default function Card(props) {
             <div id="game-warning-button">
                 {   //create different overlays if warning is component || mapping || both 
                     props.gameWarning == "component" &&
-                        <OverlayTrigger placement="left" overlay={componentWarning} >
+                        <OverlayTrigger placement="left" trigger={["click","focus", "hover"]} overlay={componentWarning} >
                             <Button className={`${styles.alertCircle} ${styles.alertCircleComponent}`} >!</Button>
                         </OverlayTrigger>
                     
                     || 
 
                     props.gameWarning == "mapping" &&
-                        <OverlayTrigger placement="left" overlay={mappingWarning} >
+                        <OverlayTrigger placement="left" trigger={["click","focus", "hover"]} overlay={mappingWarning} >
                             <Button className={`${styles.alertCircle} ${styles.alertCircleMapping}`} >!</Button>
                         </OverlayTrigger>
                         
                     ||
 
                     props.gameWarning == "both" &&
-                        <OverlayTrigger placement="left" overlay={bothWarning} >
+                        <OverlayTrigger placement="left" trigger={["click","focus", "hover"]} overlay={bothWarning} >
                             <Button className={`${styles.alertCircle} ${styles.alertCircleBoth}`}>!</Button>
                         </OverlayTrigger>
                 }

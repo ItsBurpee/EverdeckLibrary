@@ -1,7 +1,6 @@
 @value tablet, laptop, desktop, desktop-l from "./breakpoints.module.css";
 @value EDBlue, EDRed, EDDarkYellow from "./colors.module.css";
 
-
 .card {
   position: relative;
   display: grid;
@@ -115,22 +114,22 @@
 .alertCircleBoth,
 .alertCircleBoth:hover,
 .alertCircleBoth:focus {
-  background-color: EDRed;
-  border-color: EDRed;
+  background-color: EDRed !important;
+  border-color: EDRed !important;
 }
 
 .alertCircleComponent,
 .alertCircleComponent:hover,
 .alertCircleComponent:focus {
-  background-color: EDBlue;
-  border-color: EDBlue;
+  background-color: EDBlue !important;
+  border-color: EDBlue !important;
 }
 
 .alertCircleMapping,
 .alertCircleMapping:hover,
 .alertCircleMapping:focus {
-  background-color: EDDarkYellow;
-  border-color: EDDarkYellow;
+  background-color: EDDarkYellow !important;
+  border-color: EDDarkYellow !important;
 }
 
 .alertCircle > p {
