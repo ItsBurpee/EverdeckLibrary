@@ -128,15 +128,16 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                     </Row>
                 </div>
 
-                <Form>
+                <Form style={{fontSize:18.9}}>
                     <Row>
                         <Col>
-                            <Form.Check
+                            <Form.Check 
                                 label="Dice"
                                 type="checkbox"
                                 onChange={() => checkComp("Dice")}
                                 checked={checkedComponents["Dice"]}
                             />  
+                            
                             <Form.Check
                                 label="Card Guide"
                                 type="checkbox"
@@ -174,7 +175,7 @@ export default function FilterMenu({ checkedComponents, setCheckedComponents, ch
                     </Row>
                     
                 </div>
-                <Form>
+                <Form style={{fontSize:18.9}}>
                     <Row>
                         <Col>
                             <Form.Check
