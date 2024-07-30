@@ -26,18 +26,20 @@ export default function Card(props) {
         <Tooltip id="button-tooltip" {...props}>
           This game has extra components
         </Tooltip>
-    )
-    ;
+    );
+    
     const mappingWarning = (props) => (
         <Tooltip id="button-tooltip" {...props}>
           This game does not map perfectly to the everdeck
         </Tooltip>
     );
+
     const bothWarning = (props) => (
         <Tooltip id="button-tooltip" {...props}>
           This game has extra components; and does not map perfectly to the everdeck
         </Tooltip>
     );
+
     return (
         
         <div className={styles.card}>
@@ -75,36 +77,28 @@ export default function Card(props) {
                 </div>
                 <p>{props.shDescription}</p>
             </div>
-            {   //create different overlays if warning is component || mapping || both 
-                props.gameWarning == "component" &&
-                <div id="game-warning-button">
-                    <OverlayTrigger placement="left" overlay={componentWarning} >
-                        <Button className={styles.alertCircleComponent} >!</Button>
-                    </OverlayTrigger>
+            <div id="game-warning-button">
+                {   //create different overlays if warning is component || mapping || both 
+                    props.gameWarning == "component" &&
+                        <OverlayTrigger placement="left" overlay={componentWarning} >
+                            <Button className={`${styles.alertCircle} ${styles.alertCircleComponent}`} >!</Button>
+                        </OverlayTrigger>
                     
-                </div>
-                
-                || 
+                    || 
 
-                props.gameWarning == "mapping" &&
-                <div id="game-warning-button">
-                    <OverlayTrigger placement="left" overlay={mappingWarning} >
-                        <Button className={styles.alertCircleMapping} >!</Button>
-                    </OverlayTrigger>
-                    
-                </div>
+                    props.gameWarning == "mapping" &&
+                        <OverlayTrigger placement="left" overlay={mappingWarning} >
+                            <Button className={`${styles.alertCircle} ${styles.alertCircleMapping}`} >!</Button>
+                        </OverlayTrigger>
+                        
+                    ||
 
-                ||
-
-                props.gameWarning == "both" &&
-                <div id="game-warning-button">
-                    <OverlayTrigger placement="left" overlay={bothWarning} >
-                        <Button className={styles.alertCircleBoth}>!</Button>
-                    </OverlayTrigger>
-                    
-                </div>
-            }
-
+                    props.gameWarning == "both" &&
+                        <OverlayTrigger placement="left" overlay={bothWarning} >
+                            <Button className={`${styles.alertCircle} ${styles.alertCircleBoth}`}>!</Button>
+                        </OverlayTrigger>
+                }
+            </div>
         </div>
         
     );
