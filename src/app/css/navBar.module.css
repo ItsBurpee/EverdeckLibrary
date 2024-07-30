@@ -1,0 +1,10 @@
+.navbar {
+    width: 100dvw;
+    max-width: 100%;
+    background-color: #3A9DFA;
+}
+
+.container {
+    width: 95dvw;
+    max-width: 95%; 
+}
