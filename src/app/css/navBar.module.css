@@ -8,3 +8,13 @@
     width: 95dvw;
     max-width: 95%; 
 }
+
+.container > h1 {
+    display: flex;
+    align-items: center;
+}
+
+.titleImage {
+    margin-right: 12px;
+}
+

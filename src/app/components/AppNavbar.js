@@ -17,7 +17,7 @@ export default function AppNavbar() {
         <header>
             <Navbar className={styles.navbar}>
                 <Container className={styles.container}>
-                    <h1 className={alegreya_sc.className}><Image src={"/everdeck-clam.svg"} width={50} height={50} alt="Website Icon"/> Everdeck Library</h1>
+                    <h1 className={alegreya_sc.className}><Image className={styles.titleImage} src={"/everdeck-clam.svg"} width={50} height={50} alt="Website Icon"/> Everdeck Library</h1>
                 </Container>
             </Navbar>
         </header>
