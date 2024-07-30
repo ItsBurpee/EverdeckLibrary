@@ -1,0 +1,16 @@
+@value EDBlue from "./colors.module.css";
+
+.checkboxes input:checked {
+  background-color: EDBlue;
+  border-color: EDBlue;
+}
+
+.toggleButton {
+  background-color: EDBlue;
+  border-color: EDBlue;
+}
+
+.mappingSelect option:checked {
+  background-color: EDBlue;
+  color: white;
+}

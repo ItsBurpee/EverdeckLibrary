@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import MultiRangeSlider from "./MultiRangeSlider";
 import Image from "next/image";
+import styles from "../css/filterMenu.module.css"
 const firstOpen = true;
 
 export default function FilterMenu({ mappingStrength, setMappingStrength, checkedComponents, setCheckedComponents, checkedTypes, setCheckedTypes }) {
@@ -87,7 +88,7 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
     }
 
     return (
-        <div className="filter-menu d-flex flex-column gap-3">
+        <div className={`d-flex flex-column gap-3`}>
             <div className="mb-5">
                 <p><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={20} height={20} alt="Player Count Icon"/> Player Count </p>
                 <MultiRangeSlider
@@ -126,7 +127,8 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                         onChange={e => {
                             setMappingStrength(e.currentTarget.value);
                         }}
-                        >
+                        className={styles.mappingSelect}
+                    >
                         <option value="Any">Any</option>
                         <option value="Perfect">Perfect</option>
                         <option value="High">High</option>
@@ -144,15 +146,16 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                             <p className="mb-0 pb-0">External Components</p>
                         </Col>
                         <Col>
-                            <Button id="components-toggle" onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
+                            <Button id="components-toggle" className={styles.toggleButton} onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
                         </Col>
                     </Row>
                 </div>
 
-                <Form style={{fontSize:18.9}}>
+                <Form style={{fontSize:18.9}} className={styles.checkboxes}>
                     <Row>
                         <Col>
                             <Form.Check 
+                                custom
                                 label="Dice"
                                 type="checkbox"
                                 onChange={() => checkComp("Dice")}
@@ -191,12 +194,12 @@ export default function FilterMenu({ mappingStrength, setMappingStrength, checke
                             <p className="mb-0 pb-0">Game Type</p>
                         </Col>
                         <Col>
-                             <Button id="game-type-toggle" onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>
+                             <Button id="game-type-toggle" className={styles.toggleButton} onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>
                         </Col>
                     </Row>
                     
                 </div>
-                <Form style={{fontSize:18.9}}>
+                <Form style={{fontSize:18.9}} className={styles.checkboxes}>
                     <Row>
                         <Col>
                             <Form.Check

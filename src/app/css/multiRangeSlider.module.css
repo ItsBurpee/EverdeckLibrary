@@ -1,3 +1,5 @@
+@value EDBlue from "./colors.module.css";
+
 /**
 * css for slider component
 * from Sandra Lewis's tutorial with some changes to acccessibility and layout
@@ -31,7 +33,7 @@
 }
 
 .sliderRange {
-  background-color: #9fe5e1;
+  background-color: EDBlue;
   z-index: 2;
 }
 
