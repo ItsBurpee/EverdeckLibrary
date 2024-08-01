@@ -46,6 +46,54 @@ export default function MainPage() {
         "Wargames": true
     });
 
+    // temporary cards array
+    // should get populated by a call to the database in a useEffect
+    let cards = [
+        {
+            "title": "Game Title",
+            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
+            "plCount": [1, 8],
+            "plTime": [30, 45],
+            "complexity": 2.44,
+            "gameWarning": "both",
+            "shDescription": "A loaded example of a game"
+        },
+        {
+            "title": "Game Title",
+            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
+            "plCount": [1, 8],
+            "plTime": [30, 45],
+            "complexity": 2.44,
+            "shDescription": "A loaded example of a game"
+        },
+        {
+            "title": "Game Title",
+            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
+            "plCount": [2, 17],
+            "plTime": [30, 85],
+            "complexity": 4.1,
+            "shDescription": "A loaded example of a game"
+        },
+        {
+            "title": "Game Title",
+            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
+            "plCount": [1, 8],
+            "plTime": [30, 45],
+            "complexity": 2.44,
+            "gameWarning": "mapping",
+            "shDescription": "A loaded example of a game"
+        },
+        {
+            "title": "Game Title",
+            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
+            "plCount": [1, 8],
+            "plTime": [30, 45],
+            "complexity": 2.44,
+            "gameWarning": "component",
+            "shDescription": "A loaded example of a game"
+        },
+    ];
+
     return (
         <div id="main" className={styles.mainPage}>
             <div className={styles.stackContainer}>
@@ -55,50 +103,13 @@ export default function MainPage() {
                         <SearchFilters />
                     </div>
                     <div className={styles.cards}>
-                        <Card
-                            title="Game Title"
-                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                            plyCount={[1, 8]}
-                            time={[30, 45]}
-                            complexity={2.44}
-                            // "yes" is placeholder, replace with more appropriate warning names. Does { A | B } work?
-                            gameWarning="both"
-                            shDescription="A loaded example of a game"
-                        />
-                        <Card
-                            title="Game Title"
-                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                            plyCount={[2]}
-                            time={[20]}
-                            complexity={2}
-                            shDescription="A minimal example of a game"
-                        />
-                        <Card
-                            title="Game Title"
-                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                            plyCount={[2]}
-                            time={[20]}
-                            complexity={2}
-                            shDescription="A minimal example of a game"
-                        />
-                        <Card
-                            title="Game Title"
-                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                            plyCount={[1, 8]}
-                            time={[30, 45]}
-                            complexity={2.44}
-                            gameWarning="mapping"
-                            shDescription="A loaded example of a game"
-                        />
-                        <Card
-                            title="Game Title"
-                            cardImg="/gameCardIcons/image-picture-svgrepo-com.svg"
-                            plyCount={[1, 8]}
-                            time={[30, 45]}
-                            complexity={2.44}
-                            gameWarning="component"
-                            shDescription="A loaded example of a game"
-                        />
+
+                        {cards.map(card => (
+                            <Card
+                                card={card}
+                            />
+                        ))}
+
                     </div>
                 </Stack>
             </div>
