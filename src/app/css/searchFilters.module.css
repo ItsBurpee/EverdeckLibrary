@@ -1,0 +1,28 @@
+@value tablet, laptop, desktop, desktop-l from "./breakpoints.module.css";
+@value EDBlue, EDDarkBlue from "./colors.module.css";
+
+.searchFilters p {
+  margin-bottom: 0;
+}
+
+.searchFilters > button {
+  background-color: EDBlue;
+  border-color: EDBlue;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchFilters > button.active {
+  background-color: EDDarkBlue;
+  border-color: EDDarkBlue;
+}
+
+@media (laptop) {
+  .searchFilters > button {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
