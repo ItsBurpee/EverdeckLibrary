@@ -1,22 +1,32 @@
+@value tablet, laptop, desktop from "./breakpoints.module.css";
 @value EDBlue from "./colors.module.css";
 
 .navbar {
-    width: 100dvw;
-    max-width: 100%;
-    background-color: EDBlue;
+  width: 100dvw;
+  max-width: 100%;
+  background-color: EDBlue;
 }
 
 .container {
-    width: 95dvw;
-    max-width: 95%; 
+  width: 95dvw;
+  max-width: 95%;
 }
 
 .container > h1 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+.navbar > .container {
+  justify-content: center;
 }
 
 .titleImage {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
+@media (tablet) {
+  .navbar > .container {
+    justify-content: flex-start;
+  }
+}
