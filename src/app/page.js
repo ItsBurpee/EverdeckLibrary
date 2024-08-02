@@ -104,8 +104,9 @@ export default function MainPage() {
                     </div>
                     <div className={styles.cards}>
 
-                        {cards.map(card => (
+                        {cards.map((card) => (
                             <Card
+                                key={card}
                                 card={card}
                             />
                         ))}
