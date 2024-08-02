@@ -1,7 +1,7 @@
-import AppNavbar from "./components/AppNavbar";
+import AppNavbar from "../app/components/AppNavbar";
 import styles from "./css/mainPage.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ImportBsJS from "./components/importBsJs";
+import ImportBsJS from "../app/components/importBsJs";
 
 export const metadata = {
   title: 'Everdeck Library',

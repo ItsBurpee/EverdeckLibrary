@@ -3,10 +3,37 @@
 import { useState } from "react";
 import { Stack, Button, Image, Offcanvas } from "react-bootstrap";
 import styles from "./css/mainPage.module.css";
-import SearchBar from "./components/SearchBar";
-import SearchFilters from "./components/SearchFilters";
-import FilterMenu from "./components/FilterMenu";
-import Card from "./components/Card";
+import SearchBar from "../app/components/SearchBar";
+import SearchFilters from "../app/components/SearchFilters";
+import FilterMenu from "../app/components/FilterMenu";
+import Card from "../app/components/Card";
+import client from "../../lib/mongodb";
+
+//From layout.js
+import "bootstrap/dist/css/bootstrap.min.css";
+import ImportBsJS from "../app/components/importBsJs";
+import AppNavbar from "../app/components/AppNavbar";
+
+
+//Initial MongoDB section. Doesn't function but pings to the server are sucessful
+const ConnectionStatus = {
+    isConnected: Boolean
+};  
+
+export const getServerSideProps = async () => {
+    try {
+      await client.connect() // `await client.connect()` will use the default database passed in the MONGODB_URI
+      return {
+        props: { isConnected: true }
+      }
+    } catch (e) {
+      console.error(e)
+      return {
+        props: { isConnected: false }
+      }
+    }
+  }
+  
 
 export default function MainPage() {
     const [showFilters, setShowFilters] = useState(false);
@@ -94,46 +121,51 @@ export default function MainPage() {
         },
     ];
 
+    //First div is a replica of layout.js
     return (
-        <div id="main" className={styles.mainPage}>
-            <div className={styles.stackContainer}>
-                <Stack gap={3} className={styles.mainStack}>
-                    <div className={styles.searchArea}>
-                        <SearchBar />
-                        <SearchFilters />
-                    </div>
-                    <div className={styles.cards}>
+        <div className={styles.mainLayout}>
+            <ImportBsJS />
+            <AppNavbar />
+            <div id="main" className={styles.mainPage}>
+                <div className={styles.stackContainer}>
+                    <Stack gap={3} className={styles.mainStack}>
+                        <div className={styles.searchArea}>
+                            <SearchBar />
+                            <SearchFilters />
+                        </div>
+                        <div className={styles.cards}>
 
-                        {cards.map((card) => (
-                            <Card
-                                key={card}
-                                card={card}
-                            />
-                        ))}
+                            {cards.map((card) => (
+                                <Card
+                                    key={card}
+                                    card={card}
+                                />
+                            ))}
 
-                    </div>
-                </Stack>
+                        </div>
+                    </Stack>
+                </div>
+                <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
+                    <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
+                </Button>
+                <Offcanvas show={showFilters} onHide={handleClose} placement="end">
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Filter Menu</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <FilterMenu
+                            sliderRanges={sliderRanges}
+                            setSliderRanges={setSliderRanges}
+                            mappingStrength={mappingStrength}
+                            setMappingStrength={setMappingStrength}
+                            checkedComponents={checkedComponents}
+                            setCheckedComponents={setCheckedComponents}
+                            checkedTypes={checkedTypes}
+                            setCheckedTypes={setCheckedTypes}
+                        />
+                    </Offcanvas.Body>
+                </Offcanvas>
             </div>
-            <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
-                <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
-            </Button>
-            <Offcanvas show={showFilters} onHide={handleClose} placement="end">
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Filter Menu</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                    <FilterMenu
-                        sliderRanges={sliderRanges}
-                        setSliderRanges={setSliderRanges}
-                        mappingStrength={mappingStrength}
-                        setMappingStrength={setMappingStrength}
-                        checkedComponents={checkedComponents}
-                        setCheckedComponents={setCheckedComponents}
-                        checkedTypes={checkedTypes}
-                        setCheckedTypes={setCheckedTypes}
-                    />
-                </Offcanvas.Body>
-            </Offcanvas>
         </div>
     );
 }
