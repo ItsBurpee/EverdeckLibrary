@@ -145,7 +145,11 @@ export default function MainPage() {
                         </div>
                     </Stack>
                 </div>
-                <Button variant="primary" onClick={handleShow} className={styles.filterButton}>
+                <Button
+                    variant="primary"
+                    onClick={handleShow}
+                    bsPrefix={styles.filterButton}
+                >
                     <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
                 </Button>
                 <Offcanvas show={showFilters} onHide={handleClose} placement="end">

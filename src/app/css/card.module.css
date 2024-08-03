@@ -103,6 +103,7 @@
   border-radius: 50%;
   font-size: 2rem;
   z-index: 2;
+  border: none;
 }
 
 /* overwrite react-bootstrap button hover and focus effects for the warning */
@@ -114,22 +115,22 @@
 .alertCircleBoth,
 .alertCircleBoth:hover,
 .alertCircleBoth:focus {
-  background-color: EDRed !important;
-  border-color: EDRed !important;
+  background-color: EDRed;
+  border-color: EDRed;
 }
 
 .alertCircleComponent,
 .alertCircleComponent:hover,
 .alertCircleComponent:focus {
-  background-color: EDBlue !important;
-  border-color: EDBlue !important;
+  background-color: EDBlue;
+  border-color: EDBlue;
 }
 
 .alertCircleMapping,
 .alertCircleMapping:hover,
 .alertCircleMapping:focus {
-  background-color: EDDarkYellow !important;
-  border-color: EDDarkYellow !important;
+  background-color: EDDarkYellow;
+  border-color: EDDarkYellow;
 }
 
 .alertCircle > p {
