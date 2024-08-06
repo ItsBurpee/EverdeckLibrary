@@ -1,12 +1,13 @@
 import Head from "next/head";
 
-import client from "../../lib/mongodb";
+// import client from "../../lib/mongodb";
 import GameListPage from "./GameListPage";
 
+/*
 //Initial MongoDB section. Doesn't function but pings to the server are sucessful
 const ConnectionStatus = {
     isConnected: Boolean
-};  
+};
 
 export const getServerSideProps = async () => {
     try {
@@ -21,7 +22,8 @@ export const getServerSideProps = async () => {
       }
     }
 }
-  
+*/ 
+
 const mainPage = () => {
     return (
         <>
