@@ -89,12 +89,12 @@
 
 .thumb:focus::-webkit-slider-thumb {
   border: 1px solid black;
-  outline: 1px solid #9fe5e1;
+  outline: 1px solid EDBlue;
 }
 
 .thumb:focus::-moz-range-thumb {
   border: 1px solid black;
-  outline: 1px solid #9fe5e1;
+  outline: 1px solid EDBlue;
 }
 
 .sliderLeftVal,
