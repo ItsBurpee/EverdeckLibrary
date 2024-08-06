@@ -29,6 +29,7 @@
   padding-inline: 1rem;
   border-radius: 12px;
   z-index: 1;
+  cursor: pointer;
 }
 
 .cardTitle *,
@@ -52,6 +53,7 @@
 
 .cardImgContainer {
   display: none;
+  cursor: pointer;
 }
 
 .cardImg {
