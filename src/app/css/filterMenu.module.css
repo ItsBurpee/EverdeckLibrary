@@ -1,11 +1,16 @@
 @value EDBlue from "./colors.module.css";
 
-.checkboxes input:checked {
-  background-color: EDBlue;
-  border-color: EDBlue;
+.filterMenuSliderSections,.filterMenuSections  {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.toggleButton {
+.filterMenuSections {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.checkboxes input:checked, .toggleButton {
   background-color: EDBlue;
   border-color: EDBlue;
 }

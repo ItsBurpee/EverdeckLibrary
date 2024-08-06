@@ -131,7 +131,7 @@ export default function FilterMenu({
     return (
         <div className={`d-flex flex-column gap-3`}>
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={20} height={20} alt="Player Count Icon"/> Player Count </p>
+                <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={24} height={24} alt="Player Count Icon"/> Player Count </p>
                 <MultiRangeSlider
                     min={1}
                     max={8}
@@ -143,7 +143,7 @@ export default function FilterMenu({
                 />
             </div>
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={20} height={20} alt="Play Time Icon"/> Play Time </p>
+                <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={24} height={24} alt="Play Time Icon"/> Play Time </p>
                 <MultiRangeSlider
                     min={15}
                     max={120}
@@ -155,7 +155,7 @@ export default function FilterMenu({
                 />
             </div>
             <div className="mb-5">
-                <p><Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} width={20} height={20} alt="Complexity Icon"/> Complexity </p>
+                <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} width={24} height={24} alt="Complexity Icon"/> Complexity </p>
                 <MultiRangeSlider
                     min={1}
                     max={5}
@@ -167,9 +167,9 @@ export default function FilterMenu({
                 />
             </div>
 
-            <Row className="w-100 mb-4 align-items-center">
+            <Row className="w-100 mb-3 align-items-center">
                 <Col>
-                    <p className="mb-0 pb-0">Mapping Strength</p>
+                    <p className={styles.filterMenuSections}>Mapping Strength</p>
                 </Col>
                 <Col>
                     <Form.Select
@@ -193,7 +193,7 @@ export default function FilterMenu({
                 <div className="components-title mb-3">
                     <Row className="align-items-center">
                         <Col>
-                            <p className="mb-0 pb-0">External Components</p>
+                            <p className={styles.filterMenuSections}>External Components</p>
                         </Col>
                         <Col>
                             <Button id="components-toggle" className={styles.toggleButton} onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
@@ -201,7 +201,7 @@ export default function FilterMenu({
                     </Row>
                 </div>
 
-                <Form style={{fontSize:18.9}} className={styles.checkboxes}>
+                <Form style={{fontSize:"1.1rem"}} className={styles.checkboxes}>
                     <Row>
                         <Col>
                             <Form.Check
@@ -240,7 +240,7 @@ export default function FilterMenu({
                 <div className="game-type-title mb-3">
                     <Row className="align-items-center">
                         <Col>
-                            <p className="mb-0 pb-0">Game Type</p>
+                            <p className={styles.filterMenuSections}>Game Type</p>
                         </Col>
                         <Col>
                              <Button id="game-type-toggle" className={styles.toggleButton} onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>
@@ -248,7 +248,7 @@ export default function FilterMenu({
                     </Row>
                     
                 </div>
-                <Form style={{fontSize:18.9}} className={styles.checkboxes}>
+                <Form style={{fontSize:"1.1rem"}} className={styles.checkboxes}>
                     <Row>
                         <Col>
                             <Form.Check

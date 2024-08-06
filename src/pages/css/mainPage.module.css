@@ -10,9 +10,6 @@
   align-items: center;
 }
 
-.mainPage {
-}
-
 .stackContainer {
   display: flex;
   justify-content: center;
@@ -52,6 +49,11 @@
   border: none;
   z-index: 100;
 }
+
+.filterMenuOffcanvas {
+  background-color: EDBlue;
+}
+
 
 @media (laptop) {
   .cards > * {

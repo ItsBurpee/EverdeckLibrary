@@ -16,9 +16,6 @@
   align-items: center;
 }
 
-.slider * {
-}
-
 .sliderTrack,
 .sliderRange {
   border-radius: 3px;
@@ -66,7 +63,7 @@
   background-color: #f1f5f7;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 0 1px 1px #ced4da;
+  box-shadow: 0 0 1px 1px #727577;
   cursor: pointer;
   height: 1.2rem;
   width: 1.2rem;
@@ -78,7 +75,7 @@
   background-color: #f1f5f7;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 0 1px 1px #ced4da;
+  box-shadow: 0 0 1px 1px #727577;
   cursor: pointer;
   height: 1.2rem;
   width: 1.2rem;
@@ -103,7 +100,7 @@
 .sliderLeftVal,
 .sliderRightVal {
   color: black;
-  font-size: 12px;
+  font-size: 1rem;
   margin-top: 20px;
   position: absolute;
 }

@@ -131,8 +131,8 @@ const GameListPage = () => {
                     <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
                 </Button>
                 <Offcanvas show={showFilters} onHide={handleClose} placement="end">
-                    <Offcanvas.Header closeButton>
-                        <Offcanvas.Title>Filter Menu</Offcanvas.Title>
+                    <Offcanvas.Header closeButton className={styles.filterMenuOffcanvas}>
+                        <Offcanvas.Title style={{fontSize:"1.75rem", fontWeight:"bold"}}>Filter Menu</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <FilterMenu
