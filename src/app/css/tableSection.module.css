@@ -1,0 +1,13 @@
+
+.tableSection p{
+    text-align: center;
+}
+
+
+.table{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem;
+    justify-content: center;
+}
+

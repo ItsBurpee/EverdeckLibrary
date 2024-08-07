@@ -1,0 +1,43 @@
+@value tablet, laptop, desktop from "../../app/css/breakpoints.module.css";
+@value EDBlue from "../../app/css/colors.module.css";
+
+.rulesPage h1{
+    text-align: center;
+}
+
+.summary{
+    width: 40rem;
+    word-wrap: break-word;
+}
+.mainLayout {
+    width: 100dvw;
+    max-width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.topSection{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.summary{
+    align-items: right;
+}
+
+.rulesPage{
+    align-items: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.middleSection{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+}

@@ -1,0 +1,7 @@
+.cardZoneBox {
+    width: 15rem;
+    height: 5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px;
+    background-color: #ffe3e3;
+  }
