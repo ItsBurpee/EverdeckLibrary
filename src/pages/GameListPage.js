@@ -51,11 +51,11 @@ const GameListPage = () => {
         "Wargames": true
     });
 
-    // temporary cards array
+    // temporary games array
     // should get populated by a call to the database in a useEffect
-    let cards = [
+    let games = [
         {
-            "title": "Game Title",
+            "title": "Game Title 1",
             "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
             "plCount": [1, 8],
             "plTime": [30, 45],
@@ -64,7 +64,7 @@ const GameListPage = () => {
             "shDescription": "A loaded example of a game"
         },
         {
-            "title": "Game Title",
+            "title": "For Sale",
             "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
             "plCount": [1, 8],
             "plTime": [30, 45],
@@ -72,7 +72,7 @@ const GameListPage = () => {
             "shDescription": "A loaded example of a game"
         },
         {
-            "title": "Game Title",
+            "title": "Game Title 3",
             "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
             "plCount": [2, 17],
             "plTime": [30, 85],
@@ -80,7 +80,7 @@ const GameListPage = () => {
             "shDescription": "A loaded example of a game"
         },
         {
-            "title": "Game Title",
+            "title": "Game Title 4",
             "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
             "plCount": [1, 8],
             "plTime": [30, 45],
@@ -89,7 +89,7 @@ const GameListPage = () => {
             "shDescription": "A loaded example of a game"
         },
         {
-            "title": "Game Title",
+            "title": "Game Title 5",
             "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
             "plCount": [1, 8],
             "plTime": [30, 45],
@@ -113,10 +113,10 @@ const GameListPage = () => {
                         </div>
                         <div className={styles.cards}>
 
-                            {cards.map((card) => (
+                            {games.map((game) => (
                                 <Card
-                                    key={card}
-                                    card={card}
+                                    key={game}
+                                    game={game}
                                 />
                             ))}
 
