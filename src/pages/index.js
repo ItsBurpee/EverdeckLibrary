@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-//import client from "../../lib/mongodb";
+import client from "../../lib/mongodb";
 import GameListPage from "./GameListPage";
 
 /*
@@ -15,21 +15,17 @@ export const getServerSideProps = async () => {
 }
 */
 
-/*
-A proper DB fetch :D
 export const getServerSideProps = async () => {
     try {
       await client.connect() // `await client.connect()` will use the default database passed in the MONGODB_URI
-      const db = client.db("sample_mflix")
-      const movies = await db
-      .collection("movies")
+      const db = client.db("everdeck_database")
+      const dbGames = await db
+      .collection("games")
       .find({})
-      .sort({ metacritic: -1 })
-      .limit(1)
+      .sort({})
       .toArray()
-      console.log(movies[0].year)
       return {
-        props: { movie: movies[0].year, isConnected: true }
+        props: { gameList: JSON.stringify(dbGames) , isConnected: true }
       }
     } catch (e) {
       console.error(e)
@@ -38,10 +34,10 @@ export const getServerSideProps = async () => {
       }
     }
 }
-*/
 
-//const mainPage = ({ movie, isConnected }) => {
-const mainPage = () => {
+
+const mainPage = ({ gameList, isConnected }) => {
+//const mainPage = () => {
     return (
         <>
             <Head>
@@ -49,7 +45,7 @@ const mainPage = () => {
                 <link rel="icon" href="/everdeck-clam.ico"/>
             </Head>
             <div>
-              <GameListPage />
+              <GameListPage allGames={gameList}/>
             </div>
         </>
     )

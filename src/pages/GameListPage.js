@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
-const GameListPage = () => {
+const GameListPage = ( {allGames} ) => {
     const [showFilters, setShowFilters] = useState(false);
     const handleClose = () => setShowFilters(false);
     const handleShow = () => setShowFilters(true);
@@ -51,9 +51,12 @@ const GameListPage = () => {
         "Wargames": true
     });
 
+    // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
+    let games = JSON.parse(allGames)
+
     // temporary games array
     // should get populated by a call to the database in a useEffect
-    let games = [
+    /*let games = [
         {
             "title": "Game Title 1",
             "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
@@ -97,7 +100,7 @@ const GameListPage = () => {
             "gameWarning": "component",
             "shDescription": "A loaded example of a game"
         },
-    ];
+    ];*/
 
     //First div is a replica of layout.js
     return (
@@ -115,7 +118,7 @@ const GameListPage = () => {
 
                             {games.map((game) => (
                                 <Card
-                                    key={game}
+                                    key={game._id}
                                     game={game}
                                 />
                             ))}

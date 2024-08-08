@@ -18,12 +18,28 @@ import Tooltip from 'react-bootstrap/Tooltip';
  *  plTime - range of average time to complete the game 
  *  complexity - range of complexity of game 
  *  shDescription - short description of game
- *  gameWarning - warnings for the game "both" "component" or "mapping"
+ *  mapStrength - How well the Everdeck can map to the game's components
+ *  extComponents - A list of components outside of the Everdeck
+ * 
+ *  gameWarning - warnings based on map strength & external components
  * @returns {React.ReactElement} - card element
  */
 
 export default function Card({ game }) {
  
+    let gameWarning = ""
+
+    //A very simple check on the warnings
+    if(game.mapStrength !== "Perfect" && game.extComponents.length > 0) {
+        gameWarning = "both"
+    }
+    else if(game.mapStrength !== "Perfect") {
+        gameWarning = "mapping"
+    } 
+    else if(game.extComponents.length > 0) {
+        gameWarning = "component"
+    }
+
     const componentWarning = (props) => (
         <Tooltip id="button-tooltip" {...props}>
           This game has extra components
@@ -32,13 +48,13 @@ export default function Card({ game }) {
     
     const mappingWarning = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-          This game does not map perfectly to the everdeck
+          This game does not map perfectly to the Everdeck
         </Tooltip>
     );
 
     const bothWarning = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-          This game has extra components; and does not map perfectly to the everdeck
+          This game has extra components; and does not map perfectly to the Everdeck
         </Tooltip>
     );
 
@@ -89,21 +105,21 @@ export default function Card({ game }) {
             </div>
             <div id="game-warning-button">
                 {   //create different overlays if warning is component || mapping || both 
-                    game.gameWarning == "component" &&
+                    gameWarning == "component" &&
                         <OverlayTrigger placement="left" trigger={["click", "hover"]} overlay={componentWarning} >
                             <Button bsPrefix={`${styles.alertCircle} ${styles.alertCircleComponent}`} >!</Button>
                         </OverlayTrigger>
                     
                     || 
 
-                    game.gameWarning == "mapping" &&
+                    gameWarning == "mapping" &&
                         <OverlayTrigger placement="left" trigger={["click", "hover"]} overlay={mappingWarning} >
                             <Button bsPrefix={`${styles.alertCircle} ${styles.alertCircleMapping}`} >!</Button>
                         </OverlayTrigger>
                         
                     ||
 
-                    game.gameWarning == "both" &&
+                    gameWarning == "both" &&
                         <OverlayTrigger placement="left" trigger={["click", "hover"]} overlay={bothWarning} >
                             <Button bsPrefix={`${styles.alertCircle} ${styles.alertCircleBoth}`}>!</Button>
                         </OverlayTrigger>

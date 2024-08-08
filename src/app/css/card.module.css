@@ -142,6 +142,8 @@
 @media (laptop) {
   .card {
     width: 27rem;
+    min-width: 27rem;
+    max-width: 40rem;
     height: 14rem;
   }
 }
