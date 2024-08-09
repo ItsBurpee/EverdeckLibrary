@@ -7,6 +7,10 @@ import { useRouter } from "next/router";
 import { Button, Modal } from "react-bootstrap";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { Alegreya, Alegreya_Sans } from "next/font/google";
+import "../css/globals.css";
+const alegreya = Alegreya({ subsets: ["latin"] });
+const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"] });
 
 /**
  * Card component for use in the main gamelist page
@@ -76,7 +80,13 @@ export default function Card({ game }) {
             </div>
             <div onClick={pushRoute} className={styles.cardInfo}>
                 <div className={styles.cardTitle}>
-                    <h2 className={ `${game.title.length >= 20 && styles.titleSmall} ${styles.titleText}` }>{game.title}</h2>
+                    <h2
+                        className={
+                            `${game.title.length >= 20 && styles.titleSmall} ${game.title.length >= 30 && styles.titleXSmall} ${styles.titleText}`
+                        }
+                    >
+                        {game.title}
+                    </h2>
                     <div className={styles.statIcons}>
                         {/* player count icon */}
                         <div className={styles.icon}>
@@ -101,13 +111,14 @@ export default function Card({ game }) {
                         </div>
                     </div>
                 </div>
+                {/* <p className={ alegreyaSans.className }>{game.shDescription}</p> */}
                 <p>{game.shDescription}</p>
             </div>
             <div id="game-warning-button">
                 {   //create different overlays if warning is component || mapping || both 
                     gameWarning == "component" &&
                         <OverlayTrigger placement="left" trigger={["click", "hover"]} overlay={componentWarning} >
-                            <Button bsPrefix={`${styles.alertCircle} ${styles.alertCircleComponent}`} >!</Button>
+                            <Button bsPrefix={`${styles.alertCircle} ${styles.alertCircleComponent}`}>!</Button>
                         </OverlayTrigger>
                     
                     || 

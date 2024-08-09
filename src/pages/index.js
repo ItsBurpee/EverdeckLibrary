@@ -1,19 +1,12 @@
 import Head from "next/head";
 
 import client from "../../lib/mongodb";
+import { Alegreya, Alegreya_Sans } from "next/font/google";
+import "../app/css/globals.css";
 import GameListPage from "./GameListPage";
 
-/*
-TEST FETCH
-export const getServerSideProps = async () => {
-  // Fetch data from external API
-  const res = await fetch('https://api.github.com/repos/vercel/next.js')
-  const repo = await res.json()
-  console.log(repo)
-  // Pass data to the page via props
-  return { props: { repo } }
-}
-*/
+const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
+const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variable: "--font-alegreya-sans" });
 
 export const getServerSideProps = async () => {
     try {
@@ -44,7 +37,7 @@ const mainPage = ({ gameList, isConnected }) => {
                 <title>Everdeck Library</title>
                 <link rel="icon" href="/everdeck-clam.ico"/>
             </Head>
-            <div>
+            <div className={ `${alegreya.variable} ${alegreyaSans.variable}` }>
               <GameListPage allGames={gameList}/>
             </div>
         </>

@@ -1,14 +1,15 @@
 @value EDBlue from "./colors.module.css";
 
 .searchField {
-    border-radius: 12px;
-    box-shadow: 0 5px 10px;
-    padding-top: 0;
-  }
+  border-radius: 12px;
+  box-shadow: 0 5px 10px;
+  padding-top: 0;
+  font-family: var(--font-alegreya-sans);
+}
 
-  .searchButton {
-    display: flex;
-    align-items: center;
-    background-color: EDBlue;
-    border-color: EDBlue;
-  }
+.searchButton {
+  display: flex;
+  align-items: center;
+  background-color: EDBlue;
+  border-color: EDBlue;
+}
