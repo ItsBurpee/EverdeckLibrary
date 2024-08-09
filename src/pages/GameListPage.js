@@ -34,8 +34,8 @@ const GameListPage = ( {allGames} ) => {
     // state for slider ranges
     const [sliderRanges, setSliderRanges] = useState({
         "plCountMin": 1,
-        "plCountMax": 8,
-        "plTimeMin": 15,
+        "plCountMax": 16,
+        "plTimeMin": 5,
         "plTimeMax": 120,
         "complexityMin": 1,
         "complexityMax": 5
@@ -67,6 +67,53 @@ const GameListPage = ( {allGames} ) => {
     // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
     let games = JSON.parse(allGames)
 
+
+    function getKeysByValue(targetObject, targetValue) {
+        return Object.keys(targetObject).filter((key) => targetObject[key] === targetValue);
+    }
+
+    //Filter Menu section
+    games = games.filter(function(game) {
+        let filterFlag = true
+
+        if ((game.plCount.plCountMin < sliderRanges.plCountMin) || (game.plCount.plCountMax > sliderRanges.plCountMax)) {
+            filterFlag = false;
+        }
+        if ((game.plTime.plTimeMin < sliderRanges.plTimeMin) || (game.plTime.plTimeMax > sliderRanges.plTimeMax)) {
+            filterFlag = false;
+        }
+        if ((game.complexity < sliderRanges.complexityMin) || (game.complexity > sliderRanges.complexityMax)) {
+            filterFlag = false;
+        }
+
+        // Filtering with Map Strength might be too strict any may have to change
+        if ((game.mapStrength !== mappingStrength) && (mappingStrength !== "Any")) {
+            filterFlag = false;
+        }
+
+        if (game.extComponents.length > 0) {
+            const uncheckedComponents = getKeysByValue(checkedComponents, false);
+            game.extComponents.forEach(extComponent => {
+                if (uncheckedComponents.includes(extComponent)) {
+                    filterFlag = false;
+                }
+            });
+        }
+
+        const selectedCheckedTypes = getKeysByValue(checkedTypes, true);
+        let inSelectedTypes = false
+        game.gameType.forEach(gType => {
+            if (selectedCheckedTypes.includes(gType)) {
+                inSelectedTypes = true;
+            }
+        });
+        if (!inSelectedTypes) {
+            filterFlag = false;
+        }
+
+        return filterFlag;
+    });
+
     //SWITCH: Sorts the cards based on the sort filter
     switch(sortFilters.sortName) {
         case "name":
@@ -87,7 +134,7 @@ const GameListPage = ( {allGames} ) => {
                 games.reverse();
             }
             break;
-        //plCount & plTime: IF the target comparisons values MATCH, then the order is based on the other value
+        //plCount & plTime: IF the target comparison values MATCH, then the order is based on the other value
         //ex. Minimum player counts match, sort order is instead based on Maximum player count
         case "plCount":
             if (sortFilters.sortDirec === "asc") {

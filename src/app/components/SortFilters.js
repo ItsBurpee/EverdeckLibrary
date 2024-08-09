@@ -22,7 +22,6 @@ export default function SortFilters({
         } else {
             setSortFilters({ "sortName": filter, "sortDirec": "asc" });
         }
-        console.log(sortFilters)
     }
     return (
         <ButtonGroup className={styles.sortFilters}>

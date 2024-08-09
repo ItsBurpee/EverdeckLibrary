@@ -139,7 +139,7 @@ export default function FilterMenu({
                 <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={24} height={24} alt="Player Count Icon"/> Player Count </p>
                 <MultiRangeSlider
                     min={1}
-                    max={8}
+                    max={16}
                     currMin={sliderRanges["plCountMin"]}
                     currMax={sliderRanges["plCountMax"]}
                     setMinMax={setPlCountRange}
@@ -150,7 +150,7 @@ export default function FilterMenu({
             <div className="mb-5">
                 <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={24} height={24} alt="Play Time Icon"/> Play Time </p>
                 <MultiRangeSlider
-                    min={15}
+                    min={5}
                     max={120}
                     currMin={sliderRanges["plTimeMin"]}
                     currMax={sliderRanges["plTimeMax"]}
@@ -167,7 +167,7 @@ export default function FilterMenu({
                     currMin={sliderRanges["complexityMin"]}
                     currMax={sliderRanges["complexityMax"]}
                     setMinMax={setComplexityRange}
-                    step={1}
+                    step={0.1}
                     onChange={({ currMin, currMax }) => console.log(`min = ${currMin}, max = ${currMax}`)}
                 />
             </div>
