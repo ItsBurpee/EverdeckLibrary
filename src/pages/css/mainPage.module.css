@@ -1,4 +1,4 @@
-@value tablet, laptop, desktop from "../../app/css/breakpoints.module.css";
+@value tablet, tablet-l, laptop, desktop from "../../app/css/breakpoints.module.css";
 @value EDBlue from "../../app/css/colors.module.css";
 
 .mainLayout {
@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-inline: 1rem;
 }
 
 .stackContainer {
@@ -15,8 +16,11 @@
   justify-content: center;
 }
 
+.mainPage {
+  width: 94%;
+}
+
 .mainStack {
-  max-width: 90%;
 }
 
 .searchArea {
@@ -28,10 +32,17 @@
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   gap: 1rem;
   justify-content: center;
+  width: 100%;
+  min-width: fit-content;
+}
+
+.cards > * {
+  justify-self: center;
 }
 
 .filterButton {
@@ -54,11 +65,22 @@
   background-color: EDBlue;
 }
 
+@media (tablet-l) {
+  .cards {
+    grid-template-columns: 1rem 1fr 1fr 1rem;
+  }
+
+  .cards > *:nth-child(odd) {
+    grid-column: 2;
+  }
+
+  .cards > *:nth-child(even) {
+    grid-column: 3;
+  }
+}
 
 @media (laptop) {
-  .cards > * {
-    flex-basis: 49%;
-    flex-shrink: 0;
+  .cards {
   }
   /* fixed position right attribute not working for some reason */
   .filterButton {

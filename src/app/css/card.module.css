@@ -1,4 +1,4 @@
-@value tablet, laptop, desktop, desktop-l from "./breakpoints.module.css";
+@value tablet, tablet-l, laptop, desktop, desktop-l from "./breakpoints.module.css";
 @value EDBlue, EDRed, EDDarkYellow from "./colors.module.css";
 
 .card {
@@ -10,6 +10,7 @@
   grid-gap: 0;
   width: 23rem;
   height: 11rem;
+  max-height: 100%;
   border-radius: 12px;
   box-shadow: 0 5px 10px;
 }
@@ -46,9 +47,14 @@
   align-items: center;
 }
 
-.cardTitle h2 {
+.titleText {
   font-size: 2rem;
   margin: 0;
+}
+
+/* give title a smaller font if the title is 20 chars or more */
+.titleSmall {
+  font-size: 1.6rem;
 }
 
 .cardImgContainer {
@@ -71,6 +77,8 @@
   align-items: center;
   height: 100%;
   gap: 1rem;
+  min-width: 47%;
+  max-width: 50%;
 }
 
 .icon {
@@ -139,10 +147,14 @@
   margin-top: 0.7rem;
 }
 
+@media (tablet-l) {
+  .card {
+    min-width: 100%;
+  }
+}
+
 @media (laptop) {
   .card {
-    width: 27rem;
-    min-width: 27rem;
     max-width: 40rem;
     height: 14rem;
   }

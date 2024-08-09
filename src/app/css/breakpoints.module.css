@@ -1,4 +1,5 @@
 @value tablet: min-width: 600px;
+@value tablet-l: min-width: 815px;
 @value laptop: min-width: 992px;
 @value desktop: min-width: 1200px;
 @value desktop-l: min-width: 1400px;

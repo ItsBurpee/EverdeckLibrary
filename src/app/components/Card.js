@@ -76,7 +76,7 @@ export default function Card({ game }) {
             </div>
             <div onClick={pushRoute} className={styles.cardInfo}>
                 <div className={styles.cardTitle}>
-                    <h2>{game.title}</h2>
+                    <h2 className={ `${game.title.length >= 20 && styles.titleSmall} ${styles.titleText}` }>{game.title}</h2>
                     <div className={styles.statIcons}>
                         {/* player count icon */}
                         <div className={styles.icon}>
