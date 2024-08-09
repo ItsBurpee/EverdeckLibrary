@@ -26,6 +26,12 @@ const GameListPage = ( {allGames} ) => {
     const handleShow = () => setShowFilters(true);
 
     // state for slider ranges
+    const [sortFilters, setSortFilters] = useState({
+        "sortName": "name",
+        "sortDirec": "asc"
+    });
+
+    // state for slider ranges
     const [sliderRanges, setSliderRanges] = useState({
         "plCountMin": 1,
         "plCountMax": 8,
@@ -60,6 +66,71 @@ const GameListPage = ( {allGames} ) => {
 
     // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
     let games = JSON.parse(allGames)
+    
+    //SWITCH: Sorts the cards based on the sort filter
+    switch(sortFilters.sortName) {
+        case "name":
+            games.sort(function(a,b) {
+                const titleA = a.title.toLowerCase();
+                const titleB = b.title.toLowerCase();
+                if(titleA < titleB) {
+                    return -1;
+                }
+                else if(titleA > titleB) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            });
+            if (sortFilters.sortDirec === "desc") {
+                games.reverse();
+            }
+            break;
+        case "plCount":
+            if (sortFilters.sortDirec === "asc") {
+                games.sort(function(a,b) {
+                    if (a.plCount.plCountMin === b.plCount.plCountMin) {
+                        return a.plCount.plCountMax - b.plCount.plCountMax
+                    }
+                    return a.plCount.plCountMin - b.plCount.plCountMin
+                });
+            } 
+            else {
+                games.sort(function(a,b) {
+                    if (a.plCount.plCountMax === b.plCount.plCountMax) {
+                        return a.plCount.plCountMin - b.plCount.plCountMin
+                    }
+                    return a.plCount.plCountMax - b.plCount.plCountMax
+                }).reverse();
+            }
+            break;
+        case "plTime":
+            if (sortFilters.sortDirec === "asc") {
+                games.sort(function(a,b) {
+                    if (a.plTime.plTimeMin === b.plTime.plTimeMin) {
+                        return a.plTime.plTimeMax - b.plTime.plTimeMax
+                    }
+                    return a.plTime.plTimeMin - b.plTime.plTimeMin
+                });
+            } 
+            else {
+                games.sort(function(a,b) {
+                    if (a.plTime.plTimeMax === b.plTime.plTimeMax) {
+                        return a.plTime.plTimeMin - b.plTime.plTimeMin
+                    }
+                    return a.plTime.plTimeMax - b.plTime.plTimeMax
+                }).reverse();
+            }
+            break;
+        case "complexity":
+            games.sort((a,b) => a.complexity - b.complexity); 
+            if (sortFilters.sortDirec === "desc") {
+                games.reverse();
+            }
+            break;
+
+    }
 
     //First div is a replica of layout.js
     return (
@@ -71,7 +142,10 @@ const GameListPage = ( {allGames} ) => {
                     <Stack gap={3} className={styles.mainStack}>
                         <div className={styles.searchArea}>
                             <SearchBar />
-                            <SortFilters />
+                            <SortFilters 
+                                sortFilters={sortFilters}
+                                setSortFilters={setSortFilters}
+                            />
                         </div>
                         <div className={styles.cards}>
 
