@@ -13,15 +13,19 @@ import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
 const ForSalePage = () => {
+    const moveToTop = () => document.getElementById('top').scrollIntoView();
+    const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
+    const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
+
     return(
         <div className={styles.mainLayout}>
         <ImportBsJS />
         <AppNavbar />
         <div id="rulesMain" className={styles.rulesPage} >
-            <h1>For Sale</h1>
+            <h1 id="top">For Sale</h1>
             <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
-                        <div className={styles.topSection}>
+                        <div  className={styles.topSection}>
                             <RulesImageIcons />
                             <div className={styles.summary}>
                                 <h2>Summary</h2>
@@ -34,7 +38,7 @@ const ForSalePage = () => {
                              {/* warnings go here, activate if flagged */}
 
                         </div>
-                        <div className={styles.middleSection}>
+                        <div id="middle" className={styles.middleSection}>
                             <div className={styles.cardZone}>
                                 <CardZone />
                             </div>
@@ -43,13 +47,37 @@ const ForSalePage = () => {
                             </div>
                         </div>
 
-                        <div className={styles.bottomSection}>
+                        <div id="bottom" className={styles.bottomSection}>
                             <div className={styles.tableSection}>
                                 <TableSection />
                             </div>
                         </div>
                     </Stack>
                 </div>
+                <div className={styles.jumpSection}>
+                    <Button
+                        variant="top"
+                        onClick={moveToTop}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Basic Info
+                    </Button>
+                    <Button
+                        variant="middle"
+                        onClick={moveToMiddle}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Card Zone/Rules
+                    </Button>
+                    <Button
+                        variant="bottom"
+                        onClick={moveToBottom}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Card Table
+                    </Button>  
+                </div>
+                
         </div>
     </div>
 
