@@ -25,6 +25,8 @@ const GameListPage = ( {allGames} ) => {
     const handleClose = () => setShowFilters(false);
     const handleShow = () => setShowFilters(true);
 
+    const [searchName, setSearchName] = useState("");
+
     // state for slider ranges
     const [sortFilters, setSortFilters] = useState({
         "sortName": "name",
@@ -67,6 +69,10 @@ const GameListPage = ( {allGames} ) => {
     // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
     let games = JSON.parse(allGames)
 
+    games = games.filter(function(game) {
+        const regExSearch = RegExp(searchName, "i")
+        return (game.title.match(regExSearch));
+    })
 
     function getKeysByValue(targetObject, targetValue) {
         return Object.keys(targetObject).filter((key) => targetObject[key] === targetValue);
@@ -190,7 +196,7 @@ const GameListPage = ( {allGames} ) => {
                 <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
                         <div className={styles.searchArea}>
-                            <SearchBar />
+                            <SearchBar setSearchName={setSearchName}/>
                             <SortFilters 
                                 sortFilters={sortFilters}
                                 setSortFilters={setSortFilters}
