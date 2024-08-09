@@ -16,7 +16,9 @@ import "../css/globals.css";
  *  title - title for the card 
  *  cardImg - image for the card 
  *  plCount - range of number of players that can play the game 
+ *      {plCountMin, plCountMax}
  *  plTime - range of average time to complete the game 
+ *      {plTimeMin, plTimeMax}
  *  complexity - range of complexity of game 
  *  shDescription - short description of game
  *  mapStrength - How well the Everdeck can map to the game's components
@@ -90,14 +92,14 @@ export default function Card({ game }) {
                             <div className={styles.iconImage}>
                                 <Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} height={25} width={25} alt="Player Count Icon" />
                             </div>
-                            <h4>{game.plCount.length == 1 ? `${game.plCount[0]}` : `${game.plCount[0]}-${game.plCount[1]}`}</h4>
+                            <h4>{game.plCount.plCountMin === game.plCount.plCountMax ? `${game.plCount.plCountMin}` : `${game.plCount.plCountMin}-${game.plCount.plCountMax}`}</h4>
                         </div>
                         {/* time icon */}
                         <div className={styles.icon}>
                             <div className={styles.iconImage}>
                                 <Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} height={25} width={25} alt="Play Time Icon" />
                             </div> 
-                            <h4>{game.plTime.length == 1 ? `${game.plTime[0]}` : `${game.plTime[0]}-${game.plTime[1]}`}</h4>
+                            <h4>{game.plTime.plTimeMin === game.plTime.plTimeMax ? `${game.plTime.plTimeMin}` : `${game.plTime.plTimeMin}-${game.plTime.plTimeMax}`}</h4>
                         </div>
                         {/* complexity icon */}
                         <div className={styles.icon}>
