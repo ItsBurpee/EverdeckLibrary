@@ -66,7 +66,7 @@ const GameListPage = ( {allGames} ) => {
 
     // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
     let games = JSON.parse(allGames)
-    
+
     //SWITCH: Sorts the cards based on the sort filter
     switch(sortFilters.sortName) {
         case "name":
@@ -87,6 +87,8 @@ const GameListPage = ( {allGames} ) => {
                 games.reverse();
             }
             break;
+        //plCount & plTime: IF the target comparisons values MATCH, then the order is based on the other value
+        //ex. Minimum player counts match, sort order is instead based on Maximum player count
         case "plCount":
             if (sortFilters.sortDirec === "asc") {
                 games.sort(function(a,b) {
