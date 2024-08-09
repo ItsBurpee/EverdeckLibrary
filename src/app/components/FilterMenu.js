@@ -12,7 +12,12 @@ import {
 import MultiRangeSlider from "./MultiRangeSlider";
 import Image from "next/image";
 import styles from "../css/filterMenu.module.css"
-const firstOpen = true;
+// import { Alegreya, Alegreya_Sans } from "next/font/google";
+
+// // font variables from index were not reaching the filter menu
+// // so reinitialize those variables
+// const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
+// const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variable: "--font-alegreya-sans" });
 
 export default function FilterMenu({
     sliderRanges,
@@ -196,7 +201,7 @@ export default function FilterMenu({
                             <p className={styles.filterMenuSections}>External Components</p>
                         </Col>
                         <Col>
-                            <Button id="components-toggle" className={styles.toggleButton} onClick={() => handleToggleComps(!toggleComponents)}>Toggle All</Button>
+                            <Button id="components-toggle" className={styles.toggleButton} onClick={() => handleToggleComps(!toggleComponents)}><p>Toggle All</p></Button>
                         </Col>
                     </Row>
                 </div>
@@ -243,7 +248,7 @@ export default function FilterMenu({
                             <p className={styles.filterMenuSections}>Game Type</p>
                         </Col>
                         <Col>
-                             <Button id="game-type-toggle" className={styles.toggleButton} onClick={() => handleToggleTypes(!toggleTypes)}>Toggle All</Button>
+                             <Button id="game-type-toggle" className={styles.toggleButton} onClick={() => handleToggleTypes(!toggleTypes)}><p>Toggle All</p></Button>
                         </Col>
                     </Row>
                     

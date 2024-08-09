@@ -64,6 +64,7 @@
 
 .filterMenuOffcanvas {
   background-color: EDBlue;
+  font-family: var(--font-alegreya);
 }
 
 @media (tablet-l) {

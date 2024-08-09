@@ -1,8 +1,10 @@
 @value EDBlue from "./colors.module.css";
 
-.filterMenuSliderSections,.filterMenuSections  {
+.filterMenuSliderSections,
+.filterMenuSections {
   font-size: 1.25rem;
   font-weight: bold;
+  font-family: var(--font-alegreya);
 }
 
 .filterMenuSections {
@@ -10,9 +12,23 @@
   padding-bottom: 0;
 }
 
-.checkboxes input:checked, .toggleButton {
+.checkboxes,
+.toggleButton > p {
+  font-family: var(--font-alegreya-sans);
+}
+
+.toggleButton > p {
+  margin-bottom: 0;
+}
+
+.checkboxes input:checked,
+.toggleButton {
   background-color: EDBlue;
   border-color: EDBlue;
+}
+
+.mappingSelect {
+  font-family: var(--font-alegreya-sans);
 }
 
 .mappingSelect option:checked {

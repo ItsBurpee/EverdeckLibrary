@@ -13,6 +13,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
+import { Alegreya, Alegreya_Sans } from "next/font/google";
+
+// font variables from index were not reaching the offcanvas
+// so reinitialize those variables
+const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
+const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variable: "--font-alegreya-sans" });
+
 const GameListPage = ( {allGames} ) => {
     const [showFilters, setShowFilters] = useState(false);
     const handleClose = () => setShowFilters(false);
@@ -54,54 +61,6 @@ const GameListPage = ( {allGames} ) => {
     // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
     let games = JSON.parse(allGames)
 
-    // temporary games array
-    // should get populated by a call to the database in a useEffect
-    /*let games = [
-        {
-            "title": "Game Title 1",
-            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
-            "plCount": [1, 8],
-            "plTime": [30, 45],
-            "complexity": 2.44,
-            "gameWarning": "both",
-            "shDescription": "A loaded example of a game"
-        },
-        {
-            "title": "For Sale",
-            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
-            "plCount": [1, 8],
-            "plTime": [30, 45],
-            "complexity": 2.44,
-            "shDescription": "A loaded example of a game"
-        },
-        {
-            "title": "Game Title 3",
-            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
-            "plCount": [2, 17],
-            "plTime": [30, 85],
-            "complexity": 4.1,
-            "shDescription": "A loaded example of a game"
-        },
-        {
-            "title": "Game Title 4",
-            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
-            "plCount": [1, 8],
-            "plTime": [30, 45],
-            "complexity": 2.44,
-            "gameWarning": "mapping",
-            "shDescription": "A loaded example of a game"
-        },
-        {
-            "title": "Game Title 5",
-            "cardImg": "/gameCardIcons/image-picture-svgrepo-com.svg",
-            "plCount": [1, 8],
-            "plTime": [30, 45],
-            "complexity": 2.44,
-            "gameWarning": "component",
-            "shDescription": "A loaded example of a game"
-        },
-    ];*/
-
     //First div is a replica of layout.js
     return (
         <div className={styles.mainLayout}>
@@ -133,7 +92,7 @@ const GameListPage = ( {allGames} ) => {
                 >
                     <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
                 </Button>
-                <Offcanvas show={showFilters} onHide={handleClose} placement="end">
+                <Offcanvas show={showFilters} onHide={handleClose} placement="end" className={`${alegreya.variable} ${alegreyaSans.variable}`}>
                     <Offcanvas.Header closeButton className={styles.filterMenuOffcanvas}>
                         <Offcanvas.Title style={{fontSize:"1.75rem", fontWeight:"bold"}}>Filter Menu</Offcanvas.Title>
                     </Offcanvas.Header>

@@ -7,10 +7,7 @@ import { useRouter } from "next/router";
 import { Button, Modal } from "react-bootstrap";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-import { Alegreya, Alegreya_Sans } from "next/font/google";
 import "../css/globals.css";
-const alegreya = Alegreya({ subsets: ["latin"] });
-const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"] });
 
 /**
  * Card component for use in the main gamelist page

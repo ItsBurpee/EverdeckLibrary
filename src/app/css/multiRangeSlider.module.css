@@ -100,9 +100,10 @@
 .sliderLeftVal,
 .sliderRightVal {
   color: black;
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin-top: 20px;
   position: absolute;
+  font-family: var(--font-alegreya-sans);
 }
 
 .sliderLeftVal {
