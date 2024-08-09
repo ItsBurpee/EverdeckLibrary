@@ -1,11 +1,11 @@
 @value tablet, laptop, desktop, desktop-l from "./breakpoints.module.css";
 @value EDBlue, EDDarkBlue from "./colors.module.css";
 
-.searchFilters p {
+.sortFilters p {
   margin-bottom: 0;
 }
 
-.searchFilters > button {
+.sortFilters > button {
   background-color: EDBlue;
   border-color: EDBlue;
   position: relative;
@@ -14,13 +14,13 @@
   flex-direction: column;
 }
 
-.searchFilters > button.active {
+.sortFilters > button.active {
   background-color: EDDarkBlue;
   border-color: EDDarkBlue;
 }
 
 @media (laptop) {
-  .searchFilters > button {
+  .sortFilters > button {
     flex-direction: row;
     justify-content: center;
     gap: 0.5rem;

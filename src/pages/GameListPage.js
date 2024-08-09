@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Stack, Button, Image, Offcanvas } from "react-bootstrap";
 import styles from "./css/mainPage.module.css";
 import SearchBar from "../app/components/SearchBar";
-import SearchFilters from "../app/components/SearchFilters";
+import SortFilters from "../app/components/SortFilters";
 import FilterMenu from "../app/components/FilterMenu";
 import Card from "../app/components/Card";
 
@@ -71,7 +71,7 @@ const GameListPage = ( {allGames} ) => {
                     <Stack gap={3} className={styles.mainStack}>
                         <div className={styles.searchArea}>
                             <SearchBar />
-                            <SearchFilters />
+                            <SortFilters />
                         </div>
                         <div className={styles.cards}>
 
