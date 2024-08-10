@@ -5,23 +5,29 @@ import Image from "next/image"
 import styles from "../css/searchBar.module.css";
 
 export default function SearchBar({
-    setSearchName
+    setSearchName,
+    searchName
 }) {
 
     return (
         <div className="p-3">
-            <InputGroup className={styles.searchField}>
+            <InputGroup bsPrefix={`${styles.searchField}`}>
                 <Form.Control
                     placeholder="Search" 
                     aria-label="Game Library Search Field"
-                    aria-describedby="button-search"
+                    value={searchName}
                     onChange={e => {
                         setSearchName(e.currentTarget.value);
                     }}
+                    bsPrefix={styles.searchBar}
                 />
-                <Button className={styles.searchButton} id="button-search">
-                    <Image src={"/search-svgrepo-com.svg"} width={20} height={20} alt="Search button"/> 
-                </Button>
+                <div
+                    className={`${styles.clearButton} ${searchName !== "" && styles.activeButton}`}
+                    onClick={() => { setSearchName("") }}
+                    aria-label="Clear search"
+                >
+                    <Image src={"/close-svgrepo-com.svg"} width={20} height={20} alt="Clear search button" />
+                </div>
             </InputGroup>
         </div>
     )

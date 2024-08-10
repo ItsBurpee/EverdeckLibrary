@@ -196,7 +196,7 @@ const GameListPage = ( {allGames} ) => {
                 <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
                         <div className={styles.searchArea}>
-                            <SearchBar setSearchName={setSearchName}/>
+                            <SearchBar searchName={ searchName } setSearchName={setSearchName}/>
                             <SortFilters 
                                 sortFilters={sortFilters}
                                 setSortFilters={setSortFilters}

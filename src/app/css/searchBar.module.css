@@ -1,15 +1,39 @@
-@value EDBlue from "./colors.module.css";
+@value EDBlue, EDDarkBlue from "./colors.module.css";
 
 .searchField {
+  position: relative;
   border-radius: 12px;
   box-shadow: 0 5px 10px;
-  padding-top: 0;
+  height: 2.5rem;
   font-family: var(--font-alegreya-sans);
 }
 
-.searchButton {
+.searchBar {
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding-inline: 1rem;
+  font-size: 1.3rem;
+}
+
+.searchBar:focus {
+  outline: 2px solid EDDarkBlue;
+}
+
+.clearButton {
+  display: none;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 1rem;
+  width: 2rem;
+  background: none;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.activeButton {
   display: flex;
   align-items: center;
-  background-color: EDBlue;
-  border-color: EDBlue;
 }
