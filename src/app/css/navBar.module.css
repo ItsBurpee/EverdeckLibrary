@@ -1,10 +1,19 @@
 @value tablet, laptop, desktop from "./breakpoints.module.css";
 @value EDBlue from "./colors.module.css";
 
+.header {
+  /* uncomment this if we use navbar to jump to top */
+  /* margin-bottom: 5rem; */
+}
+
 .navbar {
   width: 100dvw;
   max-width: 100%;
   background-color: EDBlue;
+  /* uncomment this if we use navbar to jump to top */
+  /* position: fixed;
+  left: 0;
+  z-index: 100; */
 }
 
 .container {
@@ -15,6 +24,7 @@
 .container > h1 {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .navbar > .container {
