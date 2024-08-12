@@ -43,8 +43,14 @@ export const getServerSideProps = async (context) => {
 
 const skeleton = ({ dbgame, gameRules, isConnected }) => {
     const router = useRouter();
-    const game = JSON.parse(dbgame)[0];
-    const rules = JSON.parse(gameRules)[0];
+    let game = [];
+    let rules = [];
+    if (dbgame) {
+        game = JSON.parse(dbgame)[0];
+    }
+    if (gameRules) {
+        rules = JSON.parse(gameRules)[0];
+    }
     let title = game ? game.title : "404";
     return (
         <>
@@ -54,7 +60,7 @@ const skeleton = ({ dbgame, gameRules, isConnected }) => {
             </Head>
             <div>
                 { 
-                    game ?
+                    dbgame ?
                         <SkeletonPage game={game} rules={rules} /> :
                         <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
                 }
