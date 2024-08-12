@@ -202,16 +202,17 @@ const GameListPage = ( {allGames} ) => {
                                 setSortFilters={setSortFilters}
                             />
                         </div>
-                        <div className={styles.cards}>
-
-                            {games.map((game) => (
-                                <Card
-                                    key={game._id}
-                                    game={game}
-                                />
-                            ))}
-
-                        </div>
+                        {games.length > 0 ?
+                            <div className={styles.cards}>
+                                {games.map((game) => (
+                                    <Card
+                                        key={game._id}
+                                        game={game}
+                                    />
+                                ))}
+                            </div>
+                            : <p className={styles.noCardsMessage}>No known games that match the search criteria!<br />Try changing the search name or adjusting the filters. </p>
+                        }
                     </Stack>
                 </div>
                 <Button

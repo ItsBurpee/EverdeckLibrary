@@ -2,6 +2,7 @@
 @value EDBlue from "../../app/css/colors.module.css";
 
 .mainLayout {
+  overflow: hidden;
   width: 100dvw;
   max-width: 100%;
   min-height: 100dvh;
@@ -31,6 +32,15 @@
   min-width: 65%;
   align-self: center;
 }
+
+.noCardsMessage {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 10%;
+}
+
 
 .cards {
   display: grid;
