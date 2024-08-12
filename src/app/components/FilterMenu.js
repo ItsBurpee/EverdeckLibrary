@@ -20,6 +20,7 @@ import styles from "../css/filterMenu.module.css"
 // const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variable: "--font-alegreya-sans" });
 
 export default function FilterMenu({
+    sliderEndpoints,
     sliderRanges,
     setSliderRanges,
     mappingStrength,
@@ -138,8 +139,8 @@ export default function FilterMenu({
             <div className="mb-5">
                 <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/person-male-svgrepo-com.svg"} width={24} height={24} alt="Player Count Icon"/> Player Count </p>
                 <MultiRangeSlider
-                    min={1}
-                    max={16}
+                    min={sliderEndpoints["plCountMinEndpoint"]}
+                    max={sliderEndpoints["plCountMaxEndpoint"]}
                     currMin={sliderRanges["plCountMin"]}
                     currMax={sliderRanges["plCountMax"]}
                     setMinMax={setPlCountRange}
@@ -150,8 +151,8 @@ export default function FilterMenu({
             <div className="mb-5">
                 <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/stopwatch-svgrepo-com.svg"} width={24} height={24} alt="Play Time Icon"/> Play Time </p>
                 <MultiRangeSlider
-                    min={5}
-                    max={120}
+                    min={sliderEndpoints["plTimeMinEndpoint"]}
+                    max={sliderEndpoints["plTimeMaxEndpoint"]}
                     currMin={sliderRanges["plTimeMin"]}
                     currMax={sliderRanges["plTimeMax"]}
                     setMinMax={setPlTimeRange}
@@ -162,8 +163,8 @@ export default function FilterMenu({
             <div className="mb-5">
                 <p className={styles.filterMenuSliderSections}><Image src={"/gameCardIcons/signal-strong-svgrepo-com.svg"} width={24} height={24} alt="Complexity Icon"/> Complexity </p>
                 <MultiRangeSlider
-                    min={1}
-                    max={5}
+                    min={sliderEndpoints["complexityMinEndpoint"]}
+                    max={sliderEndpoints["complexityMaxEndpoint"]}
                     currMin={sliderRanges["complexityMin"]}
                     currMax={sliderRanges["complexityMax"]}
                     setMinMax={setComplexityRange}

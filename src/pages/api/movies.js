@@ -1,3 +1,6 @@
+//Based on this tutorial: https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/
+//Unused
+
 import clientPromise from "../../lib/mongodb"
 
 export default async (req, res) => {

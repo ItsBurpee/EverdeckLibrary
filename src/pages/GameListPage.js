@@ -25,6 +25,57 @@ const GameListPage = ( {allGames} ) => {
     const handleClose = () => setShowFilters(false);
     const handleShow = () => setShowFilters(true);
 
+
+    //section to determine slider endpoint values
+    let plCountMinEndpoint, plCountMaxEndpoint;
+    let plTimeMinEndpoint, plTimeMaxEndpoint;
+    let complexityMinEndpoint, complexityMaxEndpoint;
+    JSON.parse(allGames).forEach(function(game,gameIndex) {
+        if (gameIndex === 0) {
+            plCountMinEndpoint = game.plCount.plCountMin;
+            plCountMaxEndpoint = game.plCount.plCountMax;
+            plTimeMinEndpoint = game.plTime.plTimeMin;
+            plTimeMaxEndpoint = game.plTime.plTimeMax;
+            complexityMinEndpoint = game.complexity;
+            complexityMaxEndpoint = game.complexity;
+        }
+        else {
+            if (game.plCount.plCountMin < plCountMinEndpoint) {
+                plCountMinEndpoint = game.plCount.plCountMin;
+            }
+            if (game.plCount.plCountMax > plCountMaxEndpoint) {
+                plCountMaxEndpoint = game.plCount.plCountMax;
+            }
+
+            if (game.plTime.plTimeMin < plTimeMinEndpoint) {
+                plTimeMinEndpoint = game.plTime.plTimeMin;
+            }
+            if (game.plTime.plTimeMax > plTimeMaxEndpoint) {
+                plTimeMaxEndpoint = game.plTime.plTimeMax;
+            }
+
+            if (game.complexity < complexityMinEndpoint) {
+                complexityMinEndpoint = game.complexity;
+            }
+            else if (game.complexity > complexityMaxEndpoint) {
+                complexityMaxEndpoint = game.complexity;
+            }
+        }
+    });
+    console.log(Math.floor(complexityMinEndpoint))
+    complexityMinEndpoint = Math.floor(complexityMinEndpoint)
+    complexityMaxEndpoint = Math.ceil(complexityMaxEndpoint)
+
+    // state for slider endpoints
+    const sliderEndpoints = {
+        "plCountMinEndpoint" : plCountMinEndpoint,
+        "plCountMaxEndpoint" : plCountMaxEndpoint,
+        "plTimeMinEndpoint" : plTimeMinEndpoint,
+        "plTimeMaxEndpoint" : plTimeMaxEndpoint,
+        "complexityMinEndpoint": complexityMinEndpoint,
+        "complexityMaxEndpoint" : complexityMaxEndpoint
+    };
+
     const [searchName, setSearchName] = useState("");
 
     // state for slider ranges
@@ -35,12 +86,12 @@ const GameListPage = ( {allGames} ) => {
 
     // state for slider ranges
     const [sliderRanges, setSliderRanges] = useState({
-        "plCountMin": 1,
-        "plCountMax": 16,
-        "plTimeMin": 5,
-        "plTimeMax": 120,
-        "complexityMin": 1,
-        "complexityMax": 5
+        "plCountMin": plCountMinEndpoint,
+        "plCountMax": plCountMaxEndpoint,
+        "plTimeMin": plTimeMinEndpoint,
+        "plTimeMax": plTimeMaxEndpoint,
+        "complexityMin": complexityMinEndpoint,
+        "complexityMax": complexityMaxEndpoint
     });
 
     // state for the mapping strength dropdown
@@ -228,6 +279,7 @@ const GameListPage = ( {allGames} ) => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <FilterMenu
+                            sliderEndpoints={sliderEndpoints}
                             sliderRanges={sliderRanges}
                             setSliderRanges={setSliderRanges}
                             mappingStrength={mappingStrength}
