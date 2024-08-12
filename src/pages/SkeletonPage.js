@@ -12,17 +12,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
-const ForSalePage = ({ title }) => {
+const ForSalePage = ({ game }) => {
     return(
         <div className={styles.mainLayout}>
         <ImportBsJS />
         <AppNavbar />
         <div id="rulesMain" className={styles.rulesPage} >
-            <h1>{title}</h1>
+            <h1>{game.title}</h1>
             <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
                         <div className={styles.topSection}>
-                            <RulesImageIcons />
+                            <RulesImageIcons
+                                cardImg={game.cardImg}
+                                plCount={game.plCount}
+                                plTime={game.plTime}
+                                complexity={game.complexity}
+                            />
                             <div className={styles.summary}>
                                 <h2>Summary</h2>
                                 <p>Summary Text</p>
