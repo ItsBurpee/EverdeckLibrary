@@ -63,9 +63,16 @@ export default function Card({ game }) {
 
     // router to direct to the rules page 
     const router = useRouter();
-    const gameUrl = game.title.replaceAll(" ", "_") // replace spaces in game name with _ for url
 
     const pushRoute = () => {
+        // replace spaces in title for url
+        let gameUrl = game.title.replaceAll(" ", "_");
+        gameUrl = encodeURIComponent(gameUrl);
+        // encode special characters ignored by encodeURIComponent to UTF-8 ASCII encoding
+        gameUrl = gameUrl.replaceAll("'", "%27");
+        gameUrl = gameUrl.replaceAll("-", "%2D");
+        gameUrl = gameUrl.replaceAll("!", "%2D");
+        gameUrl = gameUrl.replaceAll(".", "%2E");
         router.push(`/${gameUrl}`)
     }
 

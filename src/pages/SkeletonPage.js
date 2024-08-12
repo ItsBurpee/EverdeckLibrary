@@ -12,13 +12,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
-const ForSalePage = () => {
+const ForSalePage = ({ title }) => {
     return(
         <div className={styles.mainLayout}>
         <ImportBsJS />
         <AppNavbar />
         <div id="rulesMain" className={styles.rulesPage} >
-            <h1>Title</h1>
+            <h1>{title}</h1>
             <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
                         <div className={styles.topSection}>
