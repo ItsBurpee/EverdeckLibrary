@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
-const ForSalePage = ({ game }) => {
+const ForSalePage = ({ game, rules }) => {
     return(
         <div className={styles.mainLayout}>
         <ImportBsJS />
@@ -30,7 +30,10 @@ const ForSalePage = ({ game }) => {
                             />
                             <div className={styles.summary}>
                                 <h2>Summary</h2>
-                                <p>Summary Text</p>
+                                {/* conditionally render summary to avoid errors while
+                                    rules db is not fully populated */}
+                                <p>{rules ? rules.summary : "Summary Text"}</p>
+                                {rules && <a href={rules.bggLink}>BGG Link</a>}
                             </div>
                         </div>
                         <div className={styles.warnings}>

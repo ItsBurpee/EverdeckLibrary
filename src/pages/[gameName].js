@@ -3,7 +3,6 @@ import SkeletonPage from "./SkeletonPage";
 import NotFound from "./NotFound";
 import { useRouter } from "next/router";
 import client from "../../lib/mongodb";
-
 /*
     TODO:
         -query rules db when its ready
@@ -17,31 +16,36 @@ const decodeGameName = url => {
 // get the game based on the url. need to add query for rules db when that is ready.
 export const getServerSideProps = async (context) => {
     const gameName = decodeGameName(context.params.gameName);
+    // const gameID = ;
+    let props = {};
     try {
       await client.connect() // `await client.connect()` will use the default database passed in the MONGODB_URI
       const db = client.db("everdeck_database")
+      // get the game's data from the db using the game's name
       const dbgame = await db
-      .collection("games")
-      .find({title: gameName})
-      .sort({})
-      .toArray()
-      return {
-        props: { dbgame: JSON.stringify(dbgame) , isConnected: true }
-      }
+        .collection("games")
+        .find({title: gameName})
+        .sort({})
+        .toArray()
+      // get the game's rules from the db using the id from the game data
+      const gameRules = await db
+        .collection("rules")
+        .find({game_id: dbgame[0]._id})
+        .sort({})
+        .toArray()
+      props = { props: { dbgame: JSON.stringify(dbgame), gameRules: JSON.stringify(gameRules), isConnected: true } }
     } catch (e) {
       console.error(e)
-      return {
-        props: { isConnected: false }
-      }
+      props = { props: {isConnected: false} }
     }
+    return props;
 }
 
-const skeleton = ({ dbgame, isConnected }) => {
+const skeleton = ({ dbgame, gameRules, isConnected }) => {
     const router = useRouter();
     const game = JSON.parse(dbgame)[0];
+    const rules = JSON.parse(gameRules)[0];
     let title = game ? game.title : "404";
-    console.log(decodeGameName(router.asPath).substring(1));
-
     return (
         <>
             <Head>
@@ -50,7 +54,9 @@ const skeleton = ({ dbgame, isConnected }) => {
             </Head>
             <div>
                 { 
-                    game ? <SkeletonPage game={game} /> : <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
+                    game ?
+                        <SkeletonPage game={game} rules={rules} /> :
+                        <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
                 }
             </div>
         </>
