@@ -1,7 +1,77 @@
+@value (
+    EDDarkBlue,
+    EDDarkRed, 
+    EDDarkYellow, 
+    paleRed,
+    paleYellow,
+    paleBlue,
+    lightBlue,
+    lightYellow,
+    lightRed
+  ) from "./colors.module.css";
+
+.cardZoneBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .cardZoneBox {
-    width: 15rem;
-    height: 5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px;
-    background-color: #ffe3e3;
-  }
+  position: relative;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px;
+  padding-left: 2rem;
+}
+
+.cardZoneBox::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 12%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-right: 2px solid black;
+}
+
+.cardZoneRed {
+  background-color: paleRed;
+}
+
+.cardZoneRed::before {
+  background-color: EDDarkRed;
+}
+
+.cardZoneRed:hover {
+  background-color: lightRed;
+}
+
+.cardZoneBlue {
+  background-color: paleBlue;
+}
+
+.cardZoneBlue::before {
+  background-color: EDDarkBlue;
+}
+
+.cardZoneBlue:hover {
+  background-color: lightBlue;
+}
+
+.cardZoneYellow {
+  background-color: paleYellow;
+}
+
+.cardZoneYellow::before {
+  background-color: EDDarkYellow;
+}
+
+.cardZoneYellow:hover {
+  background-color: lightYellow;
+}
+
+.halfOpacity {
+  opacity: 50%;
+}

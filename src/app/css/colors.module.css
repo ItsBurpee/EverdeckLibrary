@@ -1,13 +1,17 @@
 @value EDBlue: #3A9DFA;
 @value EDDarkBlue: #346EBF;
 @value paleBlue: #dbecfe;
+@value lightBlue: #bbdbff;
 
 @value EDRed: #EC1D27;
 @value EDDarkRed: #D80F08;
+@value paleRed: #ffe3e3;
+@value lightRed: #ffc1c1;
 
 @value EDYellow: #FFFB3E;
 @value EDDarkYellow: #E1AD12;
 @value paleYellow: #fff1b9;
+@value lightYellow: #ffe993;
 
 @value EDBlack: #141110;
 @value EDGrey: #847976;

@@ -91,9 +91,7 @@ const ForSalePage = ({ game, rules }) => {
                         <div className={styles.divider}></div>
                         <div className={styles.middleSection}>
                             <div className={styles.cardZone}>
-                                {/*
-                                <CardZone />  //needs to take in paramaters to fill itself
-                                */}
+                                <CardZone />
                             </div>
                             <div className={styles.rules}>
                                 {/*
