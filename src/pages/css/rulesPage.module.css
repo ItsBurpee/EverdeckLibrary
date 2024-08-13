@@ -1,64 +1,200 @@
 @value tablet, laptop, desktop from "../../app/css/breakpoints.module.css";
-@value EDBlue from "../../app/css/colors.module.css";
+@value EDDarkBlue, EDDarkYellow, paleBlue, paleYellow, EDLightGrey, BGGPurple from "../../app/css/colors.module.css";
 
-.rulesPage h1{
-    text-align: center;
+.rulesPage h1 {
+  text-align: center;
+  font-size: 3.5rem;
 }
 
-.summary{
-    width: 40rem;
-    word-wrap: break-word;
+.rulesPage h1,
+.rulesPage h2,
+.rulesPage h3,
+.rulesPage h4 {
+  font-family: var(--font-alegreya);
 }
+
+.rulesPage p,
+.rulesPage li {
+  font-family: var(--font-alegreya-sans);
+}
+
+.divider {
+  border: 1px solid EDLightGrey;
+  width: 85dvw;
+  align-self: center;
+  margin-block: 1.5rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.summary h2 {
+  text-align: center;
+}
+
+.summary p {
+  font-size: 1.2rem;
+}
+
+.summary a {
+  align-self: center;
+  background-color: BGGPurple;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
 .mainLayout {
-    width: 100dvw;
-    max-width: 100%;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-.topSection{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
-    justify-content: center;
+  width: 100dvw;
+  max-width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 4rem 1rem;
 }
 
-.summary{
-    align-items: right;
+.topSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.rulesPage{
-    align-items: center;
-    padding-left: 10rem;
-    padding-right: 10rem;
+.summary {
+  align-items: right;
 }
 
-.middleSection{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
-    justify-content: center;
+.rulesPage {
+  align-items: center;
 }
 
-.jumpSection
-{
-    top: 5.5rem;
-    left: 90%;
-    display: flex;
-    position: fixed;
-    flex-direction: column;
+.middleSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+}
+
+.jumpSection {
+  top: 5.5rem;
+  left: 90%;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
 }
 .jumpButton {
-    margin: 1rem;
-    bottom: 2rem;
-    left: 5%;
-    border-radius: 12px;
-    height: 3rem;
-    width: 10rem;
-    box-shadow: 0 1px 5px black;
-    background-color: EDBlue;
-    border: none;
-    z-index: 100;
+  margin: 1rem;
+  bottom: 2rem;
+  left: 5%;
+  border-radius: 12px;
+  height: 3rem;
+  width: 10rem;
+  box-shadow: 0 1px 5px black;
+  background-color: EDBlue;
+  border: none;
+  z-index: 100;
+}
+
+.warnings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  align-self: center;
+  width: 100%;
+}
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 100%;
+  width: 95%;
+  min-height: 10rem;
+}
+
+.mapWarn {
+  border: 2px solid EDDarkYellow;
+  background-color: paleYellow;
+}
+
+.compWarn {
+  border: 2px solid EDDarkBlue;
+  background-color: paleBlue;
+}
+
+.compWarn p {
+  margin-bottom: 0.3rem;
+}
+
+.warningTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.warningTitle h3 {
+  margin-bottom: 0;
+}
+
+.warningIcon {
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warningIcon > p {
+  margin-bottom: 0;
+  color: white;
+}
+
+.mapWarn .warningIcon {
+  background-color: EDDarkYellow;
+}
+
+.compWarn .warningIcon {
+  background-color: EDDarkBlue;
+}
+
+@media (tablet) {
+  .summary {
+    padding-inline: 10%;
   }
+  .warnings {
+    width: 65%;
+  }
+}
+
+@media (laptop) {
+  .topSection {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 65%;
+    align-self: center;
+  }
+
+  .summary a {
+    align-self: flex-end;
+  }
+
+  .warnings {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 65%;
+  }
+
+  .warnings > div:only-child {
+    max-width: 50%;
+  }
+}

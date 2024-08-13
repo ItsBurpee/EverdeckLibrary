@@ -3,10 +3,13 @@ import SkeletonPage from "./SkeletonPage";
 import NotFound from "./NotFound";
 import { useRouter } from "next/router";
 import client from "../../lib/mongodb";
-/*
-    TODO:
-        -query rules db when its ready
-*/
+
+import { Alegreya, Alegreya_Sans } from "next/font/google";
+
+
+const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
+const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variable: "--font-alegreya-sans" });
+
 
 const decodeGameName = url => {
     let gameName = decodeURIComponent(url);
@@ -58,7 +61,7 @@ const skeleton = ({ dbgame, gameRules, isConnected }) => {
                 <title>{ title }</title>
                 <link rel="icon" href="/everdeck-clam.ico"/>
             </Head>
-            <div>
+            <div className={ `${alegreya.variable} ${alegreyaSans.variable}` }>
                 { 
                     dbgame ?
                         <SkeletonPage game={game} rules={rules} /> :
