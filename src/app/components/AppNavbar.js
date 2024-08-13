@@ -9,10 +9,13 @@ const alegreya_sc = Alegreya_SC({
     subsets: ['latin']
 })
 
-export default function AppNavbar() {
+export default function AppNavbar({gameTitleProp}) {
     /*TO-DO: 
         - Middle Game Name while on a rules page
     */
+    
+    let gameTitle = gameTitleProp ? gameTitleProp : "";
+    
     
     const router = useRouter();
     // push route to home page if not already on home page.
@@ -26,14 +29,21 @@ export default function AppNavbar() {
     return (
         <header className={styles.header}>
             <Navbar className={styles.navbar}>
-                <Container className={styles.container}>
-                    <h1
+                <Container className={`${styles.container} justify-content-between align-items-center`}>
+                    <div
                         className={alegreya_sc.className}
                         onClick={returnHome}
                     >
                         <Image className={styles.titleImage} src={"/everdeck-clam.svg"} width={50} height={50} alt="Website Icon" />
-                        Everdeck Library
-                    </h1>
+                        <h1>Everdeck Library</h1>
+                    </div>
+                    <h2
+                        className={
+                            `${gameTitle.length >= 20 && styles.titleSmall} ${gameTitle.length >= 30 && styles.titleXSmall} ${styles.titleText}`
+                        }
+                    >
+                        {gameTitle}
+                    </h2>
                 </Container>
             </Navbar>
         </header>

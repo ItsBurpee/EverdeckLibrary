@@ -2,29 +2,52 @@
 @value EDBlue from "./colors.module.css";
 
 .header {
-  /* uncomment this if we use navbar to jump to top */
-  /* margin-bottom: 5rem; */
+  /* comment below if we dont use navbar to jump to top */
+  margin-bottom: 7rem;
 }
 
 .navbar {
   width: 100dvw;
   max-width: 100%;
   background-color: EDBlue;
-  /* uncomment this if we use navbar to jump to top */
-  /* position: fixed;
+  /* comment below if we dont use navbar to jump to top */
+  position: fixed;
   left: 0;
-  z-index: 100; */
+  z-index: 100;
 }
 
 .container {
   width: 95dvw;
   max-width: 95%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.container > h1 {
+.container > div {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-bottom: 0;
+}
+
+.container h1 {
+  margin-bottom: 0;
+  display: none;
+}
+
+.container > h2 {
+  margin-bottom: 0;
+  margin-left: 1.8rem;
+}
+
+/* give title a smaller font if the title is 20 chars or more */
+.titleSmall {
+  font-size: 1.9rem;
+}
+
+/* give title an even smaller font at 30 chars */
+.titleXSmall {
+  font-size: 1.6rem;
 }
 
 .navbar > .container {
@@ -38,5 +61,10 @@
 @media (tablet) {
   .navbar > .container {
     justify-content: flex-start;
+  }
+
+  /* had to hide the title on smallest breakpoint to accomodate long titles */
+  .container h1 {
+    display: block;
   }
 }

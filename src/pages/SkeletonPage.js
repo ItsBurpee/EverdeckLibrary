@@ -27,7 +27,7 @@ const ForSalePage = ({ game, rules }) => {
     return(
         <div className={styles.mainLayout}>
             <ImportBsJS />
-            <AppNavbar />
+            <AppNavbar gameTitleProp={game.title} />
             <div id="rulesMain" className={styles.rulesPage} >
                 <h1>{game.title}</h1>
                 <div className={styles.stackContainer}>
