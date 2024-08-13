@@ -14,8 +14,13 @@ export default function AppNavbar({gameTitleProp}) {
         - Middle Game Name while on a rules page
     */
     
-    let gameTitle = gameTitleProp ? gameTitleProp : "";
-    
+    let gameTitle = ""
+    let hideTitleStyle = ""
+
+    if (gameTitleProp) {
+        gameTitle = gameTitleProp;
+        hideTitleStyle = styles.hideTitle; 
+    }
     
     const router = useRouter();
     // push route to home page if not already on home page.
@@ -29,7 +34,9 @@ export default function AppNavbar({gameTitleProp}) {
     return (
         <header className={styles.header}>
             <Navbar className={styles.navbar}>
-                <Container className={`${styles.container} justify-content-between align-items-center`}>
+                <Container
+                    className={`${styles.container} ${hideTitleStyle} justify-content-between align-items-center`}
+                >
                     <div
                         className={alegreya_sc.className}
                         onClick={returnHome}

@@ -32,6 +32,9 @@
 
 .container h1 {
   margin-bottom: 0;
+}
+
+.container.hideTitle h1 {
   display: none;
 }
 
@@ -65,6 +68,10 @@
 
   /* had to hide the title on smallest breakpoint to accomodate long titles */
   .container h1 {
+    display: block;
+  }
+
+  .container.hideTitle h1 {
     display: block;
   }
 }
