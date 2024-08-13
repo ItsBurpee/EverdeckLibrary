@@ -8,13 +8,13 @@
 
 .rulesPage h1,
 .rulesPage h2,
-.rulesPage h3,
-.rulesPage h4 {
+.rulesPage h3 {
   font-family: var(--font-alegreya);
 }
 
 .rulesPage p,
-.rulesPage li {
+.rulesPage li,
+.rulesPage h4 {
   font-family: var(--font-alegreya-sans);
 }
 
