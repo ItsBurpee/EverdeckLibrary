@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6.7101851mm"
+   height="6.4628887mm"
+   viewBox="0 0 6.7101851 6.4628887"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="EverdeckCard.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.8572136"
+     inkscape:cx="278.10479"
+     inkscape:cy="55.190206"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3852-2">
+      <path
+         d="m 396.5,522.5 h 178.999 v 251 H 396.5 Z"
+         transform="translate(-564.46051,-572.21591)"
+         id="path3852-4" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-333.51339,-109.94783)">
+    <path
+       id="path3851-0"
+       d="m 0,0 c -0.199,-1.687 -0.32,-3.152 -0.557,-4.599 -0.208,-1.261 -0.074,-2.297 0.961,-3.225 1.121,-1.005 2.084,-2.187 3.27,-3.456 -1.875,-0.379 -3.586,-0.65 -5.25,-1.097 -0.605,-0.163 -1.273,-0.635 -1.606,-1.162 -0.935,-1.473 -1.71,-3.048 -2.656,-4.781 -0.917,1.672 -1.78,3.174 -2.568,4.714 -0.399,0.781 -0.913,1.176 -1.818,1.304 -1.648,0.234 -3.271,0.637 -5.123,1.015 1.198,1.296 2.244,2.531 3.403,3.646 0.849,0.815 1.03,1.69 0.845,2.8 -0.253,1.522 -0.389,3.065 -0.603,4.825 1.353,-0.624 2.635,-1.059 3.745,-1.764 1.501,-0.955 2.816,-0.89 4.291,0.033 C -2.596,-1.079 -1.379,-0.645 0,0"
+       style="fill:#346ebf;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0.35277776,0,0,-0.35277776,338.92747,109.94783)"
+       clip-path="url(#clipPath3852-2)" />
+  </g>
+</svg>
