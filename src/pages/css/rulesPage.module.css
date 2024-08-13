@@ -146,8 +146,8 @@
 
 .warningIcon {
   border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +156,7 @@
 .warningIcon > p {
   margin-bottom: 0;
   color: white;
+  font-size: 1.25rem;
 }
 
 .mapWarn .warningIcon {
