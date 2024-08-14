@@ -1,83 +1,62 @@
 import styles from "../css/mappingTable.module.css";
+import { Table } from "react-bootstrap";
+import Image from "next/image";
 //The generic table which will have information passed into it
 
 //TODO: It is currently causing a hydration error
 //Needs to actually take in paramaters and use them to fill table
 
-export default function MappingTable() {
+export default function MappingTable(
+    tableSuit
+) {
+
+    console.log(Object.values(tableSuit)[0])
+
+    const cardSuits = [
+        {
+            club: "/everdeckSuits/everdeck-suits-club.svg", 
+            spade: "/everdeckSuits/everdeck-suits-spade.svg"
+        },
+        {
+            heart: "/everdeckSuits/everdeck-suits-heart.svg", 
+            diamond: "/everdeckSuits/everdeck-suits-diamond.svg"
+        },
+        {
+            coin: "/everdeckSuits/everdeck-suits-coin.svg", 
+            crown: "/everdeckSuits/everdeck-suits-crown.svg"
+        },
+        {
+            moon: "/everdeckSuits/everdeck-suits-moon.svg", 
+            star: "/everdeckSuits/everdeck-suits-star.svg"
+        }
+    ]
+
+    const targetSuit = Object.entries(cardSuits[Object.values(tableSuit)[0]]);
+
+    const cardRanks = ["0","1","2","3","4","5","6","7","8","9","X","J","Q","A"];
 
     return (
-            <div>
-                 {/*
-                 <table className={styles.table}>
+        <div>
+            <Table className={styles.table}>
+            <thead>
+            <tr>
+                <th></th>
+                {targetSuit.map((suit) => (
+                    <th><Image src={suit[1]} height={40} width={40} alt={suit[0]} /></th>
+                ))}
+            </tr>
+            </thead>
+            <tbody>
+                {cardRanks.map((rank) => (
                     <tr>
-                        <td>Suite 1</td>
-                        <td>Suite 2</td>
+                        <td><strong>{rank}</strong></td>
+                        <td>{rank}.1</td>
+                        <td>{rank}.2</td>
                     </tr>
-                    <tr>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>7</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>X</td>
-                        <td>X</td>
-                    </tr>
-                    <tr>
-                        <td>J</td>
-                        <td>J</td>
-                    </tr>
-                    <tr>
-                        <td>Q</td>
-                        <td>Q</td>
-                    </tr>
-                    <tr>
-                        <td>K</td>
-                        <td>K</td>
-                    </tr>
-                    <tr>
-                        <td>A</td>
-                        <td>A</td>
-                    </tr>
-                </table> 
-                */}
-                
-            </div>
+                ))}
+            </tbody>
+        </Table>
+      </div>
     )
 
 }

@@ -41,6 +41,7 @@
 .container > h2 {
   margin-bottom: 0;
   margin-left: 1.8rem;
+  text-align: center;
 }
 
 /* give title a smaller font if the title is 20 chars or more */

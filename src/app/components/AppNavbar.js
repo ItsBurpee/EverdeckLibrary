@@ -1,6 +1,6 @@
 import { Container, Navbar } from "react-bootstrap";
 import Image from "next/image";
-import { Alegreya_SC } from "next/font/google";
+import { Alegreya_SC, Alegreya } from "next/font/google";
 import styles from "../css/navBar.module.css";
 import { useRouter } from "next/router";
 
@@ -8,6 +8,7 @@ const alegreya_sc = Alegreya_SC({
     weight: '400', 
     subsets: ['latin']
 })
+const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
 
 export default function AppNavbar({gameTitleProp}) {
     /*TO-DO: 
@@ -46,7 +47,7 @@ export default function AppNavbar({gameTitleProp}) {
                     </div>
                     <h2
                         className={
-                            `${gameTitle.length >= 20 && styles.titleSmall} ${gameTitle.length >= 30 && styles.titleXSmall} ${styles.titleText}`
+                            `${gameTitle.length >= 20 && styles.titleSmall} ${gameTitle.length >= 30 && styles.titleXSmall} ${alegreya.className}`
                         }
                     >
                         {gameTitle}

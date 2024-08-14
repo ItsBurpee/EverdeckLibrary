@@ -13,6 +13,9 @@ import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
 const ForSalePage = ({ game, rules }) => {
+    const moveToTop = () => document.getElementById('top').scrollIntoView();
+    const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
+    const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
 
     let componentWarning = false;
     let mapWarning = false;
@@ -20,7 +23,7 @@ const ForSalePage = ({ game, rules }) => {
     if(game.mapStrength !== "Perfect") {
         mapWarning = true;
     } 
-    else if(game.extComponents.length > 0) {
+    if(game.extComponents.length > 0) {
         componentWarning = true;
     }
 
@@ -32,7 +35,7 @@ const ForSalePage = ({ game, rules }) => {
                 <h1>{game.title}</h1>
                 <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
-                        <div className={styles.topSection}>
+                        <div id="top" className={styles.topSection}>
                             <RulesImageIcons
                                 cardImg={game.cardImg}
                                 plCount={game.plCount}
@@ -89,25 +92,50 @@ const ForSalePage = ({ game, rules }) => {
                                 </div>
                         }
                         <div className={styles.divider}></div>
-                        <div className={styles.middleSection}>
+                        <div id="middle" className={styles.middleSection}>
                             <div className={styles.cardZone}>
                                 <CardZone />
                             </div>
                             <div className={styles.rules}>
                                 {/*
-                                <RulesSection />   //needs to take in paramaters to fill itself
+                                <RulesSection />
                                 */}
                             </div>
                         </div>
-
-                        <div className={styles.bottomSection}>
+                        <div className={styles.divider}></div>
+                        <div id="bottom" className={styles.bottomSection}>
                             <div className={styles.tableSection}>
-                                {/*
-                                <TableSection />   //needs to take in paramaters to fill itself
-                                */}
+                                
+                                <TableSection />
+                                
                             </div>
                         </div>
                     </Stack>
+                    {/*
+                    <div className={styles.jumpSection}>
+                    <Button
+                        variant="top"
+                        onClick={moveToTop}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Basic Info
+                    </Button>
+                    <Button
+                        variant="middle"
+                        onClick={moveToMiddle}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Card Zone/Rules
+                    </Button>
+                    <Button
+                        variant="bottom"
+                        onClick={moveToBottom}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Card Table
+                    </Button>  
+                    </div>
+                    */}
                 </div>
             </div>
         </div>

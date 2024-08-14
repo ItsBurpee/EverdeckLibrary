@@ -10,7 +10,7 @@ export default function CardZone() {
                     <h2>Card Zones</h2>
                 </div>
                 <div className={styles.img}>
-                    <Image src={"/everdeckCard.jpg"} height={175} width={125}  alt="Game Image" />
+                    <Image src={"/everdeck-card.svg"} height={275} width={225}  alt="Card Image" />
                 </div>
                 <div className={styles.groupBoxes}>
                     <CardZoneBox/>
