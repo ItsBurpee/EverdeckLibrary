@@ -1,48 +1,6 @@
-"use client"
-
-import { useEffect } from "react";
 import styles from "../css/cardZoneBox.module.css";
 
 export default function CardZone() {
-    useEffect(() => {
-        const redZone = document.getElementById("cardZoneRed");
-        const blueZone = document.getElementById("cardZoneBlue");
-        const yellowZone = document.getElementById("cardZoneYellow");
-
-        // mouse over and mouse out events for red card zone
-        redZone.addEventListener("mouseover", () => {
-            blueZone.classList.add(styles.halfOpacity);
-            yellowZone.classList.add(styles.halfOpacity);
-        })
-
-        redZone.addEventListener("mouseout", () => {
-            blueZone.classList.remove(styles.halfOpacity);
-            yellowZone.classList.remove(styles.halfOpacity);
-        })
-
-        // mouse over and mouse out events for blue card zone
-        blueZone.addEventListener("mouseover", () => {
-            redZone.classList.add(styles.halfOpacity);
-            yellowZone.classList.add(styles.halfOpacity);
-        })
-
-        blueZone.addEventListener("mouseout", () => {
-            redZone.classList.remove(styles.halfOpacity);
-            yellowZone.classList.remove(styles.halfOpacity);
-        })
-
-        // mouse over and mouse out events for yellow card zone
-        yellowZone.addEventListener("mouseover", () => {
-            blueZone.classList.add(styles.halfOpacity);
-            redZone.classList.add(styles.halfOpacity);
-        })
-
-        yellowZone.addEventListener("mouseout", () => {
-            blueZone.classList.remove(styles.halfOpacity);
-            redZone.classList.remove(styles.halfOpacity);
-        })
-    }, []);
-    
 
     return (
         <div id="cardZones" className={styles.cardZoneBoxes}>
