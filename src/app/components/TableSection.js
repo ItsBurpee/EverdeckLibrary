@@ -2,7 +2,7 @@ import styles from "../css/tableSection.module.css";
 import MappingTable from "./MappingTable"
 import CardZoneBox from "./CardZoneBox"
 
-export default function TableSection() {
+export default function TableSection({ cardZones }) {
 
     return (
             <div className={styles.tableSection}>
@@ -16,7 +16,13 @@ export default function TableSection() {
                 </div>
                 <div className={styles.cardsBoxes}>
                     <p><b>Total Cards: 60   Property Cards: 30   Currency Cards: 30</b></p>
-                    <CardZoneBox />
+                    <div className={styles.cardZoneBoxes}>
+                        {
+                            cardZones.map((zone, index) => (
+                                <CardZoneBox key={zone._id} boxColorIndex={index} cardZone={zone} />
+                            ))
+                        }
+                    </div>
                     <p>Extra components <br></br>72 Coin</p><ul><li>60 $1000 Coins</li><li>12 $2,000 Coins</li></ul>
                 </div>
             </div>

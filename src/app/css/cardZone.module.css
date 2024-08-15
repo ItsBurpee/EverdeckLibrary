@@ -4,7 +4,18 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  /* max-height: 100%; */
+}
+
+.cardZoneBoxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cardZoneBoxes:hover > *:not(:hover) {
+  opacity: 0.5;
 }
 
 .img {

@@ -72,7 +72,3 @@
 .cardZoneYellow:hover {
   background-color: lightYellow;
 }
-
-.cardZoneBoxes:hover .cardZoneBox:not(:hover) {
-  opacity: 0.5;
-}

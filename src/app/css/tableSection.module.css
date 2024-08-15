@@ -1,13 +1,22 @@
-
-.tableSection p{
-    text-align: center;
+.tableSection p {
+  text-align: center;
 }
 
-
-.table{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0rem;
-    justify-content: center;
+.cardZoneBoxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
+.cardZoneBoxes:hover > *:not(:hover) {
+  opacity: 0.5;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0rem;
+  justify-content: center;
+}

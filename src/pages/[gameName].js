@@ -26,17 +26,24 @@ export const getServerSideProps = async (context) => {
       const db = client.db("everdeck_database")
       // get the game's data from the db using the game's name
       const dbgame = await db
-        .collection("games")
-        .find({title: gameName})
-        .sort({})
-        .toArray()
-      // get the game's rules from the db using the id from the game data
+      .collection("games")
+      .find({ title: gameName })
+      .sort({})
+      .toArray();
+    // get the game's rules from the db using the id from the game data
       const gameRules = await db
-        .collection("rules")
-        .find({game_id: dbgame[0]._id})
-        .sort({})
-        .toArray()
-      props = { props: { dbgame: JSON.stringify(dbgame), gameRules: JSON.stringify(gameRules), isConnected: true } }
+      .collection("rules")
+      .find({ game_id: dbgame[0]._id })
+      .sort({})
+      .toArray();
+    
+      const cardZones = await db
+      .collection("cardZones")
+      .find({ game_id: dbgame[0]._id })
+      .sort({})
+      .toArray();
+        
+      props = { props: { dbgame: JSON.stringify(dbgame), gameRules: JSON.stringify(gameRules), dbCardZones: JSON.stringify(cardZones), isConnected: true } }
     } catch (e) {
       console.error(e)
       props = { props: {isConnected: false} }
@@ -44,16 +51,24 @@ export const getServerSideProps = async (context) => {
     return props;
 }
 
-const skeleton = ({ dbgame, gameRules, isConnected }) => {
+const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
     const router = useRouter();
     let game = [];
     let rules = [];
+    let cardZones = [];
     if (dbgame) {
         game = JSON.parse(dbgame)[0];
     }
+
     if (gameRules) {
         rules = JSON.parse(gameRules)[0];
     }
+
+    if (dbCardZones) {
+        cardZones = JSON.parse(dbCardZones);
+        // console.log(cardZones);
+    }
+
     let title = game ? game.title : "404";
     return (
         <>
@@ -64,7 +79,7 @@ const skeleton = ({ dbgame, gameRules, isConnected }) => {
             <div className={ `${alegreya.variable} ${alegreyaSans.variable}` }>
                 { 
                     dbgame ?
-                        <SkeletonPage game={game} rules={rules} /> :
+                        <SkeletonPage game={game} rules={rules} cardZones={cardZones} /> :
                         <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
                 }
             </div>

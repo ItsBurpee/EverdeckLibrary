@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
-const ForSalePage = ({ game, rules }) => {
+const ForSalePage = ({ game, rules, cardZones }) => {
     const moveToTop = () => document.getElementById('top').scrollIntoView();
     const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
     const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
@@ -94,20 +94,16 @@ const ForSalePage = ({ game, rules }) => {
                         <div className={styles.divider}></div>
                         <div id="middle" className={styles.middleSection}>
                             <div className={styles.cardZone}>
-                                <CardZone />
+                                <CardZone cardZones={cardZones}  />
                             </div>
                             <div className={styles.rules}>
-                                {/*
                                 <RulesSection />
-                                */}
                             </div>
                         </div>
                         <div className={styles.divider}></div>
                         <div id="bottom" className={styles.bottomSection}>
                             <div className={styles.tableSection}>
-                                
-                                <TableSection />
-                                
+                                <TableSection cardZones={cardZones} />
                             </div>
                         </div>
                     </Stack>
