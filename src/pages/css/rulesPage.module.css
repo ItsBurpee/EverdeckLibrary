@@ -1,6 +1,11 @@
 @value tablet, laptop, desktop from "../../app/css/breakpoints.module.css";
 @value EDDarkBlue, EDDarkYellow, paleBlue, paleYellow, EDLightGrey, BGGPurple from "../../app/css/colors.module.css";
 
+.rulesPage {
+  max-width: 100%;
+  align-items: center;
+}
+
 .rulesPage h1 {
   text-align: center;
   font-size: 3.5rem;
@@ -66,10 +71,6 @@
 
 .summary {
   align-items: right;
-}
-
-.rulesPage {
-  align-items: center;
 }
 
 .middleSection {
@@ -183,6 +184,19 @@
     flex-wrap: nowrap;
     max-width: 65%;
     align-self: center;
+  }
+
+  .middleSection {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+
+  .cardZone {
+    align-self: flex-start;
+    position: sticky;
+    top: 5rem;
   }
 
   .summary a {
