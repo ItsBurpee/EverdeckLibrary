@@ -35,8 +35,8 @@ export default function AppNavbar({gameTitleProp}) {
     return (
         <header className={styles.header}>
             <Navbar className={styles.navbar}>
-                <Container
-                    className={`${styles.container} ${hideTitleStyle} justify-content-between align-items-center`}
+                <div
+                    className={`${styles.container} ${hideTitleStyle}`}
                 >
                     <div
                         className={alegreya_sc.className}
@@ -52,7 +52,7 @@ export default function AppNavbar({gameTitleProp}) {
                     >
                         {gameTitle}
                     </h2>
-                </Container>
+                </div>
             </Navbar>
         </header>
     )

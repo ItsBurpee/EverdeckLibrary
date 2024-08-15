@@ -1,4 +1,4 @@
-@value tablet, laptop, desktop from "./breakpoints.module.css";
+@value tablet, tablet-l, laptop, desktop, desktop-l from "./breakpoints.module.css";
 @value EDBlue from "./colors.module.css";
 
 .header {
@@ -14,13 +14,18 @@
   position: fixed;
   left: 0;
   z-index: 100;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   width: 95dvw;
   max-width: 95%;
-  display: flex;
-  justify-content: space-between;
+  padding: 0.2rem 0.4rem;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  align-items: center;
+  justify-content: center;
 }
 
 .container > div {
@@ -32,6 +37,8 @@
 
 .container h1 {
   margin-bottom: 0;
+  justify-self: start;
+  white-space: nowrap;
 }
 
 .container.hideTitle h1 {
@@ -40,8 +47,8 @@
 
 .container > h2 {
   margin-bottom: 0;
-  margin-left: 1.8rem;
   text-align: center;
+  justify-self: end;
 }
 
 /* give title a smaller font if the title is 20 chars or more */
@@ -67,12 +74,21 @@
     justify-content: flex-start;
   }
 
-  /* had to hide the title on smallest breakpoint to accomodate long titles */
-  .container h1 {
-    display: block;
+  .container {
+    grid-template-columns: 1fr 1fr;
   }
 
   .container.hideTitle h1 {
     display: block;
+  }
+}
+
+@media (desktop-l) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .container > h2 {
+    justify-self: center;
   }
 }
