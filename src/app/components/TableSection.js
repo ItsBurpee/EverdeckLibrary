@@ -35,9 +35,6 @@ export default function TableSection({
         }
     }
     
-
-    console.log(activeCardZone);
-
     return (
             <div className={styles.tableSection}>
                 <h1>Card Table</h1>
