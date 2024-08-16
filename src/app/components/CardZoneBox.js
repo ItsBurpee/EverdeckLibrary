@@ -1,5 +1,3 @@
-"use client"
-import { useEffect, useState } from "react";
 import styles from "../css/cardZoneBox.module.css";
 
 export default function CardZone({ boxColorIndex, cardZone }) {
@@ -30,7 +28,7 @@ export default function CardZone({ boxColorIndex, cardZone }) {
     }
 
     return (
-        <div id="cardZones" className={styles.cardZoneBoxes}>
+        <div className={styles.cardZoneBoxes} tabIndex={0}>
             <div id={cardId} className={`${styles.cardZoneBox} ${boxColorStyle}`}>
                 <p><b>{cardZone.name}</b>{`: Use ${cardComponentP}`}</p>
             </div>

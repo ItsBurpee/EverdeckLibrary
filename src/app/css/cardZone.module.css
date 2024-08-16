@@ -1,3 +1,5 @@
+@value EDDarkBlue, EDDarkRed, EDDarkYellow from "./colors.module.css";
+
 .cardZone {
   text-align: center;
   display: flex;
@@ -14,12 +16,65 @@
   gap: 1rem;
 }
 
-.cardZoneBoxes:hover > *:not(:hover) {
+.cardZoneBoxes:hover > *:not(:hover),
+.cardZoneBoxes:focus > *:not(:focus),
+.cardZoneBoxes:active > *:not(:active) {
   opacity: 0.5;
 }
 
 .img {
+  position: relative;
   width: fit-content;
-  padding: 1rem;
   box-shadow: 0 5px 10px;
+}
+
+.cardZoneHighlight {
+  position: absolute;
+  display: none;
+}
+
+.showHighlight {
+  display: block;
+}
+
+.cardZoneRed {
+  border: 3px solid EDDarkRed;
+}
+.cardZoneBlue {
+  border: 3px solid EDDarkBlue;
+}
+.cardZoneYellow {
+  border: 3px solid EDDarkYellow;
+}
+
+.cardZoneSeq {
+  height: 3.3rem;
+  width: 5rem;
+  top: 0;
+  right: 1rem;
+}
+
+.cardZoneRaS {
+  height: 4rem;
+  width: 2rem;
+  top: 0;
+  left: 1rem;
+}
+
+.cardZoneRaS::after {
+  content: "";
+  position: absolute;
+  height: 4rem;
+  width: 2rem;
+  top: 13rem;
+  left: 9.8rem;
+  border: 3px solid EDDarkBlue;
+}
+
+.cardZoneImg {
+  height: 8rem;
+  width: 8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
 }
