@@ -28,9 +28,16 @@ export default function MappingTable({
             star: "/everdeckSuits/everdeck-suits-star.svg"
         }
     }
+    const colorStyles = {
+        black: styles.tableCard,
+        red: styles.redTable,
+        yellow: styles.yellowTable,
+        blue: styles.blueTable
+    }
+
     const cardRanks = ["0","1","2","3","4","5","6","7","8","9","X","J","Q","A"];
 
-    const targetColor = Object.values(cardColors)[tableColor];
+    const targetColor = cardColors[tableColor];
     const targetSuits = Object.keys(targetColor);
 
 
@@ -51,13 +58,13 @@ export default function MappingTable({
                 </thead>
                 <tbody>
                     {cardRanks.map((rank) => (
-                        <tr key={Object.keys(cardColors)[tableColor] + "_" + rank}>
+                        <tr key={tableColor + "_" + rank}>
                             <td><h3>{rank}</h3></td>
                             {
                                 targetSuits.map((suit) => {
                                     const targetCard = findByRankSuit(tableCards, rank, suit)
                                     if(targetCard) {
-                                        return <td className={styles.tableCard} key={rank + "_" + suit}>{targetCard.label}</td>
+                                        return <td className={colorStyles[tableColor]} key={rank + "_" + suit}>{targetCard.label}</td>
                                     }
                                     else {
                                         return <td key={rank + "_" + suit}></td>

@@ -21,25 +21,26 @@ export default function TableSection(
         return (card.suit === "moon" || card.suit === "star")
     })
 
+
     return (
             <div className={styles.tableSection}>
                 <h1>Card Table</h1>
                 <p>These are the cards you require for the game</p>
                 <div className={styles.table}>
                     <MappingTable 
-                        tableColor={0}
+                        tableColor={"black"}
                         tableCards={blackCards}    
                     />
                     <MappingTable 
-                        tableColor={1}
+                        tableColor={"red"}
                         tableCards={redCards}    
                     />
                     <MappingTable 
-                        tableColor={2}
+                        tableColor={"yellow"}
                         tableCards={yellowCards}    
                     />
                     <MappingTable 
-                        tableColor={3}
+                        tableColor={"blue"}
                         tableCards={blueCards}    
                     />
                 </div>

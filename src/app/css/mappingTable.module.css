@@ -1,5 +1,12 @@
 @value (
-    EDGrey
+    EDGrey,
+    EDLightGrey,
+    EDRed,
+    EDDarkRed,
+    EDBlue,
+    EDDarkBlue,
+    lightYellow,
+    EDDarkYellow
 ) from "./colors.module.css";
 
 .table{
@@ -21,5 +28,36 @@
 }
 .tableCard{
     color: white;
+    background-color: EDLightGrey;
+}
+
+.tableCard:hover{
+    color: white;
     background-color: EDGrey;
+}
+
+.redTable{
+    color: white;
+    background-color: EDRed;
+}
+
+.redTable:hover{
+    color: white;
+    background-color: EDDarkRed;
+}
+
+.yellowTable{
+    background-color: EDDarkYellow;
+}
+
+.yellowTable:hover{
+    background-color: lightYellow;
+}
+
+.blueTable{
+    background-color: EDBlue;
+}
+
+.blueTable:hover{
+    background-color: EDDarkBlue;
 }
