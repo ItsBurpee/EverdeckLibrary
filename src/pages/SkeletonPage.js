@@ -110,7 +110,8 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                             <div className={styles.tableSection}>
                                 <TableSection 
                                     cardZones={cardZones}
-                                    cardTable={JSON.stringify(rules.cardTable)}
+                                    cardTable={rules.cardTable}
+                                    extComponents={rules.extComponents}
                                 />
                             </div>
                         </div>

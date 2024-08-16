@@ -2,22 +2,22 @@ import styles from "../css/tableSection.module.css";
 import MappingTable from "./MappingTable"
 import CardZoneBox from "./CardZoneBox"
 
-export default function TableSection( 
-    {cardZones,
-    cardTable 
+export default function TableSection({
+    cardZones,
+    cardTable,
+    extComponents 
 }) {
 
-    const cardArray = JSON.parse(cardTable)
-    const blackCards = cardArray.filter((card) => {
+    const blackCards = cardTable.filter((card) => {
         return (card.suit === "club" || card.suit === "spade")
     })
-    const redCards = cardArray.filter((card) => {
+    const redCards = cardTable.filter((card) => {
         return (card.suit === "heart" || card.suit === "diamond")
     })
-    const yellowCards = cardArray.filter((card) => {
+    const yellowCards = cardTable.filter((card) => {
         return (card.suit === "coin" || card.suit === "crown")
     })
-    const blueCards = cardArray.filter((card) => {
+    const blueCards = cardTable.filter((card) => {
         return (card.suit === "moon" || card.suit === "star")
     })
 
@@ -53,8 +53,13 @@ export default function TableSection(
                             ))
                         }
                     </div>
-                    <p>Extra components <br></br>72 Coin</p><ul><li>60 $1000 Coins</li><li>12 $2,000 Coins</li></ul>
                 </div>
+                <h3>Extra Components</h3>
+                    <ul>
+                        {extComponents.map((comp) => {
+                            return <li key={comp}>{comp}</li>
+                        })}
+                    </ul>
             </div>
     )
 

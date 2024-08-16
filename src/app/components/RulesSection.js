@@ -23,8 +23,7 @@ export default function RulesSection({
         cardZone.keywords.forEach((keyword,j) => {
             Object.defineProperty(keywordDictionary, "keyword"+i+j, {value: keyword, enumerable: true})
 
-            //Main issue with casing. Requires a changes in the DB or more tags to remember proper case
-            const keywordCaselessRegEx = RegExp(keyword, "gi")
+            const keywordCaselessRegEx = RegExp(keyword, "g")
             keywordedObjective = keywordedObjective.replaceAll(keywordCaselessRegEx, "keyword"+i+j)
             keywordedSetup = keywordedSetup.replaceAll(keywordCaselessRegEx, "keyword"+i+j)
             keywordedGameplay = keywordedGameplay.replaceAll(keywordCaselessRegEx, "keyword"+i+j)
