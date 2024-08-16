@@ -98,9 +98,10 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                             </div>
                             <div className={styles.rules}>
                                 <RulesSection 
-                                    rulesObjective={rules.rules.objective}     
-                                    rulesSetup={rules.rules.setup}     
-                                    rulesGameplay={rules.rules.gameplay}   
+                                    objective={rules.rules.objective}     
+                                    setup={rules.rules.setup}     
+                                    gameplay={rules.rules.gameplay}
+                                    cardZones={cardZones}
                                 />
                             </div>
                         </div>
