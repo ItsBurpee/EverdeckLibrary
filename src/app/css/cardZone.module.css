@@ -48,32 +48,32 @@
 }
 
 .cardZoneSeq {
-  height: 3.3rem;
-  width: 5rem;
+  height: 52.8px;
+  width: 80px;
   top: 0;
-  right: 1rem;
+  right: 16px;
 }
 
 .cardZoneRaS {
-  height: 4rem;
-  width: 2rem;
+  height: 64px;
+  width: 32px;
   top: 0;
-  left: 1rem;
+  left: 16px;
 }
 
 .cardZoneRaS::after {
   content: "";
   position: absolute;
-  height: 4rem;
-  width: 2rem;
-  top: 13rem;
-  left: 9.8rem;
+  height: 64px;
+  width: 32px;
+  top: 208px;
+  left: 156.8px;
   border: 3px solid EDDarkBlue;
 }
 
 .cardZoneImg {
-  height: 8rem;
-  width: 8rem;
+  height: 128px;
+  width: 128px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -52%);
