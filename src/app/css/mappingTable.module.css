@@ -9,6 +9,7 @@
     EDDarkYellow
 ) from "./colors.module.css";
 
+
 .table{
     border: 1px solid black;
     border-collapse: collapse;
@@ -22,16 +23,22 @@
     width: 50%;
 }
 .table td{
-    width: 4rem;
     border: 1px solid black;
     border-collapse: collapse;
 }
-.tableCard{
+.cardColumn{
+    width: 5rem;
+}
+.table h3{
+    width: 2rem;
+    margin: 0;
+}
+.blackTable{
     color: white;
     background-color: EDLightGrey;
 }
 
-.tableCard:hover{
+.activeBlackTable{
     color: white;
     background-color: EDGrey;
 }
@@ -41,7 +48,7 @@
     background-color: EDRed;
 }
 
-.redTable:hover{
+.activeRedTable{
     color: white;
     background-color: EDDarkRed;
 }
@@ -50,7 +57,7 @@
     background-color: EDDarkYellow;
 }
 
-.yellowTable:hover{
+.activeYellowTable{
     background-color: lightYellow;
 }
 
@@ -58,6 +65,6 @@
     background-color: EDBlue;
 }
 
-.blueTable:hover{
+.activeBlueTable{
     background-color: EDDarkBlue;
 }

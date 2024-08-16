@@ -1,6 +1,8 @@
+
+import { useState } from "react";
 import styles from "../css/tableSection.module.css";
-import MappingTable from "./MappingTable"
-import CardZoneBox from "./CardZoneBox"
+import MappingTable from "./MappingTable";
+import CardZoneBox from "./CardZoneBox";
 
 export default function TableSection({
     cardZones,
@@ -21,6 +23,20 @@ export default function TableSection({
         return (card.suit === "moon" || card.suit === "star")
     })
 
+    const [activeCardZone, setActiveCardZone] = useState("");
+
+    
+    const assignActiveCardZone = targetCardZoneID => {
+        if (!targetCardZoneID) {
+            setActiveCardZone("");
+        }
+        else {
+            setActiveCardZone(targetCardZoneID);
+        }
+    }
+    
+
+    console.log(activeCardZone);
 
     return (
             <div className={styles.tableSection}>
@@ -29,19 +45,31 @@ export default function TableSection({
                 <div className={styles.table}>
                     <MappingTable 
                         tableColor={"black"}
-                        tableCards={blackCards}    
+                        tableCards={blackCards}
+                        activeCardZone={activeCardZone}
+                        setActiveCardZone={setActiveCardZone}    
+                        assignActiveCardZone={assignActiveCardZone}    
                     />
                     <MappingTable 
                         tableColor={"red"}
-                        tableCards={redCards}    
+                        tableCards={redCards}
+                        activeCardZone={activeCardZone}
+                        setActiveCardZone={setActiveCardZone}
+                        assignActiveCardZone={assignActiveCardZone}  
                     />
                     <MappingTable 
                         tableColor={"yellow"}
-                        tableCards={yellowCards}    
+                        tableCards={yellowCards}
+                        activeCardZone={activeCardZone}
+                        setActiveCardZone={setActiveCardZone}
+                        assignActiveCardZone={assignActiveCardZone} 
                     />
                     <MappingTable 
                         tableColor={"blue"}
-                        tableCards={blueCards}    
+                        tableCards={blueCards}
+                        activeCardZone={activeCardZone}
+                        setActiveCardZone={setActiveCardZone}
+                        assignActiveCardZone={assignActiveCardZone}  
                     />
                 </div>
                 <div className={styles.cardsBoxes}>

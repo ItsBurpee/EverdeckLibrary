@@ -1,3 +1,4 @@
+
 import styles from "../css/mappingTable.module.css";
 import Image from "next/image";
 //The generic table which will have information passed into it
@@ -7,7 +8,10 @@ import Image from "next/image";
 
 export default function MappingTable({
     tableColor,
-    tableCards
+    tableCards,
+    activeCardZone,
+    setActiveCardZone,
+    assignActiveCardZone,
 }) {
 
     const cardColors = {
@@ -29,10 +33,16 @@ export default function MappingTable({
         }
     }
     const colorStyles = {
-        black: styles.tableCard,
+        black: styles.blackTable,
         red: styles.redTable,
         yellow: styles.yellowTable,
         blue: styles.blueTable
+    }
+    const activeColorStyles = {
+        black: styles.activeBlackTable,
+        red: styles.activeRedTable,
+        yellow: styles.activeYellowTable,
+        blue: styles.activeBlueTable
     }
 
     const cardRanks = ["0","1","2","3","4","5","6","7","8","9","X","J","Q","A"];
@@ -64,7 +74,13 @@ export default function MappingTable({
                                 targetSuits.map((suit) => {
                                     const targetCard = findByRankSuit(tableCards, rank, suit)
                                     if(targetCard) {
-                                        return <td className={colorStyles[tableColor]} key={rank + "_" + suit}>{targetCard.label}</td>
+                                        return <td className={`${ (activeCardZone === targetCard.cardZone) ? activeColorStyles[tableColor] : colorStyles[tableColor]} ${styles.cardColumn}`}
+                                            onMouseEnter={() => assignActiveCardZone(targetCard.cardZone)} 
+                                            onMouseLeave={() => assignActiveCardZone()}
+                                             key={rank + "_" + suit}
+                                             >
+                                             {targetCard.label}
+                                             </td>
                                     }
                                     else {
                                         return <td key={rank + "_" + suit}></td>
