@@ -97,13 +97,20 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                 <CardZone cardZones={cardZones}  />
                             </div>
                             <div className={styles.rules}>
-                                <RulesSection />
+                                <RulesSection 
+                                    rulesObjective={rules.rules.objective}     
+                                    rulesSetup={rules.rules.setup}     
+                                    rulesGameplay={rules.rules.gameplay}   
+                                />
                             </div>
                         </div>
                         <div className={styles.divider}></div>
                         <div id="bottom" className={styles.bottomSection}>
                             <div className={styles.tableSection}>
-                                <TableSection cardZones={cardZones} />
+                                <TableSection 
+                                    cardZones={cardZones}
+                                    cardTable={JSON.stringify(rules.cardTable)}
+                                />
                             </div>
                         </div>
                     </Stack>

@@ -1,3 +1,7 @@
+@value (
+    EDGrey
+) from "./colors.module.css";
+
 .table{
     border: 1px solid black;
     border-collapse: collapse;
@@ -11,6 +15,11 @@
     width: 50%;
 }
 .table td{
+    width: 4rem;
     border: 1px solid black;
     border-collapse: collapse;
+}
+.tableCard{
+    color: white;
+    background-color: EDGrey;
 }

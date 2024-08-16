@@ -5,4 +5,14 @@
 
 .mainText h3 {
   font-size: 20px;
+  font-weight: bold;
 }
+
+.para {
+    white-space: pre-wrap;
+    tab-size: 20px;
+}
+
+.keyword:hover {
+    background-color: lightBlue;
+  }
