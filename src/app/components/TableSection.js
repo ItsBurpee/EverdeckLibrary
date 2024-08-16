@@ -21,8 +21,6 @@ export default function TableSection(
         return (card.suit === "moon" || card.suit === "star")
     })
 
-    console.log(blackCards)
-
     return (
             <div className={styles.tableSection}>
                 <h1>Card Table</h1>
