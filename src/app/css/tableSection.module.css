@@ -1,9 +1,12 @@
+@value tablet, tablet-l, laptop, desktop, desktop-l from "./breakpoints.module.css";
+
 .tableSection p {
   text-align: center;
 }
 
 .cardZoneBoxes {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -19,4 +22,10 @@
   flex-wrap: wrap;
   gap: 0rem;
   justify-content: center;
+}
+
+@media (tablet-l) {
+  .cardZoneBoxes {
+    flex-direction: row;
+  }
 }
