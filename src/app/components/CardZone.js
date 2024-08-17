@@ -5,7 +5,11 @@ import Image from "next/image";
 import CardZoneBox from "./CardZoneBox"
 import { useEffect } from "react";
 
-export default function CardZone({ cardZones }) {
+export default function CardZone({
+    cardZones,
+    activeCardZone,
+    assignActiveCardZone 
+}) {
     
     useEffect(() => {
         const highlightRed = document.getElementById("highlightRed");
@@ -67,7 +71,13 @@ export default function CardZone({ cardZones }) {
                 <div className={styles.cardZoneBoxes}>
                 {
                     cardZones.map((zone, index) => (
-                        <CardZoneBox key={zone._id} boxColorIndex={index} cardZone={zone} />
+                        <CardZoneBox 
+                            key={zone._id}
+                            boxColorIndex={index}
+                            cardZone={zone}
+                            activeCardZone={activeCardZone}
+                            assignActiveCardZone={assignActiveCardZone}
+                        />
                     ))
                 }
                 </div>

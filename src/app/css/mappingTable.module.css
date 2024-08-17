@@ -33,12 +33,13 @@
     width: 2rem;
     margin: 0;
 }
-.blackTable{
-    color: white;
-    background-color: EDLightGrey;
+
+
+.inactiveCard {
+  opacity: 0.5;
 }
 
-.activeBlackTable{
+.blackTable{
     color: white;
     background-color: EDGrey;
 }
@@ -48,23 +49,10 @@
     background-color: EDRed;
 }
 
-.activeRedTable{
-    color: white;
-    background-color: EDDarkRed;
-}
-
 .yellowTable{
     background-color: EDDarkYellow;
 }
 
-.activeYellowTable{
-    background-color: lightYellow;
-}
-
 .blueTable{
     background-color: EDBlue;
-}
-
-.activeBlueTable{
-    background-color: EDDarkBlue;
 }

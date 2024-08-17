@@ -27,6 +27,17 @@ const ForSalePage = ({ game, rules, cardZones }) => {
         componentWarning = true;
     }
 
+    const [activeCardZone, setActiveCardZone] = useState("");
+
+    const assignActiveCardZone = targetCardZoneID => {
+        if (!targetCardZoneID) {
+            setActiveCardZone("");
+        }
+        else {
+            setActiveCardZone(targetCardZoneID);
+        }
+    }
+    
     return(
         <div className={styles.mainLayout}>
             <ImportBsJS />
@@ -94,7 +105,11 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                         <div className={styles.divider}></div>
                         <div id="middle" className={styles.middleSection}>
                             <div className={styles.cardZone}>
-                                <CardZone cardZones={cardZones}  />
+                                <CardZone 
+                                    cardZones={cardZones}
+                                    activeCardZone={activeCardZone}
+                                    assignActiveCardZone={assignActiveCardZone}
+                                />
                             </div>
                             <div className={styles.rules}>
                                 <RulesSection 

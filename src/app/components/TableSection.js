@@ -25,7 +25,6 @@ export default function TableSection({
 
     const [activeCardZone, setActiveCardZone] = useState("");
 
-    
     const assignActiveCardZone = targetCardZoneID => {
         if (!targetCardZoneID) {
             setActiveCardZone("");
@@ -74,7 +73,12 @@ export default function TableSection({
                     <div className={styles.cardZoneBoxes}>
                         {
                             cardZones.map((zone, index) => (
-                                <CardZoneBox key={zone._id} boxColorIndex={index} cardZone={zone} />
+                                <CardZoneBox key={zone._id} 
+                                boxColorIndex={index} 
+                                cardZone={zone} 
+                                activeCardZone={activeCardZone}
+                                assignActiveCardZone={assignActiveCardZone}
+                                />
                             ))
                         }
                     </div>

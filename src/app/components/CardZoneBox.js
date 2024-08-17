@@ -1,10 +1,28 @@
 import styles from "../css/cardZoneBox.module.css";
 
-export default function CardZone({ boxColorIndex, cardZone }) {
+export default function CardZone({ 
+    boxColorIndex, 
+    cardZone,
+    activeCardZone,
+    assignActiveCardZone
+}) {
     const cardZoneColors = ["Red", "Blue", "Yellow"];
-
-    let boxColorStyle = styles.cardZoneRed; 
+ 
     let cardId = `cardZone${cardZoneColors[boxColorIndex]}`;
+    const boxColorStyle = {
+        Red: styles.cardZoneRed,
+        Yellow: styles.cardZoneYellow,
+        Blue: styles.cardZoneBlue
+    }
+    const activeBoxColorStyle = {
+        Red: styles.cardZoneRedActive,
+        Yellow: styles.cardZoneYellowActive,
+        Blue: styles.cardZoneBlueActive
+    }
+
+
+    //let boxColorStyle = styles.cardZoneRed;
+    /*
     switch (boxColorIndex) {
         case 0:
             boxColorStyle = styles.cardZoneRed;
@@ -16,6 +34,7 @@ export default function CardZone({ boxColorIndex, cardZone }) {
             boxColorStyle = styles.cardZoneYellow;
             break;
     };
+    */
 
     let cardComponentP = "";
 
@@ -29,7 +48,11 @@ export default function CardZone({ boxColorIndex, cardZone }) {
 
     return (
         <div className={styles.cardZoneBoxes} tabIndex={0}>
-            <div id={cardId} className={`${styles.cardZoneBox} ${boxColorStyle}`}>
+            <div id={cardId} 
+                className={`${styles.cardZoneBox} ${(activeCardZone === cardZone._id) ? activeBoxColorStyle[cardZoneColors[boxColorIndex]] : boxColorStyle[cardZoneColors[boxColorIndex]]} ${(activeCardZone !== cardZone._id && activeCardZone !== "") && styles.inactiveCardZone}`}
+                onMouseEnter={() => assignActiveCardZone(cardZone._id)}
+                onMouseLeave={() => assignActiveCardZone()}
+            >
                 <p><b>{cardZone.name}</b>{`: Use ${cardComponentP}`}</p>
             </div>
         </div> 

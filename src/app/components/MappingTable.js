@@ -10,7 +10,6 @@ export default function MappingTable({
     tableColor,
     tableCards,
     activeCardZone,
-    setActiveCardZone,
     assignActiveCardZone,
 }) {
 
@@ -37,12 +36,6 @@ export default function MappingTable({
         red: styles.redTable,
         yellow: styles.yellowTable,
         blue: styles.blueTable
-    }
-    const activeColorStyles = {
-        black: styles.activeBlackTable,
-        red: styles.activeRedTable,
-        yellow: styles.activeYellowTable,
-        blue: styles.activeBlueTable
     }
 
     const cardRanks = ["0","1","2","3","4","5","6","7","8","9","X","J","Q","A"];
@@ -74,7 +67,7 @@ export default function MappingTable({
                                 targetSuits.map((suit) => {
                                     const targetCard = findByRankSuit(tableCards, rank, suit)
                                     if(targetCard) {
-                                        return <td className={`${ (activeCardZone === targetCard.cardZone) ? activeColorStyles[tableColor] : colorStyles[tableColor]} ${styles.cardColumn}`}
+                                        return <td className={`${colorStyles[tableColor]} ${(activeCardZone !== targetCard.cardZone && activeCardZone !== "") && styles.inactiveCard} ${styles.cardColumn}`}
                                             onMouseEnter={() => assignActiveCardZone(targetCard.cardZone)} 
                                             onMouseLeave={() => assignActiveCardZone()}
                                              key={rank + "_" + suit}

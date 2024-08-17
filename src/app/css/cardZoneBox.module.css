@@ -37,15 +37,20 @@
   border-right: 2px solid black;
 }
 
+.inactiveCardZone {
+  opacity: 0.5;
+}
+
 .cardZoneRed {
   background-color: paleRed;
 }
 
-.cardZoneRed::before {
+.cardZoneRed::before,
+.cardZoneRedActive::before {
   background-color: EDDarkRed;
 }
 
-.cardZoneRed:hover {
+.cardZoneRedActive {
   background-color: lightRed;
 }
 
@@ -53,11 +58,12 @@
   background-color: paleBlue;
 }
 
-.cardZoneBlue::before {
+.cardZoneBlue::before,
+.cardZoneBlueActive::before {
   background-color: EDDarkBlue;
 }
 
-.cardZoneBlue:hover {
+.cardZoneBlueActive {
   background-color: lightBlue;
 }
 
@@ -65,10 +71,11 @@
   background-color: paleYellow;
 }
 
-.cardZoneYellow::before {
+.cardZoneYellow::before,
+.cardZoneYellowActive::before {
   background-color: EDDarkYellow;
 }
 
-.cardZoneYellow:hover {
+.cardZoneYellowActive {
   background-color: lightYellow;
 }
