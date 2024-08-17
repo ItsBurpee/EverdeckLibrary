@@ -12,31 +12,34 @@ export default function RulesSection({
     const formattedSetup = setup.replaceAll('\\t', '\t');
     const formattedGameplay = gameplay.replaceAll('\\t', '\t');
 
-    let keywordedObjective = formattedObjective;
-    let keywordedSetup = formattedSetup;
-    let keywordedGameplay = formattedGameplay;
+    let replacedObjective = formattedObjective;
+    let replacedSetup = formattedSetup;
+    let replacedGameplay = formattedGameplay;
 
-    let keywordDictionary = {};
+    // iterate over each card zone
+    cardZones.forEach((cardZone) => {
+        // replaces count used for id to prevent hydration error
+        let replaces = 0;
 
-    //Replace all keywords with unique placeholders
-    cardZones.forEach((cardZone,i) => {
-        cardZone.keywords.forEach((keyword,j) => {
-            Object.defineProperty(keywordDictionary, "keyword"+i+j, {value: keyword, enumerable: true})
-
-            const keywordCaselessRegEx = RegExp(keyword, "g")
-            keywordedObjective = keywordedObjective.replaceAll(keywordCaselessRegEx, "keyword"+i+j)
-            keywordedSetup = keywordedSetup.replaceAll(keywordCaselessRegEx, "keyword"+i+j)
-            keywordedGameplay = keywordedGameplay.replaceAll(keywordCaselessRegEx, "keyword"+i+j)
+        // replace keyword in each section with jsx element
+        cardZone.keywords.forEach(keyword => {
+            replaces = 0;
+            replacedObjective = reactStringReplace(replacedObjective, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
+                replaces++
+                return <u key={"objective" + keyword + offset + replaces} className={styles.keyword}>{match}</u>
+            })
+            replaces = 0;
+            replacedSetup = reactStringReplace(replacedSetup, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
+                replaces++;
+                return <u key={"Setup" + keyword + offset + replaces} className={styles.keyword}>{match}</u>
+            })
+            replaces = 0;
+            replacedGameplay = reactStringReplace(replacedGameplay, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
+                replaces++;
+                return <u key={"Gameplay" + keyword + offset} className={styles.keyword}>{match}</u>
+            })
         })
-    })
-    
-    //Then replace the unique placeholders with the proper keywords
-    Object.keys(keywordDictionary).forEach((key) => {
-        console.log(keywordDictionary[key]);
-        keywordedObjective = reactStringReplace(keywordedObjective, key, (match, i) => <u key={"objective"+match+i} className={styles.keyword}>{keywordDictionary[key]}</u>)
-        keywordedSetup = reactStringReplace(keywordedSetup, key, (match, i) => <u key={"setup"+match+i} className={styles.keyword}>{keywordDictionary[key]}</u>)
-        keywordedGameplay = reactStringReplace(keywordedGameplay, key, (match, i) => <u key={match+i} className={styles.keyword}>{keywordDictionary[key]}</u>)
-    })
+    });
 
     return (
             <div className={styles.rulesSection}>
@@ -45,11 +48,11 @@ export default function RulesSection({
                 </div>
                 <div className={styles.mainText}>
                     <h3>Objective of the Game</h3>
-                    <p>{keywordedObjective}</p>
+                    <p>{replacedObjective}</p>
                     <h3>Setup</h3>
-                    <p className={styles.para}>{keywordedSetup}</p>
+                    <p className={styles.para}>{replacedSetup}</p>
                     <h3>Gameplay</h3>
-                    <p className={styles.para}>{keywordedGameplay}</p>
+                    <p className={styles.para}>{replacedGameplay}</p>
                 </div>
             </div>
             
