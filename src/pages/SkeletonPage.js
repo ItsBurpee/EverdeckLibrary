@@ -13,9 +13,11 @@ import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
 const ForSalePage = ({ game, rules, cardZones }) => {
-    const moveToTop = () => document.getElementById('top').scrollIntoView();
+    const moveToTop = () => document.getElementById('rulesMain').scrollIntoView();
     const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
     const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
+    const moveToRules = () => document.getElementById('rulesSection').scrollIntoView();
+
 
     let componentWarning = false;
     let mapWarning = false;
@@ -46,7 +48,7 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                 <h1>{game.title}</h1>
                 <div className={styles.stackContainer}>
                     <Stack gap={3} className={styles.mainStack}>
-                        <div id="top" className={styles.topSection}>
+                        <div className={styles.topSection}>
                             <RulesImageIcons
                                 cardImg={game.cardImg}
                                 plCount={game.plCount}
@@ -111,7 +113,7 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                     assignActiveCardZone={assignActiveCardZone}
                                 />
                             </div>
-                            <div className={styles.rules}>
+                            <div id="rulesSection" className={styles.rules}>
                                 <RulesSection 
                                     objective={rules.rules.objective}     
                                     setup={rules.rules.setup}     
@@ -131,31 +133,40 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                             </div>
                         </div>
                     </Stack>
-                    {/*
                     <div className={styles.jumpSection}>
-                    <Button
-                        variant="top"
-                        onClick={moveToTop}
-                        bsPrefix={styles.jumpButton}
-                    >
-                        Basic Info
-                    </Button>
-                    <Button
-                        variant="middle"
-                        onClick={moveToMiddle}
-                        bsPrefix={styles.jumpButton}
-                    >
-                        Card Zone/Rules
-                    </Button>
-                    <Button
-                        variant="bottom"
-                        onClick={moveToBottom}
-                        bsPrefix={styles.jumpButton}
-                    >
-                        Card Table
-                    </Button>  
+                        <h2>Jump To:</h2>
+                        <Button
+                            onClick={moveToTop}
+                            bsPrefix={styles.jumpButton}
+                        >
+                            Basic Info
+                        </Button>
+                        <Button
+                            onClick={moveToMiddle}
+                            bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZR}`}
+                        >
+                            Card Zone/Rules
+                        </Button>
+                        <Button
+                            onClick={moveToMiddle}
+                            bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZ}`}
+                        >
+                            Card Zones
+                        </Button>
+                        <Button
+                            onClick={moveToRules}
+                            bsPrefix={`${styles.jumpButton} ${styles.jumpButtonR}`}
+                        >
+                            Rules
+                        </Button>
+                        <Button
+                            onClick={moveToBottom}
+                            bsPrefix={styles.jumpButton}
+                        >
+                            Card Table
+                        </Button>  
                     </div>
-                    */}
+                   
                 </div>
             </div>
         </div>

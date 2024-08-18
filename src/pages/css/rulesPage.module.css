@@ -1,5 +1,5 @@
-@value tablet, laptop, desktop from "../../app/css/breakpoints.module.css";
-@value EDDarkBlue, EDDarkYellow, paleBlue, paleYellow, EDLightGrey, BGGPurple from "../../app/css/colors.module.css";
+@value tablet, tablet-l, laptop, desktop, desktop-l from "../../app/css/breakpoints.module.css";
+@value EDBlue, lightBlue, EDDarkBlue, EDDarkYellow, paleBlue, paleYellow, EDLightGrey, BGGPurple from "../../app/css/colors.module.css";
 
 .rulesPage {
   max-width: 100%;
@@ -25,7 +25,7 @@
 
 .divider {
   border: 1px solid EDLightGrey;
-  width: 85dvw;
+  width: 80dvw;
   align-self: center;
   margin-block: 1.5rem;
 }
@@ -69,10 +69,6 @@
   margin-bottom: 1.5rem;
 }
 
-.summary {
-  align-items: right;
-}
-
 .middleSection {
   display: flex;
   flex-wrap: wrap;
@@ -81,23 +77,52 @@
 }
 
 .jumpSection {
-  top: 5.5rem;
-  left: 90%;
-  display: flex;
   position: fixed;
-  flex-direction: column;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-self: center;
+  width: 100%;
+  padding: 1rem 0.3rem;
+  background-color: paleBlue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 12px;
 }
+
+.jumpSection > h2 {
+  display: none;
+}
+
 .jumpButton {
-  margin: 1rem;
-  bottom: 2rem;
   left: 5%;
   border-radius: 12px;
   height: 3rem;
-  width: 10rem;
+  width: 50%;
   box-shadow: 0 1px 5px black;
-  background-color: EDBlue;
+  background-color: EDDarkBlue;
   border: none;
   z-index: 100;
+  font-family: var(--font-alegreya);
+  color: white;
+  font-weight: bold;
+}
+
+.jumpButton:hover {
+  background-color: EDBlue;
+}
+
+.jumpButtonCZR {
+  display: none;
+}
+
+.rulesPage,
+.middleSection,
+.bottomSection,
+.rules {
+  scroll-margin-top: 5rem;
 }
 
 .warnings {
@@ -175,15 +200,39 @@
   .warnings {
     width: 65%;
   }
+
+  .jumpSection {
+    width: 75%;
+    padding-inline: 2rem;
+  }
+
+  .jumpButton {
+    height: 2.5rem;
+  }
+}
+
+@media (tablet-l) {
+  .topSection {
+    max-width: 85%;
+    align-self: center;
+  }
+  .jumpSection {
+    padding-inline: 1rem;
+    gap: 2rem;
+  }
+  .jumpButton {
+    width: 20%;
+  }
 }
 
 @media (laptop) {
+  .mainLayout {
+  }
+
   .topSection {
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
-    max-width: 65%;
-    align-self: center;
   }
 
   .middleSection {
@@ -203,6 +252,15 @@
     align-self: flex-end;
   }
 
+  .jumpButtonCZ,
+  .jumpButtonR {
+    display: none;
+  }
+
+  .jumpButtonCZR {
+    display: block;
+  }
+
   .warnings {
     flex-direction: row;
     justify-content: center;
@@ -211,5 +269,42 @@
 
   .warnings > div:only-child {
     max-width: 50%;
+  }
+}
+
+@media (desktop) {
+  .mainLayout {
+    padding: 0 11rem 5rem 11rem;
+  }
+
+  .jumpSection {
+    top: 5rem;
+    bottom: auto;
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+    flex-direction: column;
+    width: 10rem;
+    min-width: 11%;
+  }
+
+  .jumpButton {
+    width: 100%;
+    height: 3rem;
+  }
+
+  .jumpSection > h2 {
+    display: block;
+  }
+}
+
+@media (desktop-l) {
+  .mainLayout {
+    padding: 0 15rem 5rem 15rem;
+  }
+
+  .jumpSection {
+    width: 14rem;
+    min-width: 12%;
   }
 }
