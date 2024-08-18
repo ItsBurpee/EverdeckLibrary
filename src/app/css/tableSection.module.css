@@ -1,5 +1,11 @@
 @value tablet, tablet-l, laptop, desktop, desktop-l from "./breakpoints.module.css";
 
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .tableSection p {
   text-align: center;
 }
@@ -18,10 +24,40 @@
 }
 
 .table {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0rem;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 12rem;
+}
+
+@media (tablet) {
+  .table {
+    grid-template-columns: 1fr 1fr;
+    min-width: 24rem;
+  }
+
+  .table > *:nth-child(odd) {
+    grid-column: 1;
+  }
+  .table > *:nth-child(even) {
+    grid-column: 2;
+  }
+}
+
+@media (laptop) {
+  .table {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-width: 48rem;
+  }
+
+  .table > *:nth-child(odd) {
+    grid-column: auto;
+  }
+  .table > *:nth-child(even) {
+    grid-column: auto;
+  }
 }
 
 @media (tablet-l) {
