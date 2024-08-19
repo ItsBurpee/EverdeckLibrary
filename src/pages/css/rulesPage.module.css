@@ -90,6 +90,7 @@
   justify-content: center;
   gap: 0.5rem;
   border-radius: 12px;
+  z-index: 100;
 }
 
 .jumpSection > h2 {
