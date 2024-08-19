@@ -24,6 +24,7 @@
   border-radius: 12px;
   box-shadow: 0 5px 10px;
   padding-left: 2rem;
+  z-index: 25;
 }
 
 .cardZoneBox::before {
