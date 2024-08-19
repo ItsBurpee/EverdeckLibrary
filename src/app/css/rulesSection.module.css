@@ -1,3 +1,15 @@
+@value (
+    EDDarkBlue,
+    EDDarkRed, 
+    EDDarkYellow, 
+    paleRed,
+    paleYellow,
+    paleBlue,
+    lightBlue,
+    lightYellow,
+    lightRed
+  ) from "./colors.module.css";
+
 .rulesSection {
   max-width: 100%;
   word-wrap: break-word;
@@ -13,10 +25,29 @@
     tab-size: 20px;
 }
 
-.keyword {
-  background-color: lightgrey;
+.keywordRed {
+  color: EDDarkRed;
+  font-weight: bold;
 }
 
-.keyword:hover {
+.keywordBlue {
+  color: EDDarkBlue;
+  font-weight: bold;
+}
+
+.keywordYellow {
+  color: EDDarkYellow;
+  font-weight: bold;
+}
+
+.keywordRed:hover {
+    background-color: lightRed;
+}
+
+.keywordBlue:hover {
     background-color: lightBlue;
-  }
+}
+
+.keywordYellow:hover {
+    background-color: lightYellow;
+}

@@ -20,22 +20,6 @@ export default function CardZone({
         Blue: styles.cardZoneBlueActive
     }
 
-
-    //let boxColorStyle = styles.cardZoneRed;
-    /*
-    switch (boxColorIndex) {
-        case 0:
-            boxColorStyle = styles.cardZoneRed;
-            break;
-        case 1:
-            boxColorStyle = styles.cardZoneBlue;
-            break;
-        case 2:
-            boxColorStyle = styles.cardZoneYellow;
-            break;
-    };
-    */
-
     let cardComponentP = "";
 
     if (cardZone) {

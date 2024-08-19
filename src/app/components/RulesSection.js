@@ -7,7 +7,19 @@ export default function RulesSection({
     gameplay,
     cardZones
 }) {
+    const keywordColors = ["Red", "Blue", "Yellow"];
+    const keywordColorStyle = {
+        Red: styles.keywordRed,
+        Blue: styles.keywordBlue,
+        Yellow: styles.keywordYellow
+    }
+    const activeKeywordColorStyle = {
+        Red: styles.keyword1,
+        Blue: styles.keyword,
+        Yellow: styles.keyword
+    }
 
+    
     const formattedObjective = objective.replaceAll('\\t', '\t');
     const formattedSetup = setup.replaceAll('\\t', '\t');
     const formattedGameplay = gameplay.replaceAll('\\t', '\t');
@@ -16,29 +28,33 @@ export default function RulesSection({
     let replacedSetup = formattedSetup;
     let replacedGameplay = formattedGameplay;
 
+    let cardZoneIndex = 0;
     // iterate over each card zone
     cardZones.forEach((cardZone) => {
         // replaces count used for id to prevent hydration error
         let replaces = 0;
+        
+        let currentKeywordStyle = keywordColorStyle[keywordColors[cardZoneIndex]]
 
         // replace keyword in each section with jsx element
         cardZone.keywords.forEach(keyword => {
             replaces = 0;
             replacedObjective = reactStringReplace(replacedObjective, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
                 replaces++
-                return <u key={"objective" + keyword + offset + replaces} className={styles.keyword}>{match}</u>
+                return <u key={"objective" + keyword + offset + replaces} className={`${currentKeywordStyle}`}>{match}</u>
             })
             replaces = 0;
             replacedSetup = reactStringReplace(replacedSetup, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
                 replaces++;
-                return <u key={"Setup" + keyword + offset + replaces} className={styles.keyword}>{match}</u>
+                return <u key={"Setup" + keyword + offset + replaces} className={`${currentKeywordStyle}`}>{match}</u>
             })
             replaces = 0;
             replacedGameplay = reactStringReplace(replacedGameplay, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
                 replaces++;
-                return <u key={"Gameplay" + keyword + offset} className={styles.keyword}>{match}</u>
+                return <u key={"Gameplay" + keyword + offset} className={`${currentKeywordStyle}`}>{match}</u>
             })
         })
+        cardZoneIndex++;
     });
 
     return (
