@@ -9,6 +9,7 @@ export default function RulesSection({
     activeCardZone,
     assignActiveCardZone
 }) {
+    
     const keywordColors = ["Red", "Blue", "Yellow"];
     const keywordColorStyle = {
         Red: styles.keywordRed,
