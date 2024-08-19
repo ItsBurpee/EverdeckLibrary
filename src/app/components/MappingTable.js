@@ -1,6 +1,9 @@
+"use client"
 
+import { useEffect, useState } from "react";
 import styles from "../css/mappingTable.module.css";
 import Image from "next/image";
+import CardZoneBox from "./CardZoneBox";
 //The generic table which will have information passed into it
 
 //TODO: It is currently causing a hydration error
@@ -11,6 +14,7 @@ export default function MappingTable({
     tableCards,
     activeCardZone,
     assignActiveCardZone,
+    cardZones
 }) {
 
     const cardColors = {
@@ -42,14 +46,82 @@ export default function MappingTable({
 
     const targetColor = cardColors[tableColor];
     const targetSuits = Object.keys(targetColor);
-
-
+    
     function findByRankSuit(targetObject, targetRank, targetSuit) {
         return targetObject.find((card) => {return (card.rank === targetRank && card.suit === targetSuit)});
     }
+    
+
+    //state to control the tooltip
+    const [showOverlay, setShowOverlay] = useState(false);
+
+    // handlers for the table hover and click
+    const handleMouseEnter = targetCard => {
+        setShowOverlay(true);
+        assignActiveCardZone(targetCard.cardZone);
+    }
+
+    const handleMouseLeave = () => {
+        setShowOverlay(false);
+        assignActiveCardZone();
+    }
+
+    const handleClick = targetCard => {
+        if (activeCardZone) {
+            setShowOverlay(false);
+            assignActiveCardZone();
+        } else {
+            setShowOverlay(true);
+            assignActiveCardZone(targetCard.cardZone);
+        }
+    }
+
+    // filter card zones to get the active zone and the index of the active zone
+    let cardZoneInd = 0;
+    let cardZone = {}
+    const tempCardZone = cardZones.filter((zone, index) => {
+        if (zone._id === activeCardZone) {
+            cardZoneInd = index;
+            return true;
+        }
+        return false;
+    });
+    
+    //get first element of temp card zone (that filter should always result in only one)
+    if (tempCardZone) {
+        cardZone = tempCardZone[0];
+    }
+
+    // effect that adds mouse movement listener to the table and
+    // adjusts the positioning of the overlay based on mouse location (or tap location on mobile)
+    useEffect(() => {
+        const tableContainer = document.querySelectorAll(`#tableContainer`);
+        const overlayProxy = document.getElementById(`overlayProxy${tableColor}`);
+        if (tableContainer) {
+            tableContainer.forEach(tb => {
+                tb.addEventListener("mousemove", e => {
+                    overlayProxy.style.top = (e.pageY + 30) + "px";
+                    // prevents tooltip from going offscreen (left) or causing overflow (right)
+                    overlayProxy.style.left = Math.max(0, Math.min((window.innerWidth - 320),(e.pageX - 150))) + "px";
+                })
+            })
+        }
+    }, []);
+
 
     return (
-        <div>
+        <div id="tableContainer" className={styles.tableContainer}>
+            <div id={`overlayProxy${tableColor}`} className={`${styles.overlayProxy} ${showOverlay && styles.showOverlay}`}>
+                {
+                    (cardZone) && 
+                    <CardZoneBox
+                        boxColorIndex={cardZoneInd} 
+                        cardZone={cardZone} 
+                        activeCardZone={activeCardZone}
+                        assignActiveCardZone={assignActiveCardZone}
+                    />    
+                }
+            </div>
             <table className={styles.table}>
                 <thead>
                 <tr>
@@ -68,12 +140,13 @@ export default function MappingTable({
                                     const targetCard = findByRankSuit(tableCards, rank, suit)
                                     if(targetCard) {
                                         return <td className={`${colorStyles[tableColor]} ${(activeCardZone !== targetCard.cardZone && activeCardZone !== "") && styles.inactiveCard} ${styles.cardColumn}`}
-                                            onMouseEnter={() => assignActiveCardZone(targetCard.cardZone)} 
-                                            onMouseLeave={() => assignActiveCardZone()}
-                                             key={rank + "_" + suit}
-                                             >
-                                             {targetCard.label}
-                                             </td>
+                                            onMouseEnter={() => handleMouseEnter(targetCard)} 
+                                            onMouseLeave={handleMouseLeave}
+                                            onClick={() => handleClick(targetCard)} 
+                                            key={rank + "_" + suit}
+                                            >
+                                                {targetCard.label}
+                                            </td>
                                     }
                                     else {
                                         return <td key={rank + "_" + suit}></td>

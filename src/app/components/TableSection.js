@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "../css/tableSection.module.css";
 import MappingTable from "./MappingTable";
 import CardZoneBox from "./CardZoneBox";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 export default function TableSection({
     cardZones,
@@ -34,7 +35,7 @@ export default function TableSection({
         }
     }
     
-    // object to hole counts for cards of each card zone
+    // object to hold counts for cards of each card zone
     let cardCounts = {}
 
     let totalCards = 0;
@@ -50,23 +51,27 @@ export default function TableSection({
     });
 
     return (
+        
             <div className={styles.tableSection}>
                 <h1>Card Table</h1>
                 <p>These are the cards you require for the game</p>
+                
                 <div className={styles.table}>
                     <MappingTable 
                         tableColor={"black"}
                         tableCards={blackCards}
                         activeCardZone={activeCardZone}
                         setActiveCardZone={setActiveCardZone}    
-                        assignActiveCardZone={assignActiveCardZone}    
+                        assignActiveCardZone={assignActiveCardZone}
+                        cardZones={cardZones}    
                     />
                     <MappingTable 
                         tableColor={"red"}
                         tableCards={redCards}
                         activeCardZone={activeCardZone}
                         setActiveCardZone={setActiveCardZone}
-                        assignActiveCardZone={assignActiveCardZone}  
+                        assignActiveCardZone={assignActiveCardZone}
+                        cardZones={cardZones}     
                     />
                     <MappingTable 
                         tableColor={"yellow"}
@@ -74,6 +79,7 @@ export default function TableSection({
                         activeCardZone={activeCardZone}
                         setActiveCardZone={setActiveCardZone}
                         assignActiveCardZone={assignActiveCardZone} 
+                        cardZones={cardZones}   
                     />
                     <MappingTable 
                         tableColor={"blue"}
@@ -81,10 +87,11 @@ export default function TableSection({
                         activeCardZone={activeCardZone}
                         setActiveCardZone={setActiveCardZone}
                         assignActiveCardZone={assignActiveCardZone}  
+                        cardZones={cardZones}   
                     />
                 </div>
+                
                 <div className={styles.cardsBoxes}>
-                {/* <p><b>Total Cards: {totalCards}   Property Cards: {}   Currency Cards: 30</b></p> */}
                     <p><b>{`Total Cards: ${totalCards}`}</b></p>
                     
                     <div className={styles.cardZoneBoxes}>
@@ -93,7 +100,6 @@ export default function TableSection({
                                 <div key={zone._id}>
                                     <p><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>
                                     <CardZoneBox
-                                         
                                         boxColorIndex={index} 
                                         cardZone={zone} 
                                         activeCardZone={activeCardZone}

@@ -9,50 +9,57 @@
     EDDarkYellow
 ) from "./colors.module.css";
 
-
-.table{
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
+.table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
 }
 
-.table tr{
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 50%;
+.table tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 50%;
 }
-.table td{
-    border: 1px solid black;
-    border-collapse: collapse;
+.table td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
-.cardColumn{
-    width: 5rem;
+.cardColumn {
+  width: 5rem;
 }
-.table h3{
-    width: 2rem;
-    margin: 0;
+.table h3 {
+  width: 2rem;
+  margin: 0;
 }
-
 
 .inactiveCard {
   opacity: 0.5;
 }
 
-.blackTable{
-    color: white;
-    background-color: EDGrey;
+.blackTable {
+  color: white;
+  background-color: EDGrey;
 }
 
-.redTable{
-    color: white;
-    background-color: EDRed;
+.redTable {
+  color: white;
+  background-color: EDRed;
 }
 
-.yellowTable{
-    background-color: EDDarkYellow;
+.yellowTable {
+  background-color: EDDarkYellow;
 }
 
-.blueTable{
-    background-color: EDBlue;
+.blueTable {
+  background-color: EDBlue;
+}
+
+.overlayProxy {
+  position: absolute;
+  display: none;
+}
+
+.showOverlay {
+  display: block;
 }
