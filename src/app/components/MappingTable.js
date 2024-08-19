@@ -42,7 +42,7 @@ export default function MappingTable({
         blue: styles.blueTable
     }
 
-    const cardRanks = ["0","1","2","3","4","5","6","7","8","9","X","J","Q","A"];
+    const cardRanks = ["0","1","2","3","4","5","6","7","8","9","X","J","Q","K","A"];
 
     const targetColor = cardColors[tableColor];
     const targetSuits = Object.keys(targetColor);
