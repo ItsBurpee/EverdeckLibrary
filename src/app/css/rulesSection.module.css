@@ -25,29 +25,32 @@
     tab-size: 20px;
 }
 
-.keywordRed {
+.keywordRed,
+.activeKeywordRed {
   color: EDDarkRed;
   font-weight: bold;
 }
 
-.keywordBlue {
+.keywordBlue,
+.activeKeywordBlue {
   color: EDDarkBlue;
   font-weight: bold;
 }
 
-.keywordYellow {
+.keywordYellow,
+.activeKeywordYellow {
   color: EDDarkYellow;
   font-weight: bold;
 }
 
-.keywordRed:hover {
+.activeKeywordRed {
     background-color: lightRed;
 }
 
-.keywordBlue:hover {
+.activeKeywordBlue {
     background-color: lightBlue;
 }
 
-.keywordYellow:hover {
+.activeKeywordYellow {
     background-color: lightYellow;
 }

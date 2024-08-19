@@ -5,7 +5,9 @@ export default function RulesSection({
     objective,
     setup,   
     gameplay,
-    cardZones
+    cardZones,
+    activeCardZone,
+    assignActiveCardZone
 }) {
     const keywordColors = ["Red", "Blue", "Yellow"];
     const keywordColorStyle = {
@@ -14,9 +16,9 @@ export default function RulesSection({
         Yellow: styles.keywordYellow
     }
     const activeKeywordColorStyle = {
-        Red: styles.keyword1,
-        Blue: styles.keyword,
-        Yellow: styles.keyword
+        Red: styles.activeKeywordRed,
+        Blue: styles.activeKeywordBlue,
+        Yellow: styles.activeKeywordYellow
     }
 
     
@@ -34,24 +36,45 @@ export default function RulesSection({
         // replaces count used for id to prevent hydration error
         let replaces = 0;
         
-        let currentKeywordStyle = keywordColorStyle[keywordColors[cardZoneIndex]]
+        let currentKeywordColor = keywordColors[cardZoneIndex]
 
         // replace keyword in each section with jsx element
         cardZone.keywords.forEach(keyword => {
             replaces = 0;
             replacedObjective = reactStringReplace(replacedObjective, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
                 replaces++
-                return <u key={"objective" + keyword + offset + replaces} className={`${currentKeywordStyle}`}>{match}</u>
+                return (
+                    <u key={"objective" + keyword + offset + replaces} 
+                        className={`${(activeCardZone === cardZone._id) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
+                        onMouseEnter={() => assignActiveCardZone(cardZone._id)}
+                        onMouseLeave={() => assignActiveCardZone()}
+                    >
+                    {match}</u>
+                )
             })
             replaces = 0;
             replacedSetup = reactStringReplace(replacedSetup, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
                 replaces++;
-                return <u key={"Setup" + keyword + offset + replaces} className={`${currentKeywordStyle}`}>{match}</u>
+                return (
+                    <u key={"Setup" + keyword + offset + replaces}
+                        className={`${(activeCardZone === cardZone._id) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
+                        onMouseEnter={() => assignActiveCardZone(cardZone._id)}
+                        onMouseLeave={() => assignActiveCardZone()}
+                    >
+                    {match}</u>
+                )
             })
             replaces = 0;
             replacedGameplay = reactStringReplace(replacedGameplay, RegExp(`(${keyword})`, "gi"), (match, i, offset) => {
                 replaces++;
-                return <u key={"Gameplay" + keyword + offset} className={`${currentKeywordStyle}`}>{match}</u>
+                return (
+                    <u key={"Gameplay" + keyword + offset}
+                        className={`${(activeCardZone === cardZone._id) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
+                        onMouseEnter={() => assignActiveCardZone(cardZone._id)}
+                        onMouseLeave={() => assignActiveCardZone()}
+                    >
+                    {match}</u>
+                )
             })
         })
         cardZoneIndex++;

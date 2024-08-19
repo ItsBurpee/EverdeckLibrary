@@ -119,6 +119,8 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                     setup={rules.rules.setup}     
                                     gameplay={rules.rules.gameplay}
                                     cardZones={cardZones}
+                                    activeCardZone={activeCardZone}
+                                    assignActiveCardZone={assignActiveCardZone}
                                 />
                             </div>
                         </div>
