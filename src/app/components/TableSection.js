@@ -37,7 +37,7 @@ export default function TableSection({
     // object to hold counts for cards of each card zone
     let cardCounts = {}
 
-    let totalCards = 0;
+    let totalCards = cardTable.length;
     // initialize object with keys that are the card zone ids
     cardZones.forEach(cardZone => {
         cardCounts = {...cardCounts, [cardZone._id]: 0}
@@ -45,8 +45,9 @@ export default function TableSection({
     
     // loop through the card table and increment proper card zone count
     cardTable.forEach(card => {
-        cardCounts[card.cardZone]++;
-        totalCards++;
+        card.cardZone.forEach(zone => {
+            cardCounts[zone]++;
+        })
     });
 
     return (
@@ -97,7 +98,10 @@ export default function TableSection({
                         {
                             cardZones.map((zone, index) => (
                                 <div key={zone._id}>
-                                    {((cardCounts[zone._id] > 0) && <p><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>)}
+                                    {
+                                        !(cardCounts[zone._id] === totalCards) &&
+                                        <p><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>
+                                    }
                                     <CardZoneBox
                                         boxColorIndex={index} 
                                         cardZone={zone} 
