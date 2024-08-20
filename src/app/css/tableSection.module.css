@@ -19,10 +19,6 @@
   margin-bottom: 2rem;
 }
 
-.cardZoneBoxes:hover > *:not(:hover) {
-  opacity: 0.5;
-}
-
 .table {
   display: grid;
   grid-template-columns: 1fr;
