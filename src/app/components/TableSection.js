@@ -97,7 +97,7 @@ export default function TableSection({
                         {
                             cardZones.map((zone, index) => (
                                 <div key={zone._id}>
-                                    <p><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>
+                                    {((cardCounts[zone._id] > 0) && <p><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>)}
                                     <CardZoneBox
                                         boxColorIndex={index} 
                                         cardZone={zone} 
@@ -109,12 +109,17 @@ export default function TableSection({
                         }
                     </div>
                 </div>
-                <h3>Extra Components</h3>
-                    <ul>
-                        {extComponents.map((comp, index) => {
-                            return <li key={index}>{comp}</li>
-                        })}
-                    </ul>
+                {
+                    (extComponents.length > 0) &&
+                    <>
+                        <h3>Extra Components</h3>
+                        <ul>
+                            {extComponents.map((comp, index) => {
+                                return <li key={index}>{comp}</li>
+                            })}
+                        </ul>
+                    </>
+                }
             </div>
     )
 
