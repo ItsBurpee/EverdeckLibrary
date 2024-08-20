@@ -1,4 +1,6 @@
 import styles from "../css/cardZoneBox.module.css";
+import reactStringReplace from "react-string-replace";
+import Image from "next/image";
 
 export default function CardZone({ 
     boxColorIndex, 
@@ -20,6 +22,33 @@ export default function CardZone({
         Blue: styles.cardZoneBlueActive
     }
 
+    const cardSuits = {
+        //Black Suits
+        club: "/everdeckSuits/everdeck-suits-club.svg", 
+        spade: "/everdeckSuits/everdeck-suits-spade.svg",
+        //Red Suits
+        heart: "/everdeckSuits/everdeck-suits-heart.svg", 
+        diamond: "/everdeckSuits/everdeck-suits-diamond.svg",
+        //Yellow Suits
+        coin: "/everdeckSuits/everdeck-suits-coin.svg", 
+        crown: "/everdeckSuits/everdeck-suits-crown.svg",
+        //Blue Suits
+        moon: "/everdeckSuits/everdeck-suits-moon.svg", 
+        star: "/everdeckSuits/everdeck-suits-star.svg"
+    }
+
+    const applySuitIcons = (targetString) => {
+        let modifiedString = targetString;
+        Object.entries(cardSuits).forEach((suit) => {
+            modifiedString = reactStringReplace(modifiedString, RegExp(`(${suit[0]})`, "gi"), (match, i) => (
+                <Image key={suit[0] + i}
+                    src={suit[1]} height={20} width={20} alt={suit[0]}
+                />
+            ))
+        })
+        return modifiedString
+    }
+
     let cardComponentP = "";
 
     if (cardZone) {
@@ -37,7 +66,17 @@ export default function CardZone({
                 onMouseEnter={() => assignActiveCardZone(cardZone._id)}
                 onMouseLeave={() => assignActiveCardZone()}
             >
-                <p><b>{cardZone.name}</b>{`: Use ${cardComponentP}`}</p>
+                <p className={styles.cardZoneRule}><b>{cardZone.name}</b>{`: Use ${cardComponentP}`}</p>
+                {cardZone.extRules.map((extRule, i) => {
+                        let extRuleName = applySuitIcons(Object.keys(extRule)[0]);
+                        let extRuleDesc = Object.values(extRule)[0];
+                        return (
+                            <p className={styles.cardZoneRule} key={"extRule"+i}>
+                                {extRuleName}{(extRuleDesc !== "") && ` : ${extRuleDesc}`}
+                            </p>
+                        )
+                    })
+                }
             </div>
         </div> 
     );

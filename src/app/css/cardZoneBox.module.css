@@ -20,7 +20,7 @@
 .cardZoneBox {
   position: relative;
   width: 20rem;
-  height: 5rem;
+  min-height: 1rem;
   border-radius: 12px;
   box-shadow: 0 5px 10px;
   padding-left: 2rem;
@@ -36,6 +36,10 @@
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   border-right: 2px solid black;
+}
+
+.cardZoneRule {
+  margin-bottom: 0.2rem;
 }
 
 .inactiveCardZone {
