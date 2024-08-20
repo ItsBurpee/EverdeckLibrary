@@ -7,8 +7,8 @@ import { useEffect } from "react";
 
 export default function CardZone({
     cardZones,
-    activeCardZone,
-    assignActiveCardZone 
+    activeCardZones,
+    assignActiveCardZones
 }) {
     
     const cardComponentsZones = {
@@ -101,7 +101,7 @@ export default function CardZone({
                         return (
                             <div 
                                 key={zoneKey}
-                                className={`${styles.cardZoneHighlight} ${cardZoneStyle} ${tempZoneTarget[currentColor]} ${(activeCardZone === cardZone._id)  && styles.showHighlight}`}
+                                className={`${styles.cardZoneHighlight} ${cardZoneStyle} ${tempZoneTarget[currentColor]} ${(activeCardZones.includes(cardZone._id))  && styles.showHighlight}`}
                             >
                             </div>
                         )
@@ -131,8 +131,8 @@ export default function CardZone({
                             key={zone._id}
                             boxColorIndex={index}
                             cardZone={zone}
-                            activeCardZone={activeCardZone}
-                            assignActiveCardZone={assignActiveCardZone}
+                            activeCardZones={activeCardZones}
+                            assignActiveCardZones={assignActiveCardZones}
                         />
                     ))
                 }

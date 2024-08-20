@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function CardZone({ 
     boxColorIndex, 
     cardZone,
-    activeCardZone,
-    assignActiveCardZone
+    activeCardZones,
+    assignActiveCardZones
 }) {
     const cardZoneColors = ["Red", "Blue", "Yellow"];
  
@@ -62,9 +62,9 @@ export default function CardZone({
     return (
         <div className={styles.cardZoneBoxes} tabIndex={0}>
             <div id={cardId} 
-                className={`${styles.cardZoneBox} ${(activeCardZone === cardZone._id) ? activeBoxColorStyle[cardZoneColors[boxColorIndex]] : boxColorStyle[cardZoneColors[boxColorIndex]]} ${(activeCardZone !== cardZone._id && activeCardZone !== "") && styles.inactiveCardZone}`}
-                onMouseEnter={() => assignActiveCardZone(cardZone._id)}
-                onMouseLeave={() => assignActiveCardZone()}
+                className={`${styles.cardZoneBox} ${(activeCardZones.includes(cardZone._id)) ? activeBoxColorStyle[cardZoneColors[boxColorIndex]] : boxColorStyle[cardZoneColors[boxColorIndex]]} ${(!activeCardZones.includes(cardZone._id) && activeCardZones.length > 0) && styles.inactiveCardZone}`}
+                onMouseEnter={() => assignActiveCardZones(cardZone._id)}
+                onMouseLeave={() => assignActiveCardZones()}
             >
                 <p className={styles.cardZoneRule}><b>{cardZone.name}</b>{`: Use ${cardComponentP}`}</p>
                 {cardZone.extRules.map((extRule, i) => {

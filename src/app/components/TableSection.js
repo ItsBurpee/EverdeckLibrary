@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { act, useState } from "react";
 import styles from "../css/tableSection.module.css";
 import MappingTable from "./MappingTable";
 import CardZoneBox from "./CardZoneBox";
@@ -24,14 +24,13 @@ export default function TableSection({
         return (card.suit === "moon" || card.suit === "star")
     })
 
-    const [activeCardZone, setActiveCardZone] = useState("");
+    const [activeCardZones, setActiveCardZones] = useState([]);
 
-    const assignActiveCardZone = targetCardZoneID => {
-        if (!targetCardZoneID) {
-            setActiveCardZone("");
-        }
-        else {
-            setActiveCardZone(targetCardZoneID);
+    const assignActiveCardZones = targetCardZoneIDs => {
+        if (!targetCardZoneIDs) {
+            setActiveCardZones([]);
+        } else {
+            setActiveCardZones(activeCardZones.concat(targetCardZoneIDs));
         }
     }
     
@@ -60,34 +59,34 @@ export default function TableSection({
                     <MappingTable 
                         tableColor={"black"}
                         tableCards={blackCards}
-                        activeCardZone={activeCardZone}
-                        setActiveCardZone={setActiveCardZone}    
-                        assignActiveCardZone={assignActiveCardZone}
-                        cardZones={cardZones}    
+                        activeCardZones={activeCardZones}
+                        setActiveCardZones={setActiveCardZones}    
+                        assignActiveCardZones={assignActiveCardZones}
+                        AllCardZones={cardZones}    
                     />
                     <MappingTable 
                         tableColor={"red"}
                         tableCards={redCards}
-                        activeCardZone={activeCardZone}
-                        setActiveCardZone={setActiveCardZone}
-                        assignActiveCardZone={assignActiveCardZone}
-                        cardZones={cardZones}     
+                        activeCardZones={activeCardZones}
+                        setActiveCardZones={setActiveCardZones}
+                        assignActiveCardZones={assignActiveCardZones}
+                        AllCardZones={cardZones}     
                     />
                     <MappingTable 
                         tableColor={"yellow"}
                         tableCards={yellowCards}
-                        activeCardZone={activeCardZone}
-                        setActiveCardZone={setActiveCardZone}
-                        assignActiveCardZone={assignActiveCardZone} 
-                        cardZones={cardZones}   
+                        activeCardZones={activeCardZones}
+                        setActiveCardZones={setActiveCardZones}
+                        assignActiveCardZones={assignActiveCardZones} 
+                        AllCardZones={cardZones}   
                     />
                     <MappingTable 
                         tableColor={"blue"}
                         tableCards={blueCards}
-                        activeCardZone={activeCardZone}
-                        setActiveCardZone={setActiveCardZone}
-                        assignActiveCardZone={assignActiveCardZone}  
-                        cardZones={cardZones}   
+                        activeCardZones={activeCardZones}
+                        setActiveCardZones={setActiveCardZones}
+                        assignActiveCardZones={assignActiveCardZones}  
+                        AllCardZones={cardZones}   
                     />
                 </div>
                 
@@ -102,8 +101,8 @@ export default function TableSection({
                                     <CardZoneBox
                                         boxColorIndex={index} 
                                         cardZone={zone} 
-                                        activeCardZone={activeCardZone}
-                                        assignActiveCardZone={assignActiveCardZone}
+                                        activeCardZones={activeCardZones}
+                                        assignActiveCardZones={assignActiveCardZones}
                                     />
                                 </div>
                             ))

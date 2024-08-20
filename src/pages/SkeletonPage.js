@@ -29,14 +29,13 @@ const ForSalePage = ({ game, rules, cardZones }) => {
         componentWarning = true;
     }
 
-    const [activeCardZone, setActiveCardZone] = useState("");
+    const [activeCardZones, setActiveCardZones] = useState([]);
 
-    const assignActiveCardZone = targetCardZoneID => {
-        if (!targetCardZoneID) {
-            setActiveCardZone("");
-        }
-        else {
-            setActiveCardZone(targetCardZoneID);
+    const assignActiveCardZones = targetCardZoneIDs => {
+        if (!targetCardZoneIDs) {
+            setActiveCardZones([]);
+        } else {
+            setActiveCardZones(activeCardZones.concat(targetCardZoneIDs));
         }
     }
     
@@ -109,8 +108,8 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                             <div className={styles.cardZone}>
                                 <CardZone 
                                     cardZones={cardZones}
-                                    activeCardZone={activeCardZone}
-                                    assignActiveCardZone={assignActiveCardZone}
+                                    activeCardZones={activeCardZones}
+                                    assignActiveCardZones={assignActiveCardZones}
                                 />
                             </div>
                             <div id="rulesSection" className={styles.rules}>
@@ -119,8 +118,8 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                     setup={rules.rules.setup}     
                                     gameplay={rules.rules.gameplay}
                                     cardZones={cardZones}
-                                    activeCardZone={activeCardZone}
-                                    assignActiveCardZone={assignActiveCardZone}
+                                    activeCardZones={activeCardZones}
+                                    assignActiveCardZones={assignActiveCardZones}
                                 />
                             </div>
                         </div>

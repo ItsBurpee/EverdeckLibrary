@@ -12,9 +12,9 @@ import CardZoneBox from "./CardZoneBox";
 export default function MappingTable({
     tableColor,
     tableCards,
-    activeCardZone,
-    assignActiveCardZone,
-    cardZones
+    activeCardZones,
+    assignActiveCardZones,
+    AllCardZones
 }) {
 
     const cardColors = {
@@ -58,39 +58,33 @@ export default function MappingTable({
     // handlers for the table hover and click
     const handleMouseEnter = targetCard => {
         setShowOverlay(true);
-        assignActiveCardZone(targetCard.cardZone);
+        assignActiveCardZones(targetCard.cardZone);
     }
 
     const handleMouseLeave = () => {
         setShowOverlay(false);
-        assignActiveCardZone();
+        assignActiveCardZones();
     }
 
     const handleClick = targetCard => {
-        if (activeCardZone) {
+        if (activeCardZones.length > 0) {
             setShowOverlay(false);
-            assignActiveCardZone();
+            assignActiveCardZones();
         } else {
             setShowOverlay(true);
-            assignActiveCardZone(targetCard.cardZone);
+            assignActiveCardZones(targetCard.cardZone);
         }
     }
 
-    // filter card zones to get the active zone and the index of the active zone
-    let cardZoneInd = 0;
-    let cardZone = {}
-    const tempCardZone = cardZones.filter((zone, index) => {
-        if (zone._id === activeCardZone) {
-            cardZoneInd = index;
+    // filter card zones to get the active zone and the indexes of the active zones
+    let cardZoneInds = [];
+    const cardZones = AllCardZones.filter((zone, index) => {
+        if (activeCardZones.includes(zone._id)) {
+            cardZoneInds.push(index);
             return true;
         }
         return false;
     });
-    
-    //get first element of temp card zone (that filter should always result in only one)
-    if (tempCardZone) {
-        cardZone = tempCardZone[0];
-    }
 
     // effect that adds mouse movement listener to the table and
     // adjusts the positioning of the overlay based on mouse location (or tap location on mobile)
@@ -108,18 +102,19 @@ export default function MappingTable({
         }
     }, []);
 
-
     return (
         <div id="tableContainer" className={styles.tableContainer}>
             <div id={`overlayProxy${tableColor}`} className={`${styles.overlayProxy} ${showOverlay && styles.showOverlay}`}>
                 {
-                    (cardZone) && 
-                    <CardZoneBox
-                        boxColorIndex={cardZoneInd} 
-                        cardZone={cardZone} 
-                        activeCardZone={activeCardZone}
-                        assignActiveCardZone={assignActiveCardZone}
-                    />    
+                    (showOverlay) &&
+                    cardZones.map((zone, index) => (
+                        <CardZoneBox
+                            boxColorIndex={cardZoneInds[index]} 
+                            cardZone={zone} 
+                            activeCardZones={activeCardZones}
+                            assignActiveCardZones={assignActiveCardZones}
+                        />    
+                    ))
                 }
             </div>
             <table className={styles.table}>
@@ -139,7 +134,7 @@ export default function MappingTable({
                                 targetSuits.map((suit) => {
                                     const targetCard = findByRankSuit(tableCards, rank, suit)
                                     if(targetCard) {
-                                        return <td className={`${colorStyles[tableColor]} ${(activeCardZone !== targetCard.cardZone && activeCardZone !== "") && styles.inactiveCard} ${styles.cardColumn}`}
+                                        return <td className={`${colorStyles[tableColor]} ${(!targetCard.cardZone.some(el => activeCardZones.includes(el)) && activeCardZones.length > 0) && styles.inactiveCard} ${styles.cardColumn}`}
                                             onMouseEnter={() => handleMouseEnter(targetCard)} 
                                             onMouseLeave={handleMouseLeave}
                                             onClick={() => handleClick(targetCard)} 

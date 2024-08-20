@@ -6,8 +6,8 @@ export default function RulesSection({
     setup,   
     gameplay,
     cardZones,
-    activeCardZone,
-    assignActiveCardZone
+    activeCardZones,
+    assignActiveCardZones
 }) {
     
     const keywordColors = ["Red", "Blue", "Yellow"];
@@ -46,9 +46,9 @@ export default function RulesSection({
                 replaces++
                 return (
                     <u key={"objective" + keyword + offset + replaces} 
-                        className={`${(activeCardZone === cardZone._id) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
-                        onMouseEnter={() => assignActiveCardZone(cardZone._id)}
-                        onMouseLeave={() => assignActiveCardZone()}
+                        className={`${(activeCardZones.includes(cardZone._id)) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
+                        onMouseEnter={() => assignActiveCardZones(cardZone._id)}
+                        onMouseLeave={() => assignActiveCardZones()}
                     >
                     {match}</u>
                 )
@@ -58,9 +58,9 @@ export default function RulesSection({
                 replaces++;
                 return (
                     <u key={"Setup" + keyword + offset + replaces}
-                        className={`${(activeCardZone === cardZone._id) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
-                        onMouseEnter={() => assignActiveCardZone(cardZone._id)}
-                        onMouseLeave={() => assignActiveCardZone()}
+                        className={`${(activeCardZones.includes(cardZone._id)) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
+                        onMouseEnter={() => assignActiveCardZones(cardZone._id)}
+                        onMouseLeave={() => assignActiveCardZones()}
                     >
                     {match}</u>
                 )
@@ -70,9 +70,9 @@ export default function RulesSection({
                 replaces++;
                 return (
                     <u key={"Gameplay" + keyword + offset}
-                        className={`${(activeCardZone === cardZone._id) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
-                        onMouseEnter={() => assignActiveCardZone(cardZone._id)}
-                        onMouseLeave={() => assignActiveCardZone()}
+                        className={`${(activeCardZones.includes(cardZone._id)) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
+                        onMouseEnter={() => assignActiveCardZones(cardZone._id)}
+                        onMouseLeave={() => assignActiveCardZones()}
                     >
                     {match}</u>
                 )
