@@ -109,6 +109,7 @@ export default function MappingTable({
                     (showOverlay) &&
                     cardZones.map((zone, index) => (
                         <CardZoneBox
+                            key={zone._id}
                             boxColorIndex={cardZoneInds[index]} 
                             cardZone={zone} 
                             activeCardZones={activeCardZones}
