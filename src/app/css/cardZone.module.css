@@ -54,11 +54,54 @@
   right: 16px;
 }
 
-.cardZoneRaS {
-  height: 64px;
-  width: 32px;
-  top: 0;
-  left: 16px;
+.compRank {
+  height: 30px;
+  width: 30px;
+  top: 3px;
+  left: 17px;
+}
+
+.compSuit {
+  height: 29px;
+  width: 30px;
+  top: 30px;
+  left: 17px;
+}
+
+.compDots {
+  height: 38px;
+  width: 20px;
+  top: 56.5px;
+  left: 17px;
+}
+
+.compSeqNum {
+  height: 48px;
+  width: 81px;
+  top: 3px;
+  right: 18px;
+}
+
+.compBorder {
+  height: 22px;
+  width: 84px;
+  top: 3px;
+  left: 44.5px;
+}
+
+.compImg {
+  height: 128px;
+  width: 128px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+}
+
+.compName {
+  height: 48px;
+  width: 132px;
+  bottom: 8px;
+  left: 14px;
 }
 
 .cardZoneRaS::after {
@@ -69,12 +112,4 @@
   top: 208px;
   left: 156.8px;
   border: 3px solid EDDarkBlue;
-}
-
-.cardZoneImg {
-  height: 128px;
-  width: 128px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -52%);
 }
