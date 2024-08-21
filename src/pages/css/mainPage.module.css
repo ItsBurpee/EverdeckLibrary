@@ -1,5 +1,5 @@
 @value tablet, tablet-l, laptop, desktop from "../../app/css/breakpoints.module.css";
-@value EDBlue from "../../app/css/colors.module.css";
+@value EDBlue, EDDarkBlue from "../../app/css/colors.module.css";
 
 .mainLayout {
   overflow: hidden;
@@ -41,7 +41,6 @@
   padding-top: 10%;
 }
 
-
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -56,13 +55,11 @@
   justify-self: center;
 }
 
-.filterButton {
+.floatingButton {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 1rem;
-  left: 5%;
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
@@ -72,9 +69,27 @@
   z-index: 100;
 }
 
-.filterMenuOffcanvas {
+.floatingButton:hover {
+  background-color: EDDarkBlue;
+}
+
+.filterButton {
+  bottom: 1rem;
+  right: 5%;
+}
+
+.tutButton {
+  bottom: 1rem;
+  left: 5%;
+}
+
+.offcanvas {
   background-color: EDBlue;
   font-family: var(--font-alegreya);
+}
+
+.offcanvasTutorial {
+  min-width: 50%;
 }
 
 @media (tablet-l) {
@@ -94,10 +109,12 @@
 @media (laptop) {
   .cards {
   }
-  /* fixed position right attribute not working for some reason */
+
   .filterButton {
     top: 5.5rem;
-    left: 90%;
+    left: auto;
+    bottom: auto;
+    right: 6%;
   }
   .cards {
     padding-inline: 4%;

@@ -1,0 +1,155 @@
+@value EDBlue, EDDarkBlue, paleBlue, EDRed, EDDarkYellow from "./colors.module.css";
+
+.tutorial {
+  display: flex;
+  flex-direction: column;
+  scroll-behaviour: smooth;
+  margin-top: 6rem;
+}
+
+.tutorial * {
+  font-family: var(--font-alegreya-sans);
+}
+
+.tutorial h2 {
+  border-bottom: 1.5px solid black;
+  margin-bottom: 1rem;
+}
+
+.tutorial h3,
+.tutorial h4 {
+  margin-top: 1rem;
+}
+
+.tutorial > div {
+  margin-bottom: 1rem;
+}
+
+.sectionJumpContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  z-index: 100;
+}
+
+.sectionJump {
+  display: flex;
+  gap: 2rem;
+  position: fixed;
+  z-index: 50;
+  background-color: paleBlue;
+  padding: 1rem;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.jumpBtn {
+  background-color: EDBlue;
+  padding: 0.3rem 0.5rem;
+  border-radius: 12px;
+  color: white;
+  font-family: var(--font-alegreya-sans);
+  cursor: pointer;
+}
+
+.jumpBtn:hover {
+  background-color: EDDarkBlue;
+}
+
+.gameCards,
+.findGame,
+.tutMapping,
+.tutGameInfoPage {
+  scroll-margin-top: 5rem;
+}
+
+.tutImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exImage {
+  max-width: 100%;
+  min-width: 50%;
+  height: auto;
+}
+
+.tutStats {
+}
+
+.tutStats > div {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.statDesc {
+  margin-left: 0.7rem;
+}
+
+.tutWarnings {
+  margin-bottom: 1rem;
+}
+
+.exCircleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 2;
+  border: none;
+  font-family: var(--font-alegreya-sans);
+  flex-shrink: 0;
+}
+
+.blue {
+  background-color: EDBlue;
+}
+
+.yellow {
+  background-color: EDDarkYellow;
+}
+
+.red {
+  background-color: EDRed;
+}
+
+.tutWarnIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.tutWarnIcons > div {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.tutWarnIcons p {
+  margin-bottom: 0;
+}
+
+.warnDesc {
+  margin-left: 0.7rem;
+}
+
+.warnDesc span {
+  color: EDBlue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tutFilter {
+  display: flex;
+  flex-direction: column;
+}
+
+.tutFilter > div {
+  margin-bottom: 1rem;
+}

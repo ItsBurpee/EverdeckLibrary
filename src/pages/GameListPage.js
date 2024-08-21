@@ -7,6 +7,7 @@ import SearchBar from "../app/components/SearchBar";
 import SortFilters from "../app/components/SortFilters";
 import FilterMenu from "../app/components/FilterMenu";
 import Card from "../app/components/Card";
+import Tutorial from "../app/components/Tutorial";
 
 //From layout.js
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,9 +23,12 @@ const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variab
 
 const GameListPage = ( {allGames} ) => {
     const [showFilters, setShowFilters] = useState(false);
-    const handleClose = () => setShowFilters(false);
-    const handleShow = () => setShowFilters(true);
+    const handleCloseFilters = () => setShowFilters(false);
+    const handleShowFilters = () => setShowFilters(true);
 
+    const [showTutorial, setShowTutorial] = useState(false);
+    const handleCloseTut = () => setShowTutorial(false);
+    const handleShowTut = () => setShowTutorial(true);
 
     //section to determine slider endpoint values
     let plCountMinEndpoint, plCountMaxEndpoint;
@@ -268,13 +272,13 @@ const GameListPage = ( {allGames} ) => {
                 </div>
                 <Button
                     variant="primary"
-                    onClick={handleShow}
-                    bsPrefix={styles.filterButton}
+                    onClick={handleShowFilters}
+                    bsPrefix={`${styles.floatingButton} ${styles.filterButton}`}
                 >
                     <Image src="/filter-svgrepo-com.svg" width={30} height={30} />
                 </Button>
-                <Offcanvas show={showFilters} onHide={handleClose} placement="end" className={`${alegreya.variable} ${alegreyaSans.variable}`}>
-                    <Offcanvas.Header closeButton className={styles.filterMenuOffcanvas}>
+                <Offcanvas show={showFilters} onHide={handleCloseFilters} placement="end" className={`${alegreya.variable} ${alegreyaSans.variable}`}>
+                    <Offcanvas.Header closeButton className={styles.offcanvas}>
                         <Offcanvas.Title style={{fontSize:"1.75rem", fontWeight:"bold"}}>Filter Menu</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
@@ -289,6 +293,21 @@ const GameListPage = ( {allGames} ) => {
                             checkedTypes={checkedTypes}
                             setCheckedTypes={setCheckedTypes}
                         />
+                    </Offcanvas.Body>
+                </Offcanvas>
+                <Button
+                    variant="primary"
+                    onClick={handleShowTut}
+                    bsPrefix={`${styles.floatingButton} ${styles.tutButton}`}
+                >
+                    <Image src="/question-svgrepo-com.svg" width={30} height={30} />
+                </Button>
+                <Offcanvas show={showTutorial} onHide={handleCloseTut} placement="start" className={`${alegreya.variable} ${alegreyaSans.variable} ${styles.offcanvasTutorial}`}>
+                    <Offcanvas.Header closeButton className={styles.offcanvas}>
+                        <Offcanvas.Title style={{fontSize:"1.75rem", fontWeight:"bold"}}>How To Use This App</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body className="pt-0">
+                        <Tutorial />
                     </Offcanvas.Body>
                 </Offcanvas>
             </div>
