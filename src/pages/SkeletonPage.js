@@ -81,7 +81,8 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                                 <div className={styles.warningIcon}><p>!</p></div>
                                                 <h3>Mapping Warning</h3>
                                             </div>
-                                            <p>This game does not perfectly map to the Everdeck.</p>    
+                                            { game.mapStrength === "High" ? <p>This game has high mapping strength. The Everdeck version has minor changes/mental tracking but the gameplay is unhindered.<br/>See the <b>Rules</b> section for more details</p>
+                                            : <p><b>This game has low mapping strength!</b> While it's still playable with the Everdeck, expect increased mental tracking, frequent references to a card guide, or game features missing entirely.<br/>See the <b>Rules</b> section for more details</p>}  
                                         </div>
                                     }
 
@@ -117,6 +118,7 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                     objective={rules.rules.objective}     
                                     setup={rules.rules.setup}     
                                     gameplay={rules.rules.gameplay}
+                                    mapDiff={rules.rules.mapDiff}
                                     cardZones={cardZones}
                                     activeCardZones={activeCardZones}
                                     assignActiveCardZones={assignActiveCardZones}

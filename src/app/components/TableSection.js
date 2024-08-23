@@ -92,7 +92,7 @@ export default function TableSection({
                 </div>
                 
                 <div className={styles.cardsBoxes}>
-                    <p><b>{`Total Cards: ${totalCards}`}</b></p>
+                    <p className={styles.cardTotals}><b>{`Total Cards: ${totalCards}`}</b></p>
                     
                     <div className={styles.cardZoneBoxes}>
                         {
@@ -100,7 +100,7 @@ export default function TableSection({
                                 <div key={zone._id}>
                                     {
                                         !(cardCounts[zone._id] === totalCards) &&
-                                        <p><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>
+                                        <p className={styles.cardTotals}><b>{`${zone.name}: ${cardCounts[zone._id]}`}</b></p>
                                     }
                                     <CardZoneBox
                                         boxColorIndex={index} 

@@ -66,7 +66,7 @@ const GameListPage = ( {allGames} ) => {
             }
         }
     });
-    console.log(Math.floor(complexityMinEndpoint))
+
     complexityMinEndpoint = Math.floor(complexityMinEndpoint)
     complexityMaxEndpoint = Math.ceil(complexityMaxEndpoint)
 

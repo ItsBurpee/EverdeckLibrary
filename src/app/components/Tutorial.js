@@ -136,17 +136,19 @@ const Tutorial = () => {
                                 <figcaption><i>The mapping strength dropdown when expanded</i></figcaption>
                             </figure>
                             <p>
-                                A game having a perfect mapping strength means the game is completely playable
-                                with the Everdeck. 
+                                Mapping strength refers to how well the Everdeck can "map" the card components for a given game:
                             </p>
                             <p>
-                                A game having a high mapping strength means the game is playable with the Everdeck,
+                                <b>Perfect</b>: The game is completely playable with the Everdeck. 
+                            </p>
+                            <p>
+                                <b>High</b>: The game is playable with the Everdeck,
                                 but may require minor changes or are harder to play with the Everdeck (may require
                                 more mental tracking than the original game).
                             </p>
                             <p>
-                                A game having a low mapping strength means the game requires larger changes (may even be missing
-                                a feature) or a greater amount of mental tracking to play with the Everdeck.
+                                <b>Low</b>: The game requires larger changes (may even be missing
+                                features) or a greater amount of mental tracking to play with the Everdeck.
                             </p>
                         </div>
 

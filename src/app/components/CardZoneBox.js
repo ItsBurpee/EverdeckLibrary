@@ -72,7 +72,7 @@ export default function CardZone({
                         let extRuleDesc = Object.values(extRule)[0];
                         return (
                             <p className={styles.cardZoneRule} key={"extRule"+i}>
-                                {extRuleName}{(extRuleDesc !== "") && ` : ${extRuleDesc}`}
+                                <b>{extRuleName}</b>{(extRuleDesc !== "") && ` : ${extRuleDesc}`}
                             </p>
                         )
                     })
