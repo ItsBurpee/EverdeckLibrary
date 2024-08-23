@@ -95,10 +95,7 @@ export default function RulesSection({
                     <p className={styles.para}>{replacedSetup}</p>
                     <h3>Gameplay</h3>
                     <p className={styles.para}>{replacedGameplay}</p>
-
-                    <div className={styles.warningIcon}><p>!</p></div>
                 </div>
-
                 { mapDiff &&
                     <div className={`${styles.warning} ${styles.mapWarn}`}>
                         <div className={styles.warningTitle}>    
