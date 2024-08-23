@@ -30,7 +30,7 @@ export default function TableSection({
         if (!targetCardZoneIDs) {
             setActiveCardZones([]);
         } else {
-            setActiveCardZones(activeCardZones.concat(targetCardZoneIDs));
+            setActiveCardZones(targetCardZoneIDs);
         }
     }
     

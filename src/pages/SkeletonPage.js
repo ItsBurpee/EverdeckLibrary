@@ -35,7 +35,7 @@ const ForSalePage = ({ game, rules, cardZones }) => {
         if (!targetCardZoneIDs) {
             setActiveCardZones([]);
         } else {
-            setActiveCardZones(activeCardZones.concat(targetCardZoneIDs));
+            setActiveCardZones(targetCardZoneIDs);;
         }
     }
     
