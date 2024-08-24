@@ -61,7 +61,7 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                                 <p>{rules ? rules.summary : "Summary Text"}</p>
                                 {
                                     rules &&
-                                    <a href={rules.bggLink}>
+                                    <a href={rules.bggLink} target="_blank">
                                         <Image
                                             src={"/bgg-logo.svg"}
                                             height={38}
