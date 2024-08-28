@@ -19,7 +19,7 @@ const AboutPage = () => {
                 <div>  
                     <h1><br></br>License Information</h1>
                     <p>MIT License
-                    <br></br><br></br>Copyright (c) 2024 Nathan Cruz, Carl Lyss, Philip Dometita
+                    <br></br><br></br>Copyright (c) 2024 Nathan Cruz, Carl Lyss, Philip Dometita <br></br><br></br>
 
                         Permission is hereby granted, free of charge, to any person obtaining a copy
                         of this software and associated documentation files (the "Software"), to deal
