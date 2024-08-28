@@ -21,6 +21,7 @@
   .mainPage p,
   .mainPage a{
     font-size: 20px;
+    font-family: var(--font-alegreya-sans);
   }
 
 
