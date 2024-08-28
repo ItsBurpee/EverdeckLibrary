@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
 
-const ForSalePage = ({ game, rules, cardZones }) => {
+const RulesPage = ({ game, rules, cardZones }) => {
     const moveToTop = () => document.getElementById('rulesMain').scrollIntoView();
     const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
     const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
@@ -177,4 +177,4 @@ const ForSalePage = ({ game, rules, cardZones }) => {
     );
 }
 
-export default ForSalePage;
+export default RulesPage;
