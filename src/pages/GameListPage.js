@@ -31,11 +31,13 @@ const GameListPage = ( {allGames} ) => {
     const handleCloseTut = () => setShowTutorial(false);
     const handleShowTut = () => setShowTutorial(true);
 
-    //section to determine slider endpoint values
+    // SECTION: Slider Endpoints
+    // Sets up the slider endpoints to the lowest/highest values in the database
     let plCountMinEndpoint, plCountMaxEndpoint;
     let plTimeMinEndpoint, plTimeMaxEndpoint;
     let complexityMinEndpoint, complexityMaxEndpoint;
     JSON.parse(allGames).forEach(function(game,gameIndex) {
+        // IF: The first game in the database sets the initial slider endpoints
         if (gameIndex === 0) {
             plCountMinEndpoint = game.plCount.plCountMin;
             plCountMaxEndpoint = game.plCount.plCountMax;
@@ -44,6 +46,7 @@ const GameListPage = ( {allGames} ) => {
             complexityMinEndpoint = game.complexity;
             complexityMaxEndpoint = game.complexity;
         }
+        // ELSE: Update the slider endpoint should new min/max values be discovered
         else {
             if (game.plCount.plCountMin < plCountMinEndpoint) {
                 plCountMinEndpoint = game.plCount.plCountMin;
@@ -67,11 +70,10 @@ const GameListPage = ( {allGames} ) => {
             }
         }
     });
-
+    // Round the complexity values to their lowest/highest integer
     complexityMinEndpoint = Math.floor(complexityMinEndpoint)
     complexityMaxEndpoint = Math.ceil(complexityMaxEndpoint)
-
-    // state for slider endpoints
+    // Object for slider endpoints
     const sliderEndpoints = {
         "plCountMinEndpoint" : plCountMinEndpoint,
         "plCountMaxEndpoint" : plCountMaxEndpoint,
@@ -80,16 +82,7 @@ const GameListPage = ( {allGames} ) => {
         "complexityMinEndpoint": complexityMinEndpoint,
         "complexityMaxEndpoint" : complexityMaxEndpoint
     };
-
-    const [searchName, setSearchName] = useState("");
-
-    // state for slider ranges
-    const [sortFilters, setSortFilters] = useState({
-        "sortName": "name",
-        "sortDirec": "asc"
-    });
-
-    // state for slider ranges
+    // State for slider ranges
     const [sliderRanges, setSliderRanges] = useState({
         "plCountMin": plCountMinEndpoint,
         "plCountMax": plCountMaxEndpoint,
@@ -98,19 +91,29 @@ const GameListPage = ( {allGames} ) => {
         "complexityMin": complexityMinEndpoint,
         "complexityMax": complexityMaxEndpoint
     });
+    // END SECTION: Slider Endpoints
 
-    // state for the mapping strength dropdown
+    // State for the search bar name
+    const [searchName, setSearchName] = useState("");
+
+    // State for sort filters
+    const [sortFilters, setSortFilters] = useState({
+        "sortName": "name",
+        "sortDirec": "asc"
+    });
+
+    // State for the mapping strength dropdown
     const [mappingStrength, setMappingStrength] = useState("Any");
 
-    // state for the checked components in filter menu
+    // State for the checked components in filter menu
     const  [checkedComponents, setCheckedComponents] = useState({
         "Dice": true,
         "Chips": true,
-        "Card Guide": true,
+        "Timer": true,
         "Other": true
     });
 
-    // state for checked game types in filter menu
+    // State for checked game types in filter menu
     const [checkedTypes, setCheckedTypes] = useState({
         "Abstract Strategy": true,
         "Customizable": true,
@@ -125,17 +128,24 @@ const GameListPage = ( {allGames} ) => {
     // This seems to work but bundling through getServerSideProps for client side my not be a good practice?
     let games = JSON.parse(allGames)
 
+
+    // SECTION: Filter
+    // Filters the visible game list by the user's inputs and settings
+    // Filter out games based on the search bar name
     games = games.filter(function(game) {
         const regExSearch = RegExp(searchName, "i")
         return (game.title.match(regExSearch));
     })
 
+    // Function: getKeysByValue
+    // Gets the keys based on a given value in an object
     function getKeysByValue(targetObject, targetValue) {
         return Object.keys(targetObject).filter((key) => targetObject[key] === targetValue);
     }
 
-    //Filter Menu section
+    // Filters the visible game list based on the filter menu settings
     games = games.filter(function(game) {
+        // The game is considered valid until it breaks any of the filter rules
         let filterFlag = true
 
         if ((game.plCount.plCountMin < sliderRanges.plCountMin) || (game.plCount.plCountMax > sliderRanges.plCountMax)) {
@@ -148,20 +158,31 @@ const GameListPage = ( {allGames} ) => {
             filterFlag = false;
         }
 
-        // Filtering with Map Strength might be too strict any may have to change
         if ((game.mapStrength !== mappingStrength) && (mappingStrength !== "Any")) {
             filterFlag = false;
         }
 
+        // IF: Only check the extra components filter if the game has extra components
         if (game.extComponents.length > 0) {
+            const allComponents = Object.keys(checkedComponents);
+            // The last component in the component list is "Other" and doesn't directly map to a single component
+            allComponents.pop()
             const uncheckedComponents = getKeysByValue(checkedComponents, false);
             game.extComponents.forEach(extComponent => {
+                // IF: filter out the game if it has a component that isn't check
                 if (uncheckedComponents.includes(extComponent)) {
                     filterFlag = false;
                 }
+                // ELSE IF: "Other" is unchecked AND the component isn't part of the main 3, the component is considered "Other" and is filtered out
+                else if (!checkedComponents.Other && !allComponents.includes(extComponent)) {
+                    filterFlag = false;
+                }
             });
+
+
         }
 
+        // Filter only the games that are part of the checked game types
         const selectedCheckedTypes = getKeysByValue(checkedTypes, true);
         let inSelectedTypes = false
         game.gameType.forEach(gType => {
@@ -175,8 +196,9 @@ const GameListPage = ( {allGames} ) => {
 
         return filterFlag;
     });
+    // END SECTION: Filter
 
-    //SWITCH: Sorts the cards based on the sort filter
+    // SWITCH: Sorts the cards based on the sort filter
     switch(sortFilters.sortName) {
         case "name":
             games.sort(function(a,b) {

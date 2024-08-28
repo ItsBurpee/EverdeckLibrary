@@ -218,10 +218,10 @@ export default function FilterMenu({
                             />  
                             
                             <Form.Check
-                                label="Card Guide"
+                                label="Timer"
                                 type="checkbox"
-                                onChange={() => checkComp("Card Guide")}
-                                checked={checkedComponents["Card Guide"]} 
+                                onChange={() => checkComp("Timer")}
+                                checked={checkedComponents["Timer"]} 
                             />
                         </Col>
                         <Col>
