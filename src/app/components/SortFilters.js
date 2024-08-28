@@ -1,7 +1,6 @@
 "use client"
 
 import { Button, ButtonGroup } from "react-bootstrap";
-import { useState } from "react";
 import Image from "next/image";
 import styles from "../css/sortFilters.module.css";
 

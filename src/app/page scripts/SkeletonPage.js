@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import { Stack, Button, Image, Offcanvas } from "react-bootstrap";
-import styles from "./css/rulesPage.module.css";
-import RulesImageIcons from "../app/components/RulesImageIcons"
-import CardZone from "../app/components/CardZone"
-import RulesSection from "../app/components/RulesSection";
-import TableSection from "../app/components/TableSection";
+import styles from "../pages css/rulesPage.module.css";
+import RulesImageIcons from "../components/RulesImageIcons"
+import CardZone from "../components/CardZone"
+import RulesSection from "../components/RulesSection";
+import TableSection from "../components/TableSection";
 //From layout.js
 import "bootstrap/dist/css/bootstrap.min.css";
-import ImportBsJS from "../app/components/importBsJs";
-import AppNavbar from "../app/components/AppNavbar";
-import AppFooter from "../app/components/AppFooter";
+import ImportBsJS from "../components/importBsJs";
+import AppNavbar from "../components/AppNavbar";
+import AppFooter from "../components/AppFooter";
 
 
 const RulesPage = ({ game, rules, cardZones }) => {

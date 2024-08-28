@@ -1,8 +1,8 @@
 // basic not found game page
 
-import AppNavbar from "../app/components/AppNavbar"
-import AppFooter from "../app/components/AppFooter"
-import styles from "./css/mainPage.module.css";
+import AppNavbar from "../components/AppNavbar.js";
+import AppFooter from "../components/AppFooter.js";
+import styles from "../pages css/mainPage.module.css";
 
 const NotFound = ({ gameName }) => {
     console.log(gameName);

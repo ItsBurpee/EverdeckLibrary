@@ -1,9 +1,8 @@
 
-import { act, useState } from "react";
+import { useState } from "react";
 import styles from "../css/tableSection.module.css";
 import MappingTable from "./MappingTable";
 import CardZoneBox from "./CardZoneBox";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 export default function TableSection({
     cardZones,

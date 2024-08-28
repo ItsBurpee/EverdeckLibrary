@@ -1,6 +1,6 @@
-import AppFooter from "../app/components/AppFooter";
-import AppNavbar from "../app/components/AppNavbar";
-import styles from "./css/aboutPage.module.css";
+import AppFooter from "../components/AppFooter";
+import AppNavbar from "../components/AppNavbar";
+import styles from "../pages css/aboutPage.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Alegreya_Sans, Alegreya } from "next/font/google";
 

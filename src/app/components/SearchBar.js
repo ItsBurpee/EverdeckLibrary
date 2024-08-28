@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Form, InputGroup } from "react-bootstrap"
+import { Form, InputGroup } from "react-bootstrap"
 import Image from "next/image"
 import styles from "../css/searchBar.module.css";
 

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import SkeletonPage from "./SkeletonPage";
-import NotFound from "./NotFound";
+import SkeletonPage from "../app/page scripts/SkeletonPage";
+import NotFound from "../app/page scripts//NotFound";
 import { useRouter } from "next/router";
 import client from "../../lib/mongodb";
 

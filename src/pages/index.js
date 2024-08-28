@@ -3,7 +3,7 @@ import Head from "next/head";
 import client from "../../lib/mongodb";
 import { Alegreya, Alegreya_Sans } from "next/font/google";
 import "../app/css/globals.css";
-import GameListPage from "./GameListPage";
+import GameListPage from "../app/page scripts/GameListPage";
 
 const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
 const alegreyaSans = Alegreya_Sans({ weight: ["500"], subsets: ["latin"], variable: "--font-alegreya-sans" });

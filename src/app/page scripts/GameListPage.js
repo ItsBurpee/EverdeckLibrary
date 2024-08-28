@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import { Stack, Button, Image, Offcanvas } from "react-bootstrap";
-import styles from "./css/mainPage.module.css";
-import SearchBar from "../app/components/SearchBar";
-import SortFilters from "../app/components/SortFilters";
-import FilterMenu from "../app/components/FilterMenu";
-import Card from "../app/components/Card";
-import Tutorial from "../app/components/Tutorial";
+import styles from "../pages css/mainPage.module.css";
+import SearchBar from "../components/SearchBar";
+import SortFilters from "../components/SortFilters";
+import FilterMenu from "../components/FilterMenu";
+import Card from "../components/Card";
+import Tutorial from "../components/Tutorial";
 
 //From layout.js
 import "bootstrap/dist/css/bootstrap.min.css";
-import ImportBsJS from "../app/components/importBsJs";
-import AppNavbar from "../app/components/AppNavbar";
-import AppFooter from "../app/components/AppFooter";
+import ImportBsJS from "../components/importBsJs";
+import AppNavbar from "../components/AppNavbar";
+import AppFooter from "../components/AppFooter";
 
 import { Alegreya, Alegreya_Sans } from "next/font/google";
 

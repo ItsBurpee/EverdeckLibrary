@@ -1,7 +1,6 @@
 "use client"
 
 import styles from "../css/multiRangeSlider.module.css";
-import PropTypes from "prop-types";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 /**

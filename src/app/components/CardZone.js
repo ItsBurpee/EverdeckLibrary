@@ -3,7 +3,6 @@
 import styles from "../css/cardZone.module.css";
 import Image from "next/image";
 import CardZoneBox from "./CardZoneBox"
-import { useEffect } from "react";
 
 export default function CardZone({
     cardZones,
