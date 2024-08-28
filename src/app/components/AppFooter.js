@@ -6,7 +6,7 @@ export default function AppNavbar({gameTitleProp}) {
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <p className={styles.names}>Created by Nathan, Carl, and Philip</p>
-                <a href={"https://github.com/ItsBurpee/EverdeckLibrary"} className={styles.git}>Github</a>
+                <a href={"https://github.com/ItsBurpee/EverdeckLibrary"} className={styles.git} target="_blank">Github</a>
                 <Link href="/about" className={styles.about}>About Us</Link>
             </div>
         </footer>

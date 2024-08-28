@@ -24,12 +24,8 @@
   }
 
 
-  .bgg{
-    width: 12rem;
-  }
-
-  .wordpress{
-    width: 12rem;
+  .bgg,  .wordpress{
+    width: 15rem;
   }
 
   @media (tablet-l) {
