@@ -52,6 +52,7 @@
 }
 
 .mainLayout {
+  overflow: hidden;
   width: 100dvw;
   max-width: 100%;
   min-height: 100dvh;
@@ -59,7 +60,10 @@
   flex-direction: column;
   align-items: center;
   padding: 0 1rem 4rem 1rem;
+  position: relative;
+  min-height: 100vh;
 }
+
 
 .topSection {
   display: flex;

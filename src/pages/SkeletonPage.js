@@ -11,6 +11,8 @@ import TableSection from "../app/components/TableSection";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
+import AppFooter from "../app/components/AppFooter";
+
 
 const ForSalePage = ({ game, rules, cardZones }) => {
     const moveToTop = () => document.getElementById('rulesMain').scrollIntoView();
@@ -172,6 +174,7 @@ const ForSalePage = ({ game, rules, cardZones }) => {
                    
                 </div>
             </div>
+            <AppFooter />
         </div>
 
     );

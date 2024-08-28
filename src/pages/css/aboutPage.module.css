@@ -1,0 +1,45 @@
+.mainLayout {
+    overflow: hidden;
+    width: 100dvw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 100dvh;
+  }
+  
+
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    font-family: var(--font-alegreya);
+
+  }
+
+  .mainPage p,
+  .mainPage a{
+    font-size: 20px;
+  }
+
+
+  .bgg{
+    width: 12rem;
+  }
+
+  .wordpress{
+    width: 12rem;
+  }
+
+  @media (tablet-l) {
+  }
+  
+  @media (laptop) {
+    
+  }
+  
+  @media (desktop) {
+    
+  }
+  

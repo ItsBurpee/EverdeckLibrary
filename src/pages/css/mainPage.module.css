@@ -11,6 +11,8 @@
   align-items: center;
   padding-inline: 1rem;
   padding-bottom: 5rem;
+  position: relative;
+  min-height: 100vh;
 }
 
 .stackContainer {
@@ -74,12 +76,12 @@
 }
 
 .filterButton {
-  bottom: 1rem;
+  bottom: 2.1rem;
   right: 5%;
 }
 
 .tutButton {
-  bottom: 1rem;
+  bottom: 2.1rem;
   left: 5%;
 }
 

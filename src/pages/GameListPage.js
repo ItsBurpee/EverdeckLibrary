@@ -13,6 +13,7 @@ import Tutorial from "../app/components/Tutorial";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ImportBsJS from "../app/components/importBsJs";
 import AppNavbar from "../app/components/AppNavbar";
+import AppFooter from "../app/components/AppFooter";
 
 import { Alegreya, Alegreya_Sans } from "next/font/google";
 
@@ -311,6 +312,7 @@ const GameListPage = ( {allGames} ) => {
                     </Offcanvas.Body>
                 </Offcanvas>
             </div>
+            <AppFooter/>
         </div>
     );
     
