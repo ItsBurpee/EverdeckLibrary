@@ -1,11 +1,15 @@
 import AppFooter from "../app/components/AppFooter";
 import AppNavbar from "../app/components/AppNavbar";
 import styles from "./css/aboutPage.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Alegreya_Sans, Alegreya } from "next/font/google";
 
+const alegreya = Alegreya({ subsets: ['latin'], variable: "--font-alegreya"})
+const alegreyaSans = Alegreya_Sans({ weight: '500', subsets: ['latin'], variable: "--font-alegreya-sans"})
 
 const AboutPage = () => {
     return (
-        <div className={styles.mainLayout}>
+        <div className={`${styles.mainLayout} ${alegreya.variable} ${alegreyaSans.variable}`} >
             <AppNavbar/>
             <div className={styles.mainPage}>
                 <h1>About The Everdeck</h1>

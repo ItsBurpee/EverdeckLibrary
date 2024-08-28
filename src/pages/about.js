@@ -2,10 +2,10 @@ import Head from "next/head";
 import AboutPage from "./AboutPage.js";
 
 
-const forSalePage = () => {
+const about = () => {
     
     return (
-        <>
+        <div>
             <Head>
                 <title>About</title>
                 <link rel="icon" href="/everdeck-clam.ico"/>
@@ -13,8 +13,8 @@ const forSalePage = () => {
             <div>
                 <AboutPage />
             </div>
-        </>
+        </div>
     )
 }
 
-export default forSalePage;
+export default about;

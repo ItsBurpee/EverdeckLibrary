@@ -15,7 +15,7 @@
     flex-direction: column;
     width: 80%;
     font-family: var(--font-alegreya);
-
+    padding-bottom: 5rem;
   }
 
   .mainPage p,

@@ -34,7 +34,7 @@ export default function AppNavbar({gameTitleProp}) {
 
     return (
         <header className={styles.header}>
-            <Navbar className={styles.navbar}>
+            <bsPrefix className={styles.navbar}>
                 <div
                     className={`${styles.container} ${hideTitleStyle}`}
                 >
@@ -53,7 +53,7 @@ export default function AppNavbar({gameTitleProp}) {
                         {gameTitle}
                     </h2>
                 </div>
-            </Navbar>
+            </bsPrefix>
         </header>
     )
 
