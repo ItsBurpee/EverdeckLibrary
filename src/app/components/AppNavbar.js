@@ -1,3 +1,4 @@
+import { Navbar } from "react-bootstrap";
 import Image from "next/image";
 import { Alegreya_SC, Alegreya } from "next/font/google";
 import styles from "../css/navBar.module.css";
@@ -10,10 +11,6 @@ const alegreya_sc = Alegreya_SC({
 const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
 
 export default function AppNavbar({gameTitleProp}) {
-    /*TO-DO: 
-        - Middle Game Name while on a rules page
-    */
-    
     let gameTitle = ""
     let hideTitleStyle = ""
 
@@ -25,15 +22,13 @@ export default function AppNavbar({gameTitleProp}) {
     const router = useRouter();
     // push route to home page if not already on home page.
     // if on homepage, jump to top of page
-    //      this is useless as it is now, but it can act as a jump to top button on the home
-    //      page if we give the navbar a position: fixed and push everything else down
     const returnHome = () => {
         router.pathname === "/" ? router.push("#") : router.push("/");
     }
 
     return (
         <header className={styles.header}>
-            <bsPrefix className={styles.navbar}>
+            <Navbar bsPrefix={styles.navbar}>
                 <div
                     className={`${styles.container} ${hideTitleStyle}`}
                 >
@@ -52,7 +47,7 @@ export default function AppNavbar({gameTitleProp}) {
                         {gameTitle}
                     </h2>
                 </div>
-            </bsPrefix>
+            </Navbar>
         </header>
     )
 
