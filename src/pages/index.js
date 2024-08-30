@@ -30,7 +30,6 @@ export const getServerSideProps = async () => {
 
 
 const mainPage = ({ gameList, isConnected }) => {
-//const mainPage = () => {
     return (
         <>
             <Head>

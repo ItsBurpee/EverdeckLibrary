@@ -21,6 +21,7 @@ const RulesPage = ({ game, rules, cardZones }) => {
     const moveToRules = () => document.getElementById('rulesSection').scrollIntoView();
 
 
+    // Show warning boxes based on map strength and extra components
     let componentWarning = false;
     let mapWarning = false;
 
@@ -31,6 +32,11 @@ const RulesPage = ({ game, rules, cardZones }) => {
         componentWarning = true;
     }
 
+    // States for the active card zone for the rules section
+    // The active card zone for the rule section is set when hovering over a card zone box or a keyword
+
+    // The active card zones are separated by section to limit the page updates when the active card zone changes
+    // This is to prevent offscreen updates due to screen space
     const [activeCardZones, setActiveCardZones] = useState([]);
 
     const assignActiveCardZones = targetCardZoneIDs => {

@@ -10,6 +10,7 @@ export default function CardZone({
     assignActiveCardZones
 }) {
     
+    // Object for the various CSS styles for each card component highlighting
     const cardComponentsZones = {
         "Rank": styles.compRank,
         "Suit": styles.compSuit,
@@ -30,15 +31,8 @@ export default function CardZone({
         Yellow: styles.cardZoneYellow
     }
 
-    const tempZoneTarget = {
-        Red: styles.cardZoneSeq,
-        Blue: styles.cardZoneRaS,
-        Yellow: styles.cardZoneImg
-    }
-
     let cardZoneIndex = 0;
 
-    // TODO: apply highlight id's and classNames based on card zone cardComponents
     return (
             <div className={styles.cardZone}>
                 <div className={styles.title}>

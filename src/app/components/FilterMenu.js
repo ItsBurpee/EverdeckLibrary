@@ -28,11 +28,6 @@ export default function FilterMenu({
     setCheckedTypes
 }) {
     
-    /*TO-DO: 
-        - Currently has placeholder min/max values for sliders. Needs to have them set to correct values
-        - Ask what we agreed upon for the game type section
-    */
-    
     // state to track if all components are checked
     const [toggleComponents, setToggleComponents] = useState(false);
 

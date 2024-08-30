@@ -4,10 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "../css/mappingTable.module.css";
 import Image from "next/image";
 import CardZoneBox from "./CardZoneBox";
-//The generic table which will have information passed into it
-
-//TODO: It is currently causing a hydration error
-//Needs to actually take in paramaters and use them to fill table
+// The generic table which will have information passed into it
 
 export default function MappingTable({
     tableColor,
@@ -17,6 +14,7 @@ export default function MappingTable({
     AllCardZones
 }) {
 
+    // Object for the img srcs for each suit
     const cardColors = {
         black: {
             club: "/everdeckSuits/everdeck-suits-club.svg", 
@@ -35,6 +33,7 @@ export default function MappingTable({
             star: "/everdeckSuits/everdeck-suits-star.svg"
         }
     }
+    // Object for CSS styles for each mapping table
     const colorStyles = {
         black: styles.blackTable,
         red: styles.redTable,

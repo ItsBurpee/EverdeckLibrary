@@ -13,6 +13,7 @@ export default function RulesSection({
 }) {
     
     const keywordColors = ["Red", "Blue", "Yellow"];
+    // Objects for the CSS styles for keywords & when they're considered "active"
     const keywordColorStyle = {
         Red: styles.keywordRed,
         Blue: styles.keywordBlue,
@@ -24,7 +25,7 @@ export default function RulesSection({
         Yellow: styles.activeKeywordYellow
     }
 
-    
+    //Format all the "\\t" in the strings with actual tab space
     const formattedObjective = objective.replaceAll('\\t', '\t');
     const formattedSetup = setup.replaceAll('\\t', '\t');
     const formattedGameplay = gameplay.replaceAll('\\t', '\t');

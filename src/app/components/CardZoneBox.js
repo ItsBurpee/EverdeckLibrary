@@ -11,6 +11,8 @@ export default function CardZone({
     const cardZoneColors = ["Red", "Blue", "Yellow"];
  
     let cardId = `cardZone${cardZoneColors[boxColorIndex]}`;
+
+    // Objects for the CSS styles for card zone boxes & when they're considered "active"
     const boxColorStyle = {
         Red: styles.cardZoneRed,
         Yellow: styles.cardZoneYellow,
@@ -22,6 +24,8 @@ export default function CardZone({
         Blue: styles.cardZoneBlueActive
     }
 
+    //SECTION: Card Suit Icon Replacement
+    // If the keys from "cardSuits" shows up in the card zone's extra rules, it will replace them with their respective icons
     const cardSuits = {
         //Black Suits
         club: "/everdeckSuits/everdeck-suits-club.svg", 
@@ -36,7 +40,8 @@ export default function CardZone({
         moon: "/everdeckSuits/everdeck-suits-moon.svg", 
         star: "/everdeckSuits/everdeck-suits-star.svg"
     }
-
+    
+    // Use reactStringReplace to replace the keywords with their respective icons
     const applySuitIcons = (targetString) => {
         let modifiedString = targetString;
         Object.entries(cardSuits).forEach((suit) => {
@@ -48,9 +53,10 @@ export default function CardZone({
         })
         return modifiedString
     }
-
+    //END SECTION: Card Suit Icon Replacement
+    
     let cardComponentP = "";
-
+    // String formatting for the card zone's title
     if (cardZone) {
         cardComponentP = cardZone.cardComponents.join(", ");
         const lastComma = cardComponentP.lastIndexOf(", ")

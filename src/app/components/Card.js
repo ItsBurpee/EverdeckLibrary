@@ -80,7 +80,7 @@ export default function Card({ game }) {
         <div className={styles.card}>
             <div onClick={pushRoute} className={styles.cardImgContainer}>
                 <div className={styles.cardImg}>
-                    <Image src={game.cardImg} fill alt="Game Image" />
+                    <Image src={game.cardImg} fill sizes="70vw" alt="Game Image" />
                 </div>
             </div>
             <div onClick={pushRoute} className={styles.cardInfo}>

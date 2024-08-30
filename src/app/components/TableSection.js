@@ -10,6 +10,7 @@ export default function TableSection({
     extComponents 
 }) {
 
+    // Split the card table into each suit color as each mapping table covers a single suit color
     const blackCards = cardTable.filter((card) => {
         return (card.suit === "club" || card.suit === "spade")
     })
@@ -23,6 +24,8 @@ export default function TableSection({
         return (card.suit === "moon" || card.suit === "star")
     })
 
+    // States for the active card zone in the table section
+    // The active card zone is set when hovering over a card zone box or a filled table cell
     const [activeCardZones, setActiveCardZones] = useState([]);
 
     const assignActiveCardZones = targetCardZoneIDs => {

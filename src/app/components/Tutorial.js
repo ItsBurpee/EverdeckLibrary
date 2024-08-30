@@ -124,7 +124,7 @@ const Tutorial = () => {
                             play time and complexity.
                         </p>
                         <figure className={styles.tutImg}>
-                            <Image src={"/filterEx/sliderEx.png"} width={358} height={325} className={styles.exImage} />
+                            <Image src={"/filterEx/sliderEx.png"} width={358} height={325} className={styles.exImage} alt="Silder example"/>
                             <figcaption><i>The Sliders from the filter menu</i></figcaption>
                         </figure>
                         <p>You can choose a minimum amount and a maximum amount for each category</p>
@@ -132,7 +132,7 @@ const Tutorial = () => {
                             <h4>Mapping Strength</h4>
                             <p>The Filter Menu includes a dropdown that lets you select a mapping strength </p>
                             <figure className={styles.tutImg}>
-                                <Image src={"/filterEx/mappingEx.png"} width={373} height={185} className={styles.exImage} />
+                                <Image src={"/filterEx/mappingEx.png"} width={373} height={185} className={styles.exImage} alt="Mapping example"/>
                                 <figcaption><i>The mapping strength dropdown when expanded</i></figcaption>
                             </figure>
                             <p>
@@ -159,7 +159,7 @@ const Tutorial = () => {
                                 Dice or chips are common examples.
                             </p>
                             <figure className={styles.tutImg}>
-                                <Image src={"/filterEx/extCompEx.png"} width={326} height={161} className={styles.exImage} />
+                                <Image src={"/filterEx/extCompEx.png"} width={326} height={161} className={styles.exImage} alt="ExtComp Example"/>
                                 <figcaption><i>External Components checkboxes</i></figcaption>
                             </figure>
                             <p>
@@ -173,7 +173,7 @@ const Tutorial = () => {
                                 Using the filter menu, you can also filter games by their type. 
                             </p>
                             <figure className={styles.tutImg}>
-                                <Image src={"/filterEx/gameTypeEx.png"} width={326} height={174} className={styles.exImage} />
+                                <Image src={"/filterEx/gameTypeEx.png"} width={326} height={174} className={styles.exImage} alt="Game Type Example"/>
                                 <figcaption><i>Game Types checkboxes</i></figcaption>
                             </figure>
                         </div>
@@ -202,7 +202,7 @@ const Tutorial = () => {
                             in the game.
                         </p>
                         <figure className={styles.tutImg}>
-                            <Image src={"/filterEx/cardZoneEx.png"} width={339} height={344} className={styles.exImage} />
+                            <Image src={"/filterEx/cardZoneEx.png"} width={339} height={344} className={styles.exImage} alt="Card Zone Example"/>
                             <figcaption><i>Card Zone being highlighted</i></figcaption>
                         </figure>
                         <p>
@@ -220,7 +220,7 @@ const Tutorial = () => {
                             that the card belongs to.
                         </p>
                         <figure className={styles.tutImg}>
-                            <Image src={"/filterEx/cardTableEx.png"} width={350} height={201} className={styles.exImage} />
+                            <Image src={"/filterEx/cardTableEx.png"} width={350} height={201} className={styles.exImage} alt="Card Table Example"/>
                             <figcaption><i>Card Table being hovered</i></figcaption>
                         </figure>
                         <p>

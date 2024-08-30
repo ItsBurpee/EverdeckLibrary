@@ -56,6 +56,7 @@ const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
     let game = [];
     let rules = [];
     let cardZones = [];
+    // Parse each DB entry for the given game
     if (dbgame) {
         game = JSON.parse(dbgame)[0];
     }
@@ -66,10 +67,9 @@ const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
 
     if (dbCardZones) {
         cardZones = JSON.parse(dbCardZones);
-        // console.log(cardZones);
     }
 
-    let title = game ? game.title : "404";
+    let title = rules ? game.title : "404";
     return (
         <>
             <Head>
@@ -78,7 +78,7 @@ const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
             </Head>
             <div className={ `${alegreya.variable} ${alegreyaSans.variable}` }>
                 { 
-                    dbgame ?
+                    rules ?
                         <SkeletonPage game={game} rules={rules} cardZones={cardZones} /> :
                         <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
                 }
