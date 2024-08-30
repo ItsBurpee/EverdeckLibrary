@@ -9,7 +9,6 @@
     min-height: 100dvh;
   }
   
-
   .mainPage {
     display: flex;
     flex-direction: column;
@@ -18,15 +17,19 @@
     padding-bottom: 5rem;
   }
 
+  .mainPage h1{
+    margin-top: 2rem;
+  }
+
   .mainPage p,
   .mainPage a{
     font-size: 20px;
     font-family: var(--font-alegreya-sans);
   }
 
-
-  .bgg,  .wordpress{
-    width: 15rem;
+  .sourceDiv p,
+  .links {
+    margin: 0;
   }
 
   @media (tablet-l) {

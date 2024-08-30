@@ -13,7 +13,6 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    font-size: medium;
   }
 
   .container{
@@ -27,47 +26,23 @@
 
   .names
   {
-    padding-right: .5rem;
     font-family: var(--font-alegreya);
     color: EDBlack;
   }
 
-  .git{
-    padding-left: .5rem;
-    padding-right: .5rem;
-    font-family: var(--font-alegreya);
-    color: EDBlack;
-    text-decoration: none;
-  }
-
-  .about{
-    padding-left: .5rem;
+  .git,
+  .about {
     font-family: var(--font-alegreya);
     color: EDBlack;
     text-decoration: none;
   }
 
-
- .git:hover{
+ .git:hover,
+ .about:hover {
     text-decoration: underline;
   }
 
-  .about:hover{
-    text-decoration: underline;
-  }
   @media (tablet) {
-    .names
-    {
-      padding-right: 1rem;
-    }
-  
-    .git{
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  
-    .about{
-      padding-left: 1rem;
-    }  
+
   }
   
