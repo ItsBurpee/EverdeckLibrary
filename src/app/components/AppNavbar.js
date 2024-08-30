@@ -11,10 +11,6 @@ const alegreya_sc = Alegreya_SC({
 const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
 
 export default function AppNavbar({gameTitleProp}) {
-    /*TO-DO: 
-        - Middle Game Name while on a rules page
-    */
-    
     let gameTitle = ""
     let hideTitleStyle = ""
 
@@ -26,8 +22,6 @@ export default function AppNavbar({gameTitleProp}) {
     const router = useRouter();
     // push route to home page if not already on home page.
     // if on homepage, jump to top of page
-    //      this is useless as it is now, but it can act as a jump to top button on the home
-    //      page if we give the navbar a position: fixed and push everything else down
     const returnHome = () => {
         router.pathname === "/" ? router.push("#") : router.push("/");
     }

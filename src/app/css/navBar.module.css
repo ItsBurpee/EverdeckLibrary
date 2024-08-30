@@ -2,7 +2,6 @@
 @value EDBlue from "./colors.module.css";
 
 .header {
-  /* comment below if we dont use navbar to jump to top */
   margin-bottom: 7rem;
 }
 
