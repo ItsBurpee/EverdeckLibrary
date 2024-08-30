@@ -1,3 +1,4 @@
+import { Navbar } from "react-bootstrap";
 import Image from "next/image";
 import { Alegreya_SC, Alegreya } from "next/font/google";
 import styles from "../css/navBar.module.css";
@@ -33,7 +34,7 @@ export default function AppNavbar({gameTitleProp}) {
 
     return (
         <header className={styles.header}>
-            <bsPrefix className={styles.navbar}>
+            <Navbar bsPrefix={styles.navbar}>
                 <div
                     className={`${styles.container} ${hideTitleStyle}`}
                 >
@@ -52,7 +53,7 @@ export default function AppNavbar({gameTitleProp}) {
                         {gameTitle}
                     </h2>
                 </div>
-            </bsPrefix>
+            </Navbar>
         </header>
     )
 
