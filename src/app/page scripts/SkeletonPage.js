@@ -120,6 +120,7 @@ const RulesPage = ({ game, rules, cardZones }) => {
                                     objective={rules.rules.objective}     
                                     setup={rules.rules.setup}     
                                     gameplay={rules.rules.gameplay}
+                                    ruleSource={rules.rules.ruleSource}
                                     mapDiff={rules.rules.mapDiff}
                                     cardZones={cardZones}
                                     activeCardZones={activeCardZones}

@@ -5,6 +5,7 @@ export default function RulesSection({
     objective,
     setup,   
     gameplay,
+    ruleSource,
     mapDiff,
     cardZones,
     activeCardZones,
@@ -95,6 +96,7 @@ export default function RulesSection({
                     <p className={styles.para}>{replacedSetup}</p>
                     <h3>Gameplay</h3>
                     <p className={styles.para}>{replacedGameplay}</p>
+                    <h3 className={styles.ruleSource}>Rules Source:&ensp;{ruleSource}</h3>
                 </div>
                 { mapDiff &&
                     <div className={`${styles.warning} ${styles.mapWarn}`}>
