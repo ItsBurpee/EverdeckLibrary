@@ -47,13 +47,6 @@
   border: 3px solid EDDarkYellow;
 }
 
-.cardZoneSeq {
-  height: 52.8px;
-  width: 80px;
-  top: 0;
-  right: 16px;
-}
-
 .compRank {
   height: 30px;
   width: 30px;
@@ -78,6 +71,20 @@
 .compSeqNum {
   height: 48px;
   width: 81px;
+  top: 3px;
+  right: 18px;
+}
+
+.compUncolSeqNum {
+  height: 48px;
+  width: 46px;
+  top: 3px;
+  right: 48px;
+}
+
+.compColSeqNum {
+  height: 48px;
+  width: 33px;
   top: 3px;
   right: 18px;
 }
