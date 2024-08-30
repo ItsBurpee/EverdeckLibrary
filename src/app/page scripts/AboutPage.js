@@ -33,9 +33,9 @@ const AboutPage = () => {
                     <a href={"https://boardgamegeek.com/boardgame/291951/the-everdeck"} className={styles.links} >BGG: Everdeck Games Compilation</a>
                     <br/>
                     <p>BGG: The Everdeck Companion:&ensp;
-                        <a href={"https://boardgamegeek.com/filepage/263177/the-everdeck-companion-vol-1"} className={styles.links} >1</a>&ensp;
-                        <a href={"https://boardgamegeek.com/filepage/279974/the-everdeck-companion-vol-2"} className={styles.links} >2</a>&ensp;
-                        <a href={"https://boardgamegeek.com/filepage/281080/the-everdeck-companion-vol-3"} className={styles.links} >3</a>
+                        <a href={"https://boardgamegeek.com/filepage/263177/the-everdeck-companion-vol-1"} className={styles.links} >Vol. 1</a>&ensp;
+                        <a href={"https://boardgamegeek.com/filepage/279974/the-everdeck-companion-vol-2"} className={styles.links} >Vol. 2</a>&ensp;
+                        <a href={"https://boardgamegeek.com/filepage/281080/the-everdeck-companion-vol-3"} className={styles.links} >Vol. 3</a>
                     </p>
                     <p>Nathan's Personal List of Everdeck Games</p>
                     <br/>
