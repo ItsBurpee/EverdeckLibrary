@@ -9,9 +9,10 @@ export default function RulesSection({
     mapDiff,
     cardZones,
     activeCardZones,
-    assignActiveCardZones
+    assignActiveCardZones,
+    cardZoneJump
 }) {
-    
+
     const keywordColors = ["Red", "Blue", "Yellow"];
     // Objects for the CSS styles for keywords & when they're considered "active"
     const keywordColorStyle = {
@@ -53,6 +54,7 @@ export default function RulesSection({
                         className={`${(activeCardZones.includes(cardZone._id)) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
                         onMouseEnter={() => assignActiveCardZones(cardZone._id)}
                         onMouseLeave={() => assignActiveCardZones()}
+                        onClick={cardZoneJump}
                     >
                     {match}</u>
                 )
@@ -65,6 +67,7 @@ export default function RulesSection({
                         className={`${(activeCardZones.includes(cardZone._id)) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
                         onMouseEnter={() => assignActiveCardZones(cardZone._id)}
                         onMouseLeave={() => assignActiveCardZones()}
+                        onClick={cardZoneJump}
                     >
                     {match}</u>
                 )
@@ -77,6 +80,7 @@ export default function RulesSection({
                         className={`${(activeCardZones.includes(cardZone._id)) ? activeKeywordColorStyle[currentKeywordColor] : keywordColorStyle[currentKeywordColor]}`}
                         onMouseEnter={() => assignActiveCardZones(cardZone._id)}
                         onMouseLeave={() => assignActiveCardZones()}
+                        onClick={cardZoneJump}
                     >
                     {match}</u>
                 )
@@ -105,7 +109,7 @@ export default function RulesSection({
                             <div className={styles.warningIcon}><p>!</p></div>
                             <h3>Everdeck Differences</h3>
                         </div>
-                        <p className={styles.para}>{formattedMapDiff}</p> 
+                        <p className={styles.warnPara}>{formattedMapDiff}</p> 
                     </div>
                 }
             </div>

@@ -15,17 +15,9 @@ import AppFooter from "../components/AppFooter";
 
 
 const RulesPage = ({ game, rules, cardZones }) => {
-    const moveToTop = () => document.getElementById('rulesMain').scrollIntoView();
-    const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
-    const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
-    const moveToRules = () => document.getElementById('rulesSection').scrollIntoView();
-    
-    const moveToCardZone = () => document.getElementById('cardZone').scrollIntoView();
-
-
-    /*const handleJump = id => {
+    const handleJump = id => {
         document.getElementById(id).scrollIntoView({behavior: 'smooth'});
-    }*/
+    }
 
     // Show warning boxes based on map strength and extra components
     let componentWarning = false;
@@ -53,6 +45,16 @@ const RulesPage = ({ game, rules, cardZones }) => {
         }
     }
     
+    // Only jump to card zone if the screen is smaller than the laptop breakpoint
+    const cardZoneJump = () => {
+        if (typeof window !== "undefined") {
+            if (window.innerWidth < 992) {
+                handleJump("middle")
+            }
+        }
+    }
+
+
     return(
         <div className={styles.mainLayout}>
             <ImportBsJS />
@@ -137,7 +139,7 @@ const RulesPage = ({ game, rules, cardZones }) => {
                                     cardZones={cardZones}
                                     activeCardZones={activeCardZones}
                                     assignActiveCardZones={assignActiveCardZones}
-                                    moveToCardZone={moveToCardZone}
+                                    cardZoneJump={cardZoneJump}
                                 />
                             </div>
                         </div>
@@ -155,31 +157,31 @@ const RulesPage = ({ game, rules, cardZones }) => {
                     <div className={styles.jumpSection}>
                         <h2>Jump To:</h2>
                         <Button
-                            onClick={moveToTop}
+                            onClick={() => handleJump("rulesMain")}
                             bsPrefix={styles.jumpButton}
                         >
                             Basic Info
                         </Button>
                         <Button
-                            onClick={moveToMiddle}
+                            onClick={() => handleJump("middle")}
                             bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZR}`}
                         >
                             Card Zone/Rules
                         </Button>
                         <Button
-                            onClick={moveToMiddle}
+                            onClick={() => handleJump("middle")}
                             bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZ}`}
                         >
                             Card Zones
                         </Button>
                         <Button
-                            onClick={moveToRules}
+                            onClick={() => handleJump("rulesSection")}
                             bsPrefix={`${styles.jumpButton} ${styles.jumpButtonR}`}
                         >
                             Rules
                         </Button>
                         <Button
-                            onClick={moveToBottom}
+                            onClick={() => handleJump("bottom")}
                             bsPrefix={styles.jumpButton}
                         >
                             Card Table
