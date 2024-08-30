@@ -20,20 +20,21 @@
     flex-grow: 1;
     flex-direction: row;
     justify-content: center;
-    padding-top: 1.5rem;
-    padding-bottom: .5rem;
+    padding: 0;
   }
 
-  .names
+  .names,
+  .git,
+  .about
   {
     font-family: var(--font-alegreya);
     color: EDBlack;
+    margin: 0;
+    font-weight: bold;
   }
 
   .git,
   .about {
-    font-family: var(--font-alegreya);
-    color: EDBlack;
     text-decoration: none;
   }
 

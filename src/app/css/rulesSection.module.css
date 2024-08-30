@@ -26,7 +26,8 @@
   margin-bottom: 1.5rem;
 }
 
-.para {
+.para,
+.warnPara {
   white-space: pre-wrap;
   tab-size: 20px;
 }
@@ -107,6 +108,10 @@
 
 .mapWarn .warningIcon {
   background-color: EDDarkYellow;
+}
+
+.warnPara {
+  margin-bottom: 0.5rem;
 }
 
 @media (tablet) {

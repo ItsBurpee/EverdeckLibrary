@@ -52,7 +52,6 @@
 }
 
 .mainLayout {
-  overflow: hidden;
   width: 100dvw;
   max-width: 100%;
   min-height: 100dvh;

@@ -19,7 +19,13 @@ const RulesPage = ({ game, rules, cardZones }) => {
     const moveToMiddle = () => document.getElementById('middle').scrollIntoView();
     const moveToBottom = () => document.getElementById('bottom').scrollIntoView();
     const moveToRules = () => document.getElementById('rulesSection').scrollIntoView();
+    
+    const moveToCardZone = () => document.getElementById('cardZone').scrollIntoView();
 
+
+    /*const handleJump = id => {
+        document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+    }*/
 
     // Show warning boxes based on map strength and extra components
     let componentWarning = false;
@@ -114,7 +120,7 @@ const RulesPage = ({ game, rules, cardZones }) => {
                         }
                         <div className={styles.divider}></div>
                         <div id="middle" className={styles.middleSection}>
-                            <div className={styles.cardZone}>
+                            <div id="cardZone" className={styles.cardZone}>
                                 <CardZone 
                                     cardZones={cardZones}
                                     activeCardZones={activeCardZones}
@@ -131,6 +137,7 @@ const RulesPage = ({ game, rules, cardZones }) => {
                                     cardZones={cardZones}
                                     activeCardZones={activeCardZones}
                                     assignActiveCardZones={assignActiveCardZones}
+                                    moveToCardZone={moveToCardZone}
                                 />
                             </div>
                         </div>
