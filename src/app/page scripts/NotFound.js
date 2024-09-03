@@ -6,7 +6,7 @@ const NotFound = ({ gameName }) => {
     return (
         <div className={styles.mainLayout}>
             <AppNavbar />
-            <h1> The rules for <b>{gameName}</b> hasn't been set up on our database :(</h1>
+            <h1> The rules for <b>{gameName}</b> have not been set up on our database :(</h1>
             <AppFooter />
         </div>
         

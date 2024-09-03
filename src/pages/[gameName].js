@@ -78,7 +78,7 @@ const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
             </Head>
             <div className={ `${alegreya.variable} ${alegreyaSans.variable}` }>
                 { 
-                    rules ?
+                    gameRules ?
                         <SkeletonPage game={game} rules={rules} cardZones={cardZones} /> :
                         <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
                 }
