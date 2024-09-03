@@ -55,144 +55,144 @@ const RulesPage = ({ game, rules, cardZones }) => {
     }
 
 
-    return(
-        <div className={styles.mainLayout}>
-            <ImportBsJS />
-            <AppNavbar gameTitleProp={game.title} />
-            <div id="rulesMain" className={styles.rulesPage} >
-                <h1>{game.title}</h1>
-                <div className={styles.stackContainer}>
-                    <Stack gap={3} className={styles.mainStack}>
-                        <div className={styles.topSection}>
-                            <RulesImageIcons
-                                cardImg={game.cardImg}
-                                plCount={game.plCount}
-                                plTime={game.plTime}
-                                complexity={game.complexity}
-                            />
-                            <div className={styles.summary}>
-                                <h2>Summary</h2>
-                                {/* conditionally render summary to avoid errors while
-                                    rules db is not fully populated */}
-                                <p>{rules ? rules.summary : "Summary Text"}</p>
-                                {
-                                    rules &&
-                                    <a href={rules.bggLink} target="_blank">
-                                        <Image
-                                            src={"/bgg-logo.svg"}
-                                            height={38}
-                                            width={80}
-                                        />
-                                    </a>
-                                }
-                            </div>
-                        </div>
-                        {
-                            (componentWarning || mapWarning) &&
-                                <div className={styles.warnings}>
+    return (
+        <div className={styles.rulesContainer}>
+            <div className={styles.mainLayout}>
+                <ImportBsJS />
+                <AppNavbar gameTitleProp={game.title} />
+                <div id="rulesMain" className={styles.rulesPage} >
+                    <h1>{game.title}</h1>
+                    <div className={styles.stackContainer}>
+                        <Stack gap={3} className={styles.mainStack}>
+                            <div className={styles.topSection}>
+                                <RulesImageIcons
+                                    cardImg={game.cardImg}
+                                    plCount={game.plCount}
+                                    plTime={game.plTime}
+                                    complexity={game.complexity}
+                                />
+                                <div className={styles.summary}>
+                                    <h2>Summary</h2>
+                                    {/* conditionally render summary to avoid errors while
+                                        rules db is not fully populated */}
+                                    <p>{rules ? rules.summary : "Summary Text"}</p>
                                     {
-                                        mapWarning && 
-                                        <div className={`${styles.warning} ${styles.mapWarn}`}>
-                                            <div className={styles.warningTitle}>    
-                                                <div className={styles.warningIcon}><p>!</p></div>
-                                                <h3>Mapping Warning</h3>
-                                            </div>
-                                            { game.mapStrength === "High" ? <p>This game has high mapping strength. The Everdeck version has minor changes/mental tracking but the gameplay is unhindered.<br/>See the <b>Rules</b> section for more details</p>
-                                            : <p><b>This game has low mapping strength!</b> While it's still playable with the Everdeck, expect increased mental tracking, frequent references to a card guide, or game features missing entirely.<br/>See the <b>Rules</b> section for more details</p>}  
-                                        </div>
+                                        rules &&
+                                        <a href={rules.bggLink} target="_blank">
+                                            <Image
+                                                src={"/bgg-logo.svg"}
+                                                height={38}
+                                                width={80}
+                                            />
+                                        </a>
                                     }
-
-                                    {
-                                        componentWarning &&
-                                        <div className={` ${styles.warning} ${styles.compWarn}`}>
-                                            <div className={styles.warningTitle}>    
-                                                <div className={styles.warningIcon}><p>!</p></div>
-                                                <h3>Extra Components</h3>
-                                            </div>
-                                            <p>This game requires extra components to play:</p>
-                                            <ul>
-                                                {game.extComponents.map(comp => (
-                                                    <li key={comp}>{comp}</li>    
-                                                ))}     
-                                            </ul>
-                                        </div>
-                                    }
-                                    
                                 </div>
-                        }
-                        <div className={styles.divider}></div>
-                        <div id="middle" className={styles.middleSection}>
-                            <div id="cardZone" className={styles.cardZone}>
-                                <CardZone 
-                                    cardZones={cardZones}
-                                    activeCardZones={activeCardZones}
-                                    assignActiveCardZones={assignActiveCardZones}
-                                />
                             </div>
-                            <div id="rulesSection" className={styles.rules}>
-                                <RulesSection 
-                                    objective={rules.rules.objective}     
-                                    setup={rules.rules.setup}     
-                                    gameplay={rules.rules.gameplay}
-                                    ruleSource={rules.rules.ruleSource}
-                                    mapDiff={rules.rules.mapDiff}
-                                    cardZones={cardZones}
-                                    activeCardZones={activeCardZones}
-                                    assignActiveCardZones={assignActiveCardZones}
-                                    cardZoneJump={cardZoneJump}
-                                />
+                            {
+                                (componentWarning || mapWarning) &&
+                                    <div className={styles.warnings}>
+                                        {
+                                            mapWarning && 
+                                            <div className={`${styles.warning} ${styles.mapWarn}`}>
+                                                <div className={styles.warningTitle}>    
+                                                    <div className={styles.warningIcon}><p>!</p></div>
+                                                    <h3>Mapping Warning</h3>
+                                                </div>
+                                                { game.mapStrength === "High" ? <p>This game has high mapping strength. The Everdeck version has minor changes/mental tracking but the gameplay is unhindered.<br/>See the <b>Rules</b> section for more details</p>
+                                                : <p><b>This game has low mapping strength!</b> While it's still playable with the Everdeck, expect increased mental tracking, frequent references to a card guide, or game features missing entirely.<br/>See the <b>Rules</b> section for more details</p>}  
+                                            </div>
+                                        }
+
+                                        {
+                                            componentWarning &&
+                                            <div className={` ${styles.warning} ${styles.compWarn}`}>
+                                                <div className={styles.warningTitle}>    
+                                                    <div className={styles.warningIcon}><p>!</p></div>
+                                                    <h3>Extra Components</h3>
+                                                </div>
+                                                <p>This game requires extra components to play:</p>
+                                                <ul>
+                                                    {game.extComponents.map(comp => (
+                                                        <li key={comp}>{comp}</li>    
+                                                    ))}     
+                                                </ul>
+                                            </div>
+                                        }
+                                        
+                                    </div>
+                            }
+                            <div className={styles.divider}></div>
+                            <div id="middle" className={styles.middleSection}>
+                                <div id="cardZone" className={styles.cardZone}>
+                                    <CardZone 
+                                        cardZones={cardZones}
+                                        activeCardZones={activeCardZones}
+                                        assignActiveCardZones={assignActiveCardZones}
+                                    />
+                                </div>
+                                <div id="rulesSection" className={styles.rules}>
+                                    <RulesSection 
+                                        objective={rules.rules.objective}     
+                                        setup={rules.rules.setup}     
+                                        gameplay={rules.rules.gameplay}
+                                        ruleSource={rules.rules.ruleSource}
+                                        mapDiff={rules.rules.mapDiff}
+                                        cardZones={cardZones}
+                                        activeCardZones={activeCardZones}
+                                        assignActiveCardZones={assignActiveCardZones}
+                                        cardZoneJump={cardZoneJump}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.divider}></div>
-                        <div id="bottom" className={styles.bottomSection}>
-                            <div className={styles.tableSection}>
-                                <TableSection 
-                                    cardZones={cardZones}
-                                    cardTable={rules.cardTable}
-                                    extComponents={rules.extComponents}
-                                />
+                            <div className={styles.divider}></div>
+                            <div id="bottom" className={styles.bottomSection}>
+                                <div className={styles.tableSection}>
+                                    <TableSection 
+                                        cardZones={cardZones}
+                                        cardTable={rules.cardTable}
+                                        extComponents={rules.extComponents}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </Stack>
-                    <div className={styles.jumpSection}>
-                        <h2>Jump To:</h2>
-                        <Button
-                            onClick={() => handleJump("rulesMain")}
-                            bsPrefix={styles.jumpButton}
-                        >
-                            Basic Info
-                        </Button>
-                        <Button
-                            onClick={() => handleJump("middle")}
-                            bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZR}`}
-                        >
-                            Card Zone/Rules
-                        </Button>
-                        <Button
-                            onClick={() => handleJump("middle")}
-                            bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZ}`}
-                        >
-                            Card Zones
-                        </Button>
-                        <Button
-                            onClick={() => handleJump("rulesSection")}
-                            bsPrefix={`${styles.jumpButton} ${styles.jumpButtonR}`}
-                        >
-                            Rules
-                        </Button>
-                        <Button
-                            onClick={() => handleJump("bottom")}
-                            bsPrefix={styles.jumpButton}
-                        >
-                            Card Table
-                        </Button>  
+                        </Stack> 
                     </div>
-                   
+                </div>
+                <div className={styles.jumpSection}>
+                    <h2>Jump To:</h2>
+                    <Button
+                        onClick={() => handleJump("rulesMain")}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Basic Info
+                    </Button>
+                    <Button
+                        onClick={() => handleJump("middle")}
+                        bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZR}`}
+                    >
+                        Card Zone/Rules
+                    </Button>
+                    <Button
+                        onClick={() => handleJump("middle")}
+                        bsPrefix={`${styles.jumpButton} ${styles.jumpButtonCZ}`}
+                    >
+                        Card Zones
+                    </Button>
+                    <Button
+                        onClick={() => handleJump("rulesSection")}
+                        bsPrefix={`${styles.jumpButton} ${styles.jumpButtonR}`}
+                    >
+                        Rules
+                    </Button>
+                    <Button
+                        onClick={() => handleJump("bottom")}
+                        bsPrefix={styles.jumpButton}
+                    >
+                        Card Table
+                    </Button>  
                 </div>
             </div>
             <AppFooter />
         </div>
-
     );
 }
 

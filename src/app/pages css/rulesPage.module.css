@@ -51,18 +51,23 @@
   padding: 0.3rem 0.5rem 0.3rem 0.5rem;
 }
 
+.rulesContainer {
+  position: relative;
+  /* margin-bottom: 1rem; */
+}
+
 .mainLayout {
   width: 100dvw;
   max-width: 100%;
   min-height: 100dvh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem 4rem 1rem;
+  padding: 0 1rem 5rem 1rem;
   position: relative;
   min-height: 100vh;
 }
-
 
 .topSection {
   display: flex;
@@ -80,10 +85,10 @@
 }
 
 .jumpSection {
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  /* left: 50%;
+  transform: translateX(-50%); */
   align-self: center;
   width: 100%;
   padding: 1rem 0.3rem;
@@ -282,11 +287,14 @@
   }
 
   .jumpSection {
+    position: fixed;
+    /* left: 50%;
+    transform: translateX(-50%); */
     top: 5rem;
     bottom: auto;
     left: auto;
     right: 0;
-    transform: translateX(0);
+    /* transform: translateX(0); */
     flex-direction: column;
     width: 10rem;
     min-width: 11%;

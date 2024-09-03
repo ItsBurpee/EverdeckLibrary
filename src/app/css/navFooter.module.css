@@ -2,48 +2,69 @@
 @value EDBlue, EDBlack from "./colors.module.css";
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1rem;
-    background-color: EDBlue;
-    left: 0;
-    z-index: 0;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: EDBlue;
+  left: 0;
+  z-index: 0;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+}
+
+.slash {
+  display: none;
+}
+
+.names,
+.git,
+.about {
+  font-family: var(--font-alegreya);
+  color: EDBlack;
+  margin: 0;
+  font-weight: bold;
+}
+
+.git,
+.about {
+  text-decoration: none;
+}
+
+.git:hover,
+.about:hover {
+  text-decoration: underline;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+}
+
+@media (tablet) {
+  .footer {
+    height: 2.5rem;
+  }
+  .slash {
+    display: block;
   }
 
-  .container{
-    display: flex;
-    flex-grow: 1;
+  .names {
     flex-direction: row;
-    justify-content: center;
-    padding: 0;
   }
-
-  .names,
-  .git,
-  .about
-  {
-    font-family: var(--font-alegreya);
-    color: EDBlack;
-    margin: 0;
-    font-weight: bold;
-  }
-
-  .git,
-  .about {
-    text-decoration: none;
-  }
-
- .git:hover,
- .about:hover {
-    text-decoration: underline;
-  }
-
-  @media (tablet) {
-
-  }
-  
+}

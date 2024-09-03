@@ -7,10 +7,12 @@ export default function AppNavbar({gameTitleProp}) {
             <div className={styles.container}>
                 <p className={styles.names}>
                     Created by Nathan, Carl, and Philip
-                    &ensp;/&ensp;
-                    <a href={"https://github.com/ItsBurpee/EverdeckLibrary"} className={styles.git} target="_blank">Github</a>
-                    &ensp;/&ensp;
-                    <Link href="/about" className={styles.about}>About Us</Link>
+                    <span className={styles.slash}>&ensp;/&ensp;</span>
+                    <div className={styles.links}>
+                        <a href={"https://github.com/ItsBurpee/EverdeckLibrary"} className={styles.git} target="_blank">Github</a>
+                        <span>&ensp;/&ensp;</span>
+                        <Link href="/about" className={styles.about}>About Us</Link>
+                    </div>
                 </p>
             </div>
         </footer>
