@@ -15,7 +15,7 @@ export default function CardZone({
         "Rank": styles.compRank,
         "Suit": styles.compSuit,
         "Dots": styles.compDots,
-        "Sequence Number": styles.compUncolSeqNum,
+        "Sequence Number": styles.compSeqNum,
         "Uncolored Sequence Number": styles.compUncolSeqNum,
         "Colored Sequence Number": styles.compColSeqNum,
         "Border": styles.compBorder,
