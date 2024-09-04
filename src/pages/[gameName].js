@@ -45,7 +45,7 @@ export const getServerSideProps = async (context) => {
         
       props = { props: { dbgame: JSON.stringify(dbgame), gameRules: JSON.stringify(gameRules), dbCardZones: JSON.stringify(cardZones), isConnected: true } }
     } catch (e) {
-      console.error(e)
+      console.log("ERROR: Failed to query DB due to an unknown page")
       props = { props: {isConnected: false} }
     }
     return props;

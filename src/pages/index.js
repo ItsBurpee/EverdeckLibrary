@@ -21,7 +21,7 @@ export const getServerSideProps = async () => {
         props: { gameList: JSON.stringify(dbGames) , isConnected: true }
       }
     } catch (e) {
-      console.error(e)
+      console.log("ERROR: Failed to fetch game list DB")
       return {
         props: { isConnected: false }
       }
