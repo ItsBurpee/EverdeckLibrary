@@ -43,6 +43,8 @@
 
 .summary p {
   font-size: 1.2rem;
+  white-space: pre-wrap;
+  tab-size: 20px;
 }
 
 .summary a {
