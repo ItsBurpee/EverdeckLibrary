@@ -294,6 +294,7 @@ const GameListPage = ( {allGames} ) => {
                     </Stack>
                 </div>
                 <Button
+                    type="filter button"
                     variant="primary"
                     onClick={handleShowFilters}
                     bsPrefix={`${styles.floatingButton} ${styles.filterButton}`}
@@ -319,6 +320,7 @@ const GameListPage = ( {allGames} ) => {
                     </Offcanvas.Body>
                 </Offcanvas>
                 <Button
+                    type="tutorial button"
                     variant="primary"
                     onClick={handleShowTut}
                     bsPrefix={`${styles.floatingButton} ${styles.tutButton}`}
