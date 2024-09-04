@@ -75,15 +75,26 @@ export default function Card({ game }) {
         router.push(`/${gameUrl}`)
     }
 
+    const getRoute = () => {
+        let gameUrl = game.title.replaceAll(" ", "_");
+        gameUrl = encodeURIComponent(gameUrl);
+        // encode special characters ignored by encodeURIComponent to UTF-8 ASCII encoding
+        gameUrl = gameUrl.replaceAll("'", "%27");
+        gameUrl = gameUrl.replaceAll("-", "%2D");
+        gameUrl = gameUrl.replaceAll("!", "%2D");
+        gameUrl = gameUrl.replaceAll(".", "%2E");
+        return gameUrl
+    }
+
     return (
         
         <div className={styles.card}>
-            <div onClick={pushRoute} className={styles.cardImgContainer}>
+            <a href={`/${getRoute()}`} onClick={pushRoute} className={styles.cardImgContainer}>
                 <div className={styles.cardImg}>
                     <Image src={game.cardImg} fill sizes="70vw" alt="Game Image" />
                 </div>
-            </div>
-            <div onClick={pushRoute} className={styles.cardInfo}>
+            </a>
+            <a href={`/${getRoute()}`} onClick={pushRoute} className={styles.cardInfo}>
                 <div className={styles.cardTitle}>
                     <h2
                         className={
@@ -118,7 +129,7 @@ export default function Card({ game }) {
                 </div>
                 {/* <p className={ alegreyaSans.className }>{game.shDescription}</p> */}
                 <p>{game.shDescription}</p>
-            </div>
+            </a>
             <div id="game-warning-button">
                 {   //create different overlays if warning is component || mapping || both 
                     gameWarning == "component" &&

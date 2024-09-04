@@ -63,6 +63,11 @@
   font-size: 1.6rem;
 }
 
+.cardImgContainer,
+.cardInfo {
+  text-decoration: none;
+}
+
 .cardImgContainer {
   display: none;
   cursor: pointer;
