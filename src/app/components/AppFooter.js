@@ -5,7 +5,7 @@ export default function AppNavbar({gameTitleProp}) {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <p className={styles.names}>
+                <div className={styles.names}>
                     Created by Nathan, Carl, and Philip
                     <span className={styles.slash}>&ensp;/&ensp;</span>
                     <div className={styles.links}>
@@ -13,7 +13,7 @@ export default function AppNavbar({gameTitleProp}) {
                         <span>&ensp;/&ensp;</span>
                         <Link href="/about" className={styles.about}>About Us</Link>
                     </div>
-                </p>
+                </div>
             </div>
         </footer>
     )
