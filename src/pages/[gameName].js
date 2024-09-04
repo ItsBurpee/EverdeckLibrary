@@ -54,7 +54,7 @@ export const getServerSideProps = async (context) => {
 const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
     const router = useRouter();
     let game = [];
-    let rules = [];
+    let rules = null;
     let cardZones = [];
     // Parse each DB entry for the given game
     if (dbgame) {
@@ -78,7 +78,7 @@ const skeleton = ({ dbgame, gameRules, dbCardZones, isConnected }) => {
             </Head>
             <div className={ `${alegreya.variable} ${alegreyaSans.variable}` }>
                 { 
-                    gameRules ?
+                    rules ?
                         <SkeletonPage game={game} rules={rules} cardZones={cardZones} /> :
                         <NotFound gameName={decodeGameName(router.asPath).substring(1)} />
                 }
