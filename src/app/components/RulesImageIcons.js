@@ -8,7 +8,7 @@ export default function RulesImageIcons({cardImg, plCount, plTime, complexity}) 
         <div className={styles.imageIcons}>
             <div className={styles.imgContainer}>
                 <div className={styles.img}>
-                    <Image src={cardImg} height={150} width={150}  alt="Game Image" />
+                    <img src={cardImg} alt="Game Image" />
                 </div>
                 <div className={styles.statIcons}>
                     <div className={styles.icon}>

@@ -83,7 +83,7 @@ export default function Card({ game }) {
         <div className={styles.card}>
             <a href={`/${getRoute()}`} onClick={pushRoute} className={styles.cardImgContainer}>
                 <div className={styles.cardImg}>
-                    <Image src={game.cardImg} fill sizes="70vw" alt="Game Image" />
+                    <img src={game.cardImg} alt="Game Image" />
                 </div>
             </a>
             <a href={`/${getRoute()}`} onClick={pushRoute} className={styles.cardInfo}>

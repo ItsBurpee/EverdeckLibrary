@@ -74,7 +74,6 @@
 .topSection {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
   margin-bottom: 1.5rem;
 }
@@ -89,8 +88,6 @@
 .jumpSection {
   position: sticky;
   bottom: 0;
-  /* left: 50%;
-  transform: translateX(-50%); */
   align-self: center;
   width: 100%;
   padding: 1rem 0.3rem;
@@ -290,13 +287,10 @@
 
   .jumpSection {
     position: fixed;
-    /* left: 50%;
-    transform: translateX(-50%); */
     top: 5rem;
     bottom: auto;
     left: auto;
     right: 0;
-    /* transform: translateX(0); */
     flex-direction: column;
     width: 10rem;
     min-width: 11%;
