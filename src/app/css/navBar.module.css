@@ -26,6 +26,15 @@
   justify-content: center;
 }
 
+.container > a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0;
+  color: black;
+}
+
 .container > div {
   display: flex;
   align-items: center;

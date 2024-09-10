@@ -10,21 +10,23 @@ const alegreya_sc = Alegreya_SC({
 })
 const alegreya = Alegreya({ subsets: ["latin"], variable: "--font-alegreya"});
 
+/**
+ * Component of the top title / nav bar
+ * @param {Object} props - props for the component
+ * @param {String} props.gameTitleProp - the Title of the game if the current page is a game's rules page 
+ * @returns {React.ReactElement} - nav bar element
+ */
 export default function AppNavbar({gameTitleProp}) {
     let gameTitle = ""
     let hideTitleStyle = ""
 
+    // check if a game title was passed into the component
     if (gameTitleProp) {
         gameTitle = gameTitleProp;
         hideTitleStyle = styles.hideTitle; 
     }
     
     const router = useRouter();
-    // push route to home page if not already on home page.
-    // if on homepage, jump to top of page
-    const returnHome = () => {
-        router.pathname === "/" ? router.push("#") : router.push("/");
-    }
 
     return (
         <header className={styles.header}>
@@ -32,13 +34,14 @@ export default function AppNavbar({gameTitleProp}) {
                 <div
                     className={`${styles.container} ${hideTitleStyle}`}
                 >
-                    <div
+                    <a
                         className={alegreya_sc.className}
-                        onClick={returnHome}
+                        // jump to top of page if at main page or return to main page
+                        href={router.pathname === "/" ? "#" : "/"}
                     >
                         <Image className={styles.titleImage} src={"/everdeck-clam.svg"} width={50} height={50} alt="Website Icon" />
                         <h1>Everdeck Library</h1>
-                    </div>
+                    </a>
                     <h2
                         className={
                             `${gameTitle.length >= 20 && styles.titleSmall} ${gameTitle.length >= 30 && styles.titleXSmall} ${alegreya.className}`
