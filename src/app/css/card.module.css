@@ -74,6 +74,8 @@
 }
 
 .cardImg {
+  display: flex;
+  justify-content: center;
   position: relative;
   top: 50%;
   max-width: 70%;
