@@ -153,7 +153,12 @@ The Card Table displays which cards are used in the selected and the labels/info
 
 This will also happen when interacting with the Card Zone description positioned below the Card Table.
 
-## Project by:
-Nathan \
-Carl \
-Philip
+## Credits
+Thanks to:
+- Nathan, Carl, and Philip for developing this project
+- The various users who created mappings for the Everdeck. You can find more information in the About Page's **Game Source List** section
+- UltraBoardGames for providing some of the game's rules
+- BoardGameGeek for their XML API and providing information on the games found on this web app
+- And you for trying out this app!
+
+![Powered by BGG logo](https://github.com/ItsBurpee/EverdeckLibrary/blob/main/public/poweredByBGG.webp)
