@@ -198,6 +198,8 @@ const GameListPage = ( {allGames} ) => {
     });
     // END SECTION: Filter
 
+
+    // SECTION: Sort
     // SWITCH: Sorts the cards based on the sort filter
     switch(sortFilters.sortName) {
         case "name":
@@ -264,6 +266,7 @@ const GameListPage = ( {allGames} ) => {
             break;
 
     }
+    // END SECTION: Sort
 
     //First div is a replica of layout.js
     return (
