@@ -1,0 +1,18 @@
+{
+  "_id": { "$oid": "66e8cc0a68a273b4743bc547" },
+  "complexity": { "$numberDouble": "1.25" },
+  "extComponents": ["Chips"],
+  "gameType": ["Family"],
+  "mapStrength": "Perfect",
+  "plCount": {
+    "plCountMin": { "$numberInt": "3" },
+    "plCountMax": { "$numberInt": "6" }
+  },
+  "plTime": {
+    "plTimeMin": { "$numberInt": "30" },
+    "plTimeMax": { "$numberInt": "30" }
+  },
+  "shDescription": "What's your bid? Bid on promising property bundles, then sell properties for checks.",
+  "title": "For Sale",
+  "cardImg": "https://cf.geekdo-images.com/dJh9HkZC346NgPTAicJq_A__thumb/img/3cgW5aP-JJeKSpZMjA0NFheMnfY=/fit-in/200x150/filters:strip_icc()/pic1513085.jpg"
+}

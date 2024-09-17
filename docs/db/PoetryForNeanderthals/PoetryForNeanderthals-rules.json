@@ -1,0 +1,981 @@
+{
+  "_id": { "$oid": "66e8ce1368a273b4743bc54f" },
+  "game_id": {
+    "$oid": "66b575158318a0db465a0b3e"
+  },
+  "summary": "Poetry for Neanderthals is a competitive word-guessing game where you can only give clues by speaking in single syllables. So, instead of saying \"broccoli,\" you'd say something like \"green thing you eat for live long and have good health.\" If you mess up and use a big word, such as \"vegetable,\" you get bopped on the head with a NO! Stick and you lose points.\nThe goal of the game is to score the most points by correctly interpreting words and phrases. The chosen Poet starts off the game with a Poetry Card and tries to get their teammates to say the listed word, using only words with one syllable within a 90-second time limit.\nThe team with the most points is the winner.",
+  "bggLink": "https://boardgamegeek.com/boardgame/312786/poetry-for-neanderthals",
+  "rules": {
+    "objective": "Score the most points by correctly interpreting words and phrases.",
+    "setup": "Group into two teams, sitting in alternating team positions. Choose a first neanderthal poet. One of the neighbouring players who can see the poet's card gets the \"no stick\".",
+    "gameplay": "Start the 90 second timer. The poet (and the neighbour with the \"no stick\") looks at the Poetry Card. The poet trys to get their team to guess either the animal depicted on the card (for 1 point) or the word on the card (for 3 points). They do this by speaking about the thing in single syllable words. The rest of the team can shout guesses willy nilly. When someone gets it, put the card into a score pile (face down if it was an animal or face up if it was the word). The poet may also skip a card by placing it face down in the opponent's score pile (giving them one point).\n\nYou can't use words with more than one syllable, say any word, part of any word, or any form of a word that is on the Poetry card (unless someone on your team has already said it out loud), use gestures/charades, use \"sounds like\" or \"rhymes with\", use initials or abbreviations, or use other languages.\n\nIf the poet violates any of the rules, the player with the no stick bops them, takes the poetry card and puts it face down in their own score pile (taking one point).\n\nWhen the timer runs out, the next player is the poet. When everyone has had one turn as poet, add up points. Whoever has the most points wins!",
+    "mapDiff": "While the Everdeck images and names are related, the correlation is not as direct as the original game. This results in a slightly harder gameplay.\nOriginal game example:\n\\tAct - 1 Point\n\\tAct Out -  3 Points",
+    "ruleSource": "The Everdeck Companion Vol. 2"
+  },
+  "cardTable": [
+    {
+      "rank": "0",
+      "suit": "club",
+      "label": "Fool",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "club",
+      "label": "Magician",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "club",
+      "label": "Priestess",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "club",
+      "label": "Empress",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "club",
+      "label": "Emperor",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "club",
+      "label": "Hierophant",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "club",
+      "label": "Lovers",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "club",
+      "label": "Chariot",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "club",
+      "label": "Strength",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "club",
+      "label": "Hermit",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "club",
+      "label": "Excuse",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "club",
+      "label": "X-roads",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "club",
+      "label": "Artistry",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "club",
+      "label": "Exemplar",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "club",
+      "label": "Aeon",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "spade",
+      "label": "Fortune",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "spade",
+      "label": "Justice",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "spade",
+      "label": "Hanged Man",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "spade",
+      "label": "Death",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "spade",
+      "label": "Temperance",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "spade",
+      "label": "Devil",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "spade",
+      "label": "Tower",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "spade",
+      "label": "Star",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "spade",
+      "label": "Moon",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "spade",
+      "label": "Sun",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "spade",
+      "label": "Unclean",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "spade",
+      "label": "Regimen",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "spade",
+      "label": "Enigma",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "spade",
+      "label": "Opposition",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "spade",
+      "label": "World",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "heart",
+      "label": "Initiate",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "heart",
+      "label": "Ritualist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "heart",
+      "label": "Druid",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "heart",
+      "label": "Nursemaid",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "heart",
+      "label": "Overseer",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "heart",
+      "label": "Elder",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "heart",
+      "label": "Interpreter",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "heart",
+      "label": "Raider",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "heart",
+      "label": "Zealot",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "heart",
+      "label": "Outsider",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "heart",
+      "label": "Upstart",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "heart",
+      "label": "Guide",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "heart",
+      "label": "Muse",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "heart",
+      "label": "Idol",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "heart",
+      "label": "Radiant",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "diamond",
+      "label": "Escapist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "diamond",
+      "label": "Inquisitor",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "diamond",
+      "label": "Unbeliever",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "diamond",
+      "label": "Exorcist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "diamond",
+      "label": "Pacifist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "diamond",
+      "label": "Traitor",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "diamond",
+      "label": "Sacrifice",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "diamond",
+      "label": "Talent",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "diamond",
+      "label": "Occultist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "diamond",
+      "label": "Shepherd",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "diamond",
+      "label": "Outcast",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "diamond",
+      "label": "Yeoman",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "diamond",
+      "label": "Nightmare",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "diamond",
+      "label": "Duelist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "diamond",
+      "label": "Curator",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "coin",
+      "label": "Youth",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "coin",
+      "label": "Archmage",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "coin",
+      "label": "Oracle",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "coin",
+      "label": "Regent",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "coin",
+      "label": "General",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "coin",
+      "label": "Noble",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "coin",
+      "label": "Emissary",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "coin",
+      "label": "Vanguard",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "coin",
+      "label": "Legion",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "coin",
+      "label": "Eccentric",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "coin",
+      "label": "Narcissist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "coin",
+      "label": "Immigrant",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "coin",
+      "label": "Craftsman",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "coin",
+      "label": "Hero",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "coin",
+      "label": "Immortal",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "crown",
+      "label": "Explorer",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "crown",
+      "label": "Sentinel",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "crown",
+      "label": "Orphan",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "crown",
+      "label": "Executioner",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "crown",
+      "label": "Orderly",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "crown",
+      "label": "Beast",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "crown",
+      "label": "Usurper",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "crown",
+      "label": "Understudy",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "crown",
+      "label": "Theif",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "crown",
+      "label": "Blacksmith",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "crown",
+      "label": "Leper",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "crown",
+      "label": "Acrobat",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "crown",
+      "label": "Angel",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "crown",
+      "label": "Knight",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "crown",
+      "label": "Narrator",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "moon",
+      "label": "Novice",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "moon",
+      "label": "Alchemist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "moon",
+      "label": "Visionary",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "moon",
+      "label": "Physician",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "moon",
+      "label": "Rector",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "moon",
+      "label": "Teacher",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "moon",
+      "label": "Trader",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "moon",
+      "label": "Navigator",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "moon",
+      "label": "Outlaw",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "moon",
+      "label": "Logician",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "moon",
+      "label": "Quack",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "moon",
+      "label": "Ranger",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "moon",
+      "label": "Architect",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "moon",
+      "label": "Expert",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "moon",
+      "label": "Enlightened",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "star",
+      "label": "Gambler",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "star",
+      "label": "Arbiter",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "star",
+      "label": "Insomniac",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "star",
+      "label": "Assassin",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "star",
+      "label": "Bystander",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "star",
+      "label": "Trickster",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "star",
+      "label": "Orator",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "star",
+      "label": "Dreamer",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "star",
+      "label": "Imposter",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "star",
+      "label": "Weaver",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "star",
+      "label": "Lunatic",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "star",
+      "label": "Investigator",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "star",
+      "label": "Imp",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "star",
+      "label": "Rogue",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "star",
+      "label": "Archivist",
+      "cardZone": [
+        { "$oid": "66c92a75cebc7bd1ae75453a" }
+      ]
+    }
+  ],
+  "extComponents": [
+    "No Stick (soft object)",
+    "90 second timer"
+  ]
+}

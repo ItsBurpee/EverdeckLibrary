@@ -1,0 +1,954 @@
+{
+  "_id": { "$oid": "66e8cd5e68a273b4743bc54d" },
+  "game_id": {
+    "$oid": "66b54d9de9ee8a47eecc5e0d"
+  },
+  "summary": "The game has 104 cards, each bearing a number and one to seven bull's heads cards that represent penalty points. A round of ten turns is played where all players place one card of their choice onto the table. The placed cards are arranged on four rows according to fixed rules. If placed onto a row that already has five cards then the player receives those five cards, which count as penalty points that are totaled up at the end of the round. Rounds are played until a player reaches 66 points, whereupon the player with the least penalty points wins. ",
+  "bggLink": "https://boardgamegeek.com/boardgame/432/take-5",
+  "rules": {
+    "objective": "\n\nThe aim of the game is not to get any cards.\nEach card you have to pick up will cost you a minus point per bullhead shown on it.\nThe player who has the fewest bullheads at the end wins the game.\n",
+    "setup": "You will need paper and a pencil for scorekeeping. Shuffle the cards and deal 10 cards to each player. Each player takes his or her cards up in hand and arranges them according to their numbers, in ascending order.\n\nMake Four Rows\nPut the top four cards of the remaining pile face-up in the middle of the table. Each of these cards is the first card in a row, in which there may not be more than 5 cards, including this first one.\n\nPut the remaining cards aside; you will not need them until the next round.\n",
+    "gameplay": "I. Playing a Card\nEach player takes one of the cards from his hand and puts it face-down on the table in front of him. Only after all players have played a card are the cards revealed.\nThe player whose card shows the lowest number goes first, adding his card to one of the four rows. The player with the second lowest number on his card is next and so on, until all cards played this round have been added to the rows.\nCards are always placed adjacent to each other in a row. The game continues in this manner round by round, until all 10 cards in each player's hand have been played.\n\nWhich row is a card added to?\nEach card can only be added to one particular row, which is defined by the following rules:\n\n\\t - Rule No. 1: \"ascending Order\".\n\\t The number of the card that is added to a row must be higher than the number of the current last card in that row.\n\n\\t - Rule No. 2: \"small Difference\".\n\\t A card must always be added to the row with the smallest possible difference between the current last card and the new one.\n\n\nII. Getting Cards\nEverything is fine as long as you can play your card in one of the four rows. But what happens when a card would go into a row that is full, or when it fits none of the four rows?\n\nIn both cases, the player who played such a card gets cards from the table, which score against him.\n\n\\t - Rule No. 3: \"full Row\".\n\\t A row with 5 cards in it is full. If Rule No. 2 would put a sixth card in such a row, the player who played that card must take all five cards of the full row. His card then becomes the first in the new row.\n\n\\t - Rule 4: \"lowest Card\".\n\\t If a player plays a card whose number is so low that it does not fit into any row, he must pick up all cards of a row of his choice. His card then becomes the first card of the new row.\n\n\nBullhead = Minus Points\nEach card shows from one to five bullheads. When a player has to pick up cards, each bullhead represents one minus point.\n\nBullhead Stack\nPut all cards you had to pick up on the table in front of yourself, face-down, in the so-called \"bullhead stack\".\n\n\\t Note: You may not take such cards up in hand for playing.\n\nEnd of the Game\nThe game is over when players have played out all ten cards of their hands. Each player then picks up his bullhead stack and counts his minus points.\n\nTake note of each player's minus points on a piece of paper, pick up and shuffle all cards and begin a new game.\n\nThe game is played over several rounds, until a player has collected 66 or more bullheads. The player who at this point has the fewest bullheads wins the game.\n\nOf course, you can also decide to play to a different score, or for a set number of rounds.\n",
+    "mapDiff": "Everdeck dots result in a more volatile bullhead distribution. In the original game, all cards have 1 bullhead except the following:\n\\t - Cards that end in 5: 2 bullheads\n\\t - Cards that end in 0: 3 bullheads\n\\t - Cards with repdigits (ex. 11, 22): 5 bullheads\n\\t - 55: 7 bullheads",
+    "ruleSource": "UltraBoardGames"
+  },
+  "cardTable": [
+    {
+      "rank": "1",
+      "suit": "club",
+      "label": "1",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "club",
+      "label": "2",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "heart",
+      "label": "90",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "club",
+      "label": "3",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "club",
+      "label": "4",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "club",
+      "label": "5",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "club",
+      "label": "6",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "club",
+      "label": "7",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "club",
+      "label": "8",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "club",
+      "label": "9",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "spade",
+      "label": "10",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "spade",
+      "label": "11",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "spade",
+      "label": "12",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "spade",
+      "label": "13",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "spade",
+      "label": "14",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "spade",
+      "label": "15",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "spade",
+      "label": "16",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "spade",
+      "label": "17",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "spade",
+      "label": "18",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "spade",
+      "label": "19",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "heart",
+      "label": "20",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "heart",
+      "label": "21",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "heart",
+      "label": "22",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "heart",
+      "label": "23",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "heart",
+      "label": "24",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "heart",
+      "label": "25",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "heart",
+      "label": "26",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "heart",
+      "label": "27",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "heart",
+      "label": "28",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "heart",
+      "label": "29",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "diamond",
+      "label": "30",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "coin",
+      "label": "40",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "coin",
+      "label": "41",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "coin",
+      "label": "42",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "coin",
+      "label": "43",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "coin",
+      "label": "44",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "coin",
+      "label": "45",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "crown",
+      "label": "50",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "crown",
+      "label": "51",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "crown",
+      "label": "52",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "crown",
+      "label": "53",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "crown",
+      "label": "54",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "crown",
+      "label": "55",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "moon",
+      "label": "60",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "moon",
+      "label": "62",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "moon",
+      "label": "63",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "moon",
+      "label": "64",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "moon",
+      "label": "65",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "moon",
+      "label": "66",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "moon",
+      "label": "67",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "moon",
+      "label": "68",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "moon",
+      "label": "69",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "star",
+      "label": "70",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "star",
+      "label": "72",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "star",
+      "label": "73",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "star",
+      "label": "74",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "star",
+      "label": "75",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "star",
+      "label": "76",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "star",
+      "label": "77",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "star",
+      "label": "78",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "star",
+      "label": "79",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "club",
+      "label": "80",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "club",
+      "label": "81",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "club",
+      "label": "82",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "club",
+      "label": "83",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "club",
+      "label": "84",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "spade",
+      "label": "85",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "spade",
+      "label": "86",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "spade",
+      "label": "87",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "spade",
+      "label": "88",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "heart",
+      "label": "91",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "heart",
+      "label": "92",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "heart",
+      "label": "93",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "heart",
+      "label": "94",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "diamond",
+      "label": "31",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "diamond",
+      "label": "32",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "diamond",
+      "label": "33",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "diamond",
+      "label": "34",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "diamond",
+      "label": "35",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "diamond",
+      "label": "36",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "diamond",
+      "label": "37",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "diamond",
+      "label": "38",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "diamond",
+      "label": "39",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "diamond",
+      "label": "95",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "diamond",
+      "label": "96",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "diamond",
+      "label": "97",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "diamond",
+      "label": "98",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "diamond",
+      "label": "99",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "coin",
+      "label": "46",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "coin",
+      "label": "47",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "coin",
+      "label": "48",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "coin",
+      "label": "49",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "X",
+      "suit": "coin",
+      "label": "100",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "J",
+      "suit": "coin",
+      "label": "101",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "Q",
+      "suit": "coin",
+      "label": "102",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "K",
+      "suit": "coin",
+      "label": "103",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "coin",
+      "label": "104",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "crown",
+      "label": "56",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "crown",
+      "label": "57",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "crown",
+      "label": "58",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "crown",
+      "label": "59",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "moon",
+      "label": "61",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "star",
+      "label": "72",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    },
+    {
+      "rank": "A",
+      "suit": "spade",
+      "label": "89",
+      "cardZone": [
+        { "$oid": "66c3b0d7e86c5d611ccf448d" },
+        { "$oid": "66c3b42ae86c5d611ccf448e" }
+      ]
+    }
+  ],
+  "extComponents": []
+}

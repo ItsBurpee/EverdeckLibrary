@@ -1,0 +1,500 @@
+{
+  "_id": { "$oid": "66e8cbd268a273b4743bc546" },
+  "game_id": {
+    "$oid": "66b3ef810b43657d5b5310ec"
+  },
+  "summary": "For Sale is a quick, fun game nominally about buying and selling real estate. During the game's two distinct phases, players first bid for several buildings then, after all buildings have been bought, sell the buildings for the greatest profit possible.",
+  "bggLink": "https://boardgamegeek.com/boardgame/172/for-sale",
+  "rules": {
+    "objective": "All players try to purchase the most valuable properties with the least amount of money and then turn around and sell those properties for the highest-valued Currency Cards. Whoever has earned the most money at the end of the game wins!",
+    "setup": "Separate the cards by type (Property and Currency) and shuffle each pile. Set aside the Currency Cards. They will be used in the second half of the game. Place the Property Cards face down as a deck.\n\n\\t ● With 3-4 players, give each person two $2,000 Coins and fourteen $1,000 Coins.\n\\t ● With 5-6 players, give each person two $2,000 Coins and ten $1,000 Coins.\n\nWith three players, remove six Property and six Currency Cards from the game without looking at them. With four players, remove two Property and two Currency Cards . These cards are discarded and placed back into the box.",
+    "gameplay": "Phase 1: Buying Properties\n\nSetup: Turn face up the number of Property Cards equal to the number of players For example, in a four player game, turn up four Property Cards. All of the face-up properties will now be auctioned so that no player goes empty-handed. Each player may bid or pass.\n\nBidding\nThe player who lives in the largest house begins and lays down any number of his Coins onto the table. Play then continues clockwise around the table. The next player must decide whether he will bid or pass.If he bids, the bid amount must be more than the previous bid. Bidding continues around the table for as many times as necessary until all players have passed.\n\nPassing\nIf a player passes, he takes the property that remains on the table with the lowest value. He also takes back half of his bid (rounded down). For example, if a player had previously bid $3,000, but ultimately decides to pass, he takes back $1,000 into his hand.\nThe rest of the money is returned to the bank and is placed out of the game. After all players but one have passed, the remaining bidding player takes the highest-valued property, but pays the full amount of his bid to the bank.\nIt is not necessary to bid anything to gain the least valuable property. You can pass, pay nothing and secure the least valuable property at no charge.\n\nTip: Keep your money secret!\n\nPurchased properties are placed face down in front of the player who purchased them. The player who took the most valuable property turns over the next set of Property Cards for auction and continues play by bidding or passing. This continues until all of the Property Cards have been sold. When all Property Cards have been sold, Phase 1 is finished and unused Coins are kept by the players. They will be worth their face value at the end of the game.\n\nPhase 2: Selling Properties\n\nIt's time to sell your Property Cards and earn some money! In this phase, the Property Cards will be sold for Currency Cards. As in Phase 1, the same number of Currency Cards will be turned face up as there are players.\nEach player takes his Property Cards into his hand and places one Property Card face down in front of him. Once all of the other players have their face-down Property Card ready to play, all players turn over their Property Cards simultaneously.The player who has played the most valuable Property Card takes the highest-valued Currency Card.The player who has played second most valuable Property Card takes the second highest-valued Currency Card, and so on. Property Cards are then discarded from the game.\n\nEnd of the Game\nThe game ends when all players have sold all of their properties. Players add up their Currency Cards and remaining Coins and the richest player wins! Ties are resolved in favor of the player with the most remaining Coins.",
+    "ruleSource": "UltraBoardGames"
+  },
+  "cardTable": [
+    {
+      "rank": "1",
+      "suit": "club",
+      "label": "1",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "club",
+      "label": "2",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "club",
+      "label": "3",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "club",
+      "label": "4",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "club",
+      "label": "5",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "club",
+      "label": "6",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "club",
+      "label": "7",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "club",
+      "label": "8",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "club",
+      "label": "9",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "spade",
+      "label": "10",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "spade",
+      "label": "11",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "spade",
+      "label": "12",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "spade",
+      "label": "13",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "spade",
+      "label": "14",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "spade",
+      "label": "15",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "spade",
+      "label": "16",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "spade",
+      "label": "17",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "spade",
+      "label": "18",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "spade",
+      "label": "19",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "heart",
+      "label": "20",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "heart",
+      "label": "21",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "heart",
+      "label": "22",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "heart",
+      "label": "23",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "heart",
+      "label": "24",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "heart",
+      "label": "25",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "heart",
+      "label": "26",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "heart",
+      "label": "27",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "heart",
+      "label": "28",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "heart",
+      "label": "29",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "diamond",
+      "label": "30",
+      "cardZone": [
+        { "$oid": "66be6559461ddefaa29d7250" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "coin",
+      "label": "$10",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "coin",
+      "label": "$11",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "coin",
+      "label": "$12",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "coin",
+      "label": "$13",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "coin",
+      "label": "$14",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "coin",
+      "label": "$15",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "crown",
+      "label": "$10",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "1",
+      "suit": "crown",
+      "label": "$11",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "crown",
+      "label": "$12",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "crown",
+      "label": "$13",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "crown",
+      "label": "$14",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "crown",
+      "label": "$15",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "moon",
+      "label": "$0",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "moon",
+      "label": "$2",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "moon",
+      "label": "$3",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "moon",
+      "label": "$4",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "moon",
+      "label": "$5",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "moon",
+      "label": "$6",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "moon",
+      "label": "$7",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "moon",
+      "label": "$8",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "moon",
+      "label": "$9",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "0",
+      "suit": "star",
+      "label": "$0",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "2",
+      "suit": "star",
+      "label": "$2",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "3",
+      "suit": "star",
+      "label": "$3",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "4",
+      "suit": "star",
+      "label": "$4",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "5",
+      "suit": "star",
+      "label": "$5",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "6",
+      "suit": "star",
+      "label": "$6",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "7",
+      "suit": "star",
+      "label": "$7",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "8",
+      "suit": "star",
+      "label": "$8",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    },
+    {
+      "rank": "9",
+      "suit": "star",
+      "label": "$9",
+      "cardZone": [
+        { "$oid": "66be670a461ddefaa29d7251" }
+      ]
+    }
+  ],
+  "extComponents": [
+    "60 $1,000 Coins",
+    "12 $2,000 Coins"
+  ]
+}

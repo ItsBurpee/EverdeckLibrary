@@ -1,0 +1,17 @@
+{
+  "_id": { "$oid": "66e8cc5968a273b4743bc549" },
+  "game_id": {
+    "$oid": "66b3ef810b43657d5b5310ec"
+  },
+  "keywords": [
+    "currency cards",
+    "currency card",
+    "currency"
+  ],
+  "cardComponents": ["Rank", "Suit"],
+  "extRules": [
+    { "coin crown": "+10 to value" },
+    { "moon star": "No extra value" }
+  ],
+  "name": "Currency Cards"
+}

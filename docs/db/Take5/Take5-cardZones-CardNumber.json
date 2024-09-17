@@ -1,0 +1,10 @@
+{
+  "_id": { "$oid": "66e8cd1568a273b4743bc54b" },
+  "game_id": {
+    "$oid": "66b54d9de9ee8a47eecc5e0d"
+  },
+  "keywords": ["numbers", "number"],
+  "cardComponents": ["Sequence Number"],
+  "extRules": [],
+  "name": "Card Number"
+}

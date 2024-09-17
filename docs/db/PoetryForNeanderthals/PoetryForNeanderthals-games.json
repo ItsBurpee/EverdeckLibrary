@@ -1,0 +1,21 @@
+{
+  "_id": { "$oid": "66e8ce583727381d7784e7f4" },
+  "complexity": { "$numberDouble": "1.06" },
+  "extComponents": [
+    "Timer",
+    "Soft Object - \"No stick\""
+  ],
+  "gameType": ["Party"],
+  "mapStrength": "High",
+  "plCount": {
+    "plCountMin": { "$numberInt": "2" },
+    "plCountMax": { "$numberInt": "12" }
+  },
+  "plTime": {
+    "plTimeMin": { "$numberInt": "15" },
+    "plTimeMax": { "$numberInt": "15" }
+  },
+  "shDescription": "A competitive word-guessing game where you can only give clues by speaking in single syllables.",
+  "title": "Poetry for Neanderthals",
+  "cardImg": "https://cf.geekdo-images.com/CDlBjXSPT-3Zyrj8ENBkvQ__thumb/img/0ON18UcLepuwPLhwkRtRUjhvAZ8=/fit-in/200x150/filters:strip_icc()/pic5702797.jpg"
+}

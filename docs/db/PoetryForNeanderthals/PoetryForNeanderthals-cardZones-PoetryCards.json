@@ -1,0 +1,17 @@
+{
+  "_id": { "$oid": "66e8ce803727381d7784e7f5" },
+  "game_id": {
+    "$oid": "66b575158318a0db465a0b3e"
+  },
+  "keywords": [
+    "poetry cards",
+    "poetry card",
+    "poetry"
+  ],
+  "cardComponents": ["Image", "Name"],
+  "extRules": [
+    { "Image": "1 Point" },
+    { "Name": "3 Points" }
+  ],
+  "name": "Poetry Cards"
+}

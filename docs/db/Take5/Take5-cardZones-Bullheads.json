@@ -1,0 +1,10 @@
+{
+  "_id": { "$oid": "66e8cd2b68a273b4743bc54c" },
+  "game_id": {
+    "$oid": "66b54d9de9ee8a47eecc5e0d"
+  },
+  "keywords": ["bullheads", "bullhead"],
+  "cardComponents": ["Dots"],
+  "name": "Bullheads",
+  "extRules": []
+}

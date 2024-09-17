@@ -1,0 +1,18 @@
+{
+  "_id": { "$oid": "66e8ccfe68a273b4743bc54a" },
+  "complexity": { "$numberDouble": "1.19" },
+  "extComponents": [],
+  "gameType": ["Family"],
+  "mapStrength": "High",
+  "plCount": {
+    "plCountMin": { "$numberInt": "2" },
+    "plCountMax": { "$numberInt": "10" }
+  },
+  "plTime": {
+    "plTimeMin": { "$numberInt": "45" },
+    "plTimeMax": { "$numberInt": "45" }
+  },
+  "shDescription": "Choose sequential cards for rows simultaneously, but avoid adding the 6th card!",
+  "title": "Take 5",
+  "cardImg": "https://cf.geekdo-images.com/fejfmCLX0kSSKppT5iv_Pg__thumb/img/dWcwk0P0dT5AujK4CiYP_A2d93A=/fit-in/200x150/filters:strip_icc()/pic7649146.jpg"
+}
