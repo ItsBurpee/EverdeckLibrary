@@ -159,6 +159,7 @@ This will also happen when interacting with the Card Zone description positioned
 ## Credits
 Thanks to:
 - Nathan, Carl, and Philip for developing this project
+- Wilhelm Su for creating the Everdeck
 - The various users who created mappings for the Everdeck. You can find more information in the About Page's **Game Source List** section
 - UltraBoardGames for providing some of the game's rules
 - BoardGameGeek for their XML API and providing information on the games found on this web app
