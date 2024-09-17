@@ -19,6 +19,7 @@ To setup a local version of the Everdeck Library, you'll need to do the followin
 
 ## DB Structure
 This web app uses MongoDB. The database name is `everdeck_database` and contains the following Collections:
+
 For a few examples on what some of these Collection entries look like, check the `docs/db` folder
 
 ### Game
