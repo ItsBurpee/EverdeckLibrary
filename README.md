@@ -121,9 +121,44 @@ This web app uses MongoDB with the following Collections:
       ```
 
 ## How to Use
-_TODO: Everdeck Library Tutorial_
+This is a simplified version on how to use the app. A more detailed explanation can be found within the app by pressing the **?** button.
 
-## Project by:
-Nathan \
-Carl \
-Philip
+### Game List Page
+Each game has an associated card with information related to the game such as the game's title, summary, warnings, and stats provided by BGG (BoardGameGeek).
+
+![Image of a game card](https://github.com/ItsBurpee/EverdeckLibrary/blob/main/public/cardExample.png)
+
+You can search, sort, and filter the card list by using the search bar, sort buttons, and filter menu found near the top of the page if your looking for specific games.
+
+Upon clicking a game card, you'll be brought to its **Rules Page** where you'll be given detailed information like the rules, how the Everdeck maps to the game's cards, and a table of what cards will be in use.
+
+### Rules Page
+The **Rules Page** is split into 3 sections:
+#### Top Section
+This section is a more descriptive version of the game's card from the  **Game List Page**. Alongside more descriptive versions of the game's summary and warnings, there's a link to the game's BGG entry.
+
+#### Middle Section
+This section covers the game's rules and presents a visual example of how various aspects of the game's cards map onto the Everdeck's cards.
+
+Keywords in the game's rules have a different appearance and have interactions when hovered or clicked. Upon interacting with these keywords, the Card Zone section will highlight the corresponding Card Zone and card component(s) it maps to.
+
+![Image of the card zone highlighting](https://github.com/ItsBurpee/EverdeckLibrary/blob/main/public/filterEx/cardZoneEx.png)
+
+#### Bottom Section
+This section covers the Card Table and a more detailed list of the game's extra components
+
+The Card Table displays which cards are used in the selected and the labels/information assigned to each of them. Upon hovering or clicking each cell, the corresponding card zone will be shown near the interaction point and all cells/cards related to that card zone will be highlighted.
+
+![Image of interacting with the Card Table](https://github.com/ItsBurpee/EverdeckLibrary/blob/main/public/filterEx/cardTableEx.png)
+
+This will also happen when interacting with the Card Zone description positioned below the Card Table.
+
+## Credits
+Thanks to:
+- Nathan, Carl, and Philip for developing this project
+- The various users who created mappings for the Everdeck. You can find more information in the About Page's **Game Source List** section
+- UltraBoardGames for providing some of the game's rules
+- BoardGameGeek for their XML API and providing information on the games found on this web app
+- And you for trying out this app!
+
+![Powered by BGG logo](https://github.com/ItsBurpee/EverdeckLibrary/blob/main/public/poweredByBGG.webp)
